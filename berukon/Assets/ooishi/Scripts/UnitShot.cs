@@ -9,20 +9,23 @@ public class UnitShot : MonoBehaviour
     public float shotTime;
     private float time;
     private bool hitfrag;
-    private GameObject[] enemys;
-    private GameObject enemysave;
+    private Dictionary<int,GameObject> enemys;
+    private GameObject enemysave,enesave2;
+    private bool sortfrag;
 
     // Start is called before the first frame update
     void Start()
     {
         time = 0;
         hitfrag = false;
-    }
+        enemys = new Dictionary<int, GameObject>();
+;    }
 
     // Update is called once per frame
     void Update()
     {
         Shot();
+        Sort();
     }
     void Shot()
     {
@@ -41,14 +44,33 @@ public class UnitShot : MonoBehaviour
 
     void Sort()
     {
-        if(enemys.Length!=0)
+        if(enemys.Count>=2)
         {
-            for (int i = 0; i < enemys.Length; i++)
+            bool isEnd = false;
+            int finAdjust = 1; // 最終添え字の調整値
+            while (!isEnd)
             {
-                float distance = Vector2.Distance(transform.position, enemys[i].transform.position);
-                float distance = Vector2.Distance(transform.position, target.transform.position);
-                if (enemys[i].gameObject.transform.position)
+                bool loopSwap = false;
+                for (int i = 0; i < enemys.Count - finAdjust; i++)
+                {
+                    float nierdistance = Vector2.Distance(transform.position, enemys[i].transform.position);
+                    float nowdistance = Vector2.Distance(transform.position, enemys[i + 1].transform.position);
+                    if (nierdistance > nowdistance)
+                    {
+                        enemysave = enemys[i];
+                        enesave2 = enemys[i + 1];
+                        enemys[i] = enesave2;
+                        enemys[i + 1] = enemysave;
+                        loopSwap = true;
+                    }
+                }
+                if (!loopSwap) // Swapが一度も実行されなかった場合はソート終了
+                {
+                    isEnd = true;
+                }
+                finAdjust++;
             }
+            target = enemys[0];
         }
     }
 
@@ -56,11 +78,32 @@ public class UnitShot : MonoBehaviour
     {
         if(collision.gameObject.tag=="Enemy")
         {
-            if(hitfrag==false)
+            float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
+            if (enemys.Count==0)
+            {
+                enemys.Add(0,collision.gameObject);
+            }else
+            {
+                enemys.Add(enemys.Count, collision.gameObject);
+            }
+            sortfrag = false;
+            if (hitfrag==false)
             {
                 hitfrag = true;
             }
-            target = collision.gameObject;
+            target = enemys[0];
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag=="Enemy")
+        {
+            if(enemys.Count==1)
+            {
+                hitfrag = false;
+            }
+                enemys.Remove(enemys.Count-1);
+            
         }
     }
 }

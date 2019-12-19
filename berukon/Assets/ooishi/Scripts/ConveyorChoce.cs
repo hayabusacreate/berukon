@@ -33,7 +33,7 @@ public class ConveyorChoce : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
             conveyorCount++;
-            if(conveyorCount>conveyors.Length)
+            if(conveyorCount>=conveyors.Length)
             {
                 conveyorCount = conveyors.Length-1;
             }

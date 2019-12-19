@@ -30,7 +30,7 @@ public class NomalBullet : MonoBehaviour
     {
         if(collision.gameObject.tag=="Enemy")
         {
-            Destroy(gameObject);
+           Destroy(gameObject);
         }
     }
 }

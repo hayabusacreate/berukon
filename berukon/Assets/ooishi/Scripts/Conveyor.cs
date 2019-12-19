@@ -12,7 +12,7 @@ public class Conveyor : MonoBehaviour
     public Direction direction;
     public float maxspeed,nomalspeed,minspeed;
     public float speed;
-
+    public bool moveflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class Conveyor : MonoBehaviour
     }
     void ChangeSpeed()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A)&&moveflag)
         {
             speed -= 0.1f;
             if (speed < minspeed)
@@ -34,7 +34,7 @@ public class Conveyor : MonoBehaviour
                 speed = minspeed;
             }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && moveflag)
         {
             speed += 0.1f;
             if(speed>maxspeed)

@@ -9,6 +9,7 @@ TagManager:
   - AttackArea
   - Heal
   - Core
+  - Unit
   layers:
   - Default
   - TransparentFX

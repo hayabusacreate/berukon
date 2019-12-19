@@ -11,6 +11,7 @@ public class UnitShot : MonoBehaviour
     private bool hitfrag;
     private Dictionary<int,GameObject> enemys;
     private GameObject enemysave,enesave2;
+    private UnitMove unitMove;
     private bool healfrag;
 
     // Start is called before the first frame update
@@ -19,12 +20,17 @@ public class UnitShot : MonoBehaviour
         time = 0;
         hitfrag = false;
         enemys = new Dictionary<int, GameObject>();
-;    }
+        unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Shot();
+        healfrag = unitMove.healfrag;
+        if(!healfrag)
+        {
+            Shot();
+        }
         Sort();
     }
     void Shot()
@@ -76,10 +82,6 @@ public class UnitShot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Heal")
-        {
-            healfrag = true;
-        }
         if (collision.gameObject.tag=="Enemy"&&healfrag==false)
         {
             float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);

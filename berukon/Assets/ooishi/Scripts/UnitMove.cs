@@ -16,6 +16,7 @@ public class UnitMove : MonoBehaviour
     private GameObject con;
     private Conveyor conveyor;
     private float angle,an;
+    public bool healfrag;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class UnitMove : MonoBehaviour
         Rotefrag = false;
         LRfrag = true;
         rb = GetComponent<Rigidbody2D>();
+        healfrag = false;
     }
 
     // Update is called once per frame
@@ -150,7 +152,11 @@ public class UnitMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="wall")
+        if (collision.gameObject.tag == "Heal")
+        {
+            healfrag = true;
+        }
+        if (collision.tag=="wall")
         {
             angle = 0;
             rotecount = 0;
@@ -167,6 +173,13 @@ public class UnitMove : MonoBehaviour
             {
                 LRfrag = true;
             }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Heal")
+        {
+            healfrag = false;
         }
     }
 }

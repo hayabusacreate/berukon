@@ -7,6 +7,7 @@ TagManager:
   - wall
   - Enemy
   - AttackArea
+  - Heal
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - AttackArea
   - Wall
   - Enemy
-  - 
+  - Heal
   - 
   - 
   - 

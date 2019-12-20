@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -8,8 +9,17 @@ public class EnemyMove : MonoBehaviour
     Rigidbody2D rb;
     public float x;
     public int EnemyLife = 3;
+    private Vector3 deathPos;
+    private float speed;
+    float changeRed = 1.0f;
+    float changeGreen = 1.0f;
+    float cahngeBlue = 1.0f;
+    float cahngeAlpha = 0f;
+    private Color color;
     void Start()
     {
+        deathPos = new Vector3(20, 0, 0);
+        speed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -19,7 +29,12 @@ public class EnemyMove : MonoBehaviour
         rb.velocity = new Vector2(x, 0);
         if(EnemyLife == 0)
         {
-            Destroy(gameObject);
+            //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
+            transform.position = Vector3.Lerp(transform.position, deathPos, speed);
+            if(transform.position==deathPos)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void EnemyLife_Manager(int Life)

@@ -62,6 +62,7 @@ public class EnemyMove : MonoBehaviour
         }
         if(collision.gameObject.tag == "Core")
         {
+            Debug.Log("コアに侵入");
             Destroy(gameObject);
         }
     }

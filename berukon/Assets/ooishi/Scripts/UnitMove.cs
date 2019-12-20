@@ -46,7 +46,7 @@ public class UnitMove : MonoBehaviour
             HealTime += Time.deltaTime;
             if(2 < HealTime)
             {
-                Debug.Log("ヒールタイムリセット");
+                //Debug.Log("ヒールタイムリセット");
                 HealTime = 0;
             }
         }

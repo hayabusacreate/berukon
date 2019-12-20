@@ -189,7 +189,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &154814229
 GameObject:
@@ -268,7 +268,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &636464819
 GameObject:
@@ -323,7 +323,7 @@ MonoBehaviour:
   nomalspeed: 1
   minspeed: 0.1
   speed: 0
-  moveflag: 0
+  moveflag: 1
 --- !u!1 &734964436
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vrtical: 0
   healfrag: 0
+  HealTime: 0
 --- !u!50 &734964440
 Rigidbody2D:
   serializedVersion: 4
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vrtical: 1
   healfrag: 0
+  HealTime: 0
 --- !u!50 &2028240885
 Rigidbody2D:
   serializedVersion: 4

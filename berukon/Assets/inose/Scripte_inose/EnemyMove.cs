@@ -63,6 +63,8 @@ public class EnemyMove : MonoBehaviour
         {
             Debug.Log("コアに侵入");
             Destroy(gameObject);
+            //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
+           // deathFrag = true;
         }
     }
 }

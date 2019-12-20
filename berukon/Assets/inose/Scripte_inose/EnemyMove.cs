@@ -16,8 +16,10 @@ public class EnemyMove : MonoBehaviour
     float cahngeBlue = 1.0f;
     float cahngeAlpha = 0f;
     private Color color;
+    private bool deathFrag;
     void Start()
     {
+        deathFrag = false;
         deathPos = new Vector3(20, 0, 0);
         speed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
@@ -26,15 +28,23 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(x, 0);
         if(EnemyLife == 0)
         {
             //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
+            deathFrag = true;
+
+        }
+        if(deathFrag)
+        {
             transform.position = Vector3.Lerp(transform.position, deathPos, speed);
-            if(transform.position==deathPos)
+            if (transform.position == deathPos)
             {
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            rb.velocity = new Vector2(x, 0);
         }
     }
     public void EnemyLife_Manager(int Life)

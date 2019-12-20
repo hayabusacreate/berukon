@@ -96,7 +96,7 @@ public class EnemyShot : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Unit")
         {
             if (units.Count == 1)
             {

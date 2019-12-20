@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBallet : MonoBehaviour
 {
     private GameObject target;
-    private Vector2 targetpos;
+    private Vector3 targetpos;
     public float speed;
     private EnemyShot enemy;
     // Start is called before the first frame update
@@ -27,6 +27,10 @@ public class EnemyBallet : MonoBehaviour
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(unit.target.transform.position - transform.position), 0.3f);
         //targetに向かって進む
         transform.position = Vector3.Lerp(transform.position, targetpos, speed);
+        if(transform.position==targetpos)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

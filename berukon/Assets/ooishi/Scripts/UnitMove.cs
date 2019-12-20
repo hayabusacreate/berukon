@@ -17,6 +17,7 @@ public class UnitMove : MonoBehaviour
     private Conveyor conveyor;
     private float angle,an;
     public bool healfrag;
+    public float HealTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,15 @@ public class UnitMove : MonoBehaviour
     void Update()
     {
         Move();
+        if(healfrag == true)
+        {
+            HealTime += Time.deltaTime;
+            if(2 < HealTime)
+            {
+                Debug.Log("ヒールタイムリセット");
+                HealTime = 0;
+            }
+        }
     }
     void Move()
     {
@@ -155,6 +165,7 @@ public class UnitMove : MonoBehaviour
         if (collision.gameObject.tag == "Heal")
         {
             healfrag = true;
+           
         }
         if (collision.tag=="wall")
         {
@@ -179,7 +190,16 @@ public class UnitMove : MonoBehaviour
     {
         if (collision.gameObject.tag == "Heal")
         {
+            //falseが上の状態
             healfrag = false;
+
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Heal")
+        {
+
         }
     }
 }

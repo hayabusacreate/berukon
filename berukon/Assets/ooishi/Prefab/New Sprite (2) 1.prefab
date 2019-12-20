@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
-  damege: 2
+  damege: 1
 --- !u!50 &1698739887062142922
 Rigidbody2D:
   serializedVersion: 4

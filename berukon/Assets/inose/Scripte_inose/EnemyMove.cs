@@ -29,11 +29,10 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(EnemyLife == 0)
+        if(EnemyLife <= 0)
         {
             //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
             deathFrag = true;
-
         }
         if(deathFrag)
         {

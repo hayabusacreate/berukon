@@ -8,6 +8,7 @@ public class NomalBullet : MonoBehaviour
     private Vector3 targetpos;
     public float speed;
     private UnitShot unit;
+    public int damege;
     // Start is called before the first frame update
     void Start()
     {

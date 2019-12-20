@@ -17,6 +17,7 @@ public class EnemyMove : MonoBehaviour
     float cahngeAlpha = 0f;
     private Color color;
     private bool deathFrag;
+    private NomalBullet nomalBullet;
     void Start()
     {
         deathFrag = false;
@@ -55,7 +56,8 @@ public class EnemyMove : MonoBehaviour
     {
         if (collision.gameObject.tag == "AttackArea")
         {
-            EnemyLife_Manager(-1);
+            nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
+            EnemyLife_Manager(-nomalBullet.damege);
             //Debug.Log("ダメージを食らう");
         }
         if(collision.gameObject.tag == "Core")

@@ -37,7 +37,7 @@ public class EnemyMove : MonoBehaviour
         if(deathFrag)
         {
             transform.position = Vector3.Lerp(transform.position, deathPos, speed);
-            if (transform.position == deathPos)
+            if (transform.position.z <19)
             {
                 Destroy(gameObject);
             }

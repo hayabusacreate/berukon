@@ -111,6 +111,7 @@ public class UnitShot : MonoBehaviour
             {
                 hitfrag = false;
             }
+            Sort();
                 enemys.Remove(enemys.Count-1);
             
         }

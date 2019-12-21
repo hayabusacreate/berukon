@@ -10,6 +10,9 @@ TagManager:
   - Heal
   - Core
   - Unit
+  - Conveyor
+  - ConveyorRight
+  - ConveyorLeft
   layers:
   - Default
   - TransparentFX

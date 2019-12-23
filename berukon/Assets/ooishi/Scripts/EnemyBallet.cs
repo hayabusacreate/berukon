@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemyBallet : MonoBehaviour
 {
     private GameObject target;
@@ -17,26 +16,33 @@ public class EnemyBallet : MonoBehaviour
         targetpos = target.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         Move();
     }
     void Move()
     {
+
+            transform.position = Vector3.Lerp(transform.position, targetpos, speed);
+            if (transform.position == targetpos)
+            {
+                Destroy(gameObject);
+            }
+        
+
+            transform.position += transform.forward * speed;
+        
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(unit.target.transform.position - transform.position), 0.3f);
         //targetに向かって進む
-        transform.position = Vector3.Lerp(transform.position, targetpos, speed);
-        if(transform.position==targetpos)
-        {
-            Destroy(gameObject);
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Unit")
-        {
-            Destroy(gameObject);
-        }
+
+            if (collision.gameObject.tag == "Unit")
+            {
+                Destroy(gameObject);
+            }
+        
     }
 }

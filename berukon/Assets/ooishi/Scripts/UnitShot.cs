@@ -6,11 +6,12 @@ public enum UnitSelect
 {
     NomalShot,
     ThreeShot,
+    kanntuuShot,
 }
 public class UnitShot : MonoBehaviour
 {
     public UnitSelect unitSelect;
-    public GameObject shot;
+    public GameObject shot,kanntuu;
     public GameObject target;
     public float shotTime;
     private float count;
@@ -69,6 +70,12 @@ public class UnitShot : MonoBehaviour
                 GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
                 obj.transform.parent = transform;
                 count++;
+            }
+            if(unitSelect==UnitSelect.kanntuuShot)
+            {
+                time = 0.0f;
+                GameObject obj = Instantiate(kanntuu, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
             }
         }
     }

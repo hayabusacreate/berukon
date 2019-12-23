@@ -65,6 +65,10 @@ public class NomalBullet : MonoBehaviour
             // 現在の位置に加算減算を行ったPositionを代入する
             transform.position = Position;
         }
+        if (!GetComponent<Renderer>().isVisible)
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

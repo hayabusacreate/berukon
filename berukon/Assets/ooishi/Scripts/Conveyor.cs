@@ -10,12 +10,14 @@ public enum Direction
 public class Conveyor : MonoBehaviour
 {
     public Direction direction;
+    private  ConveyorChoce conveyor;
     public float maxspeed,nomalspeed,minspeed;
     public float speed;
     public bool moveflag;
     // Start is called before the first frame update
     void Start()
     {
+        conveyor = GameObject.Find("BerukonChoce").GetComponent<ConveyorChoce>();
         speed = nomalspeed;
     }
 
@@ -26,20 +28,42 @@ public class Conveyor : MonoBehaviour
     }
     void ChangeSpeed()
     {
-        if(Input.GetKeyDown(KeyCode.A)&&moveflag)
+        if(conveyor.selectSpeed==SelectSpeed.Tap)
         {
-            speed -= 0.1f;
-            if (speed < minspeed)
+            if (Input.GetKeyDown(KeyCode.A) && moveflag)
             {
-                speed = minspeed;
+                speed -= 0.1f;
+                if (speed < minspeed)
+                {
+                    speed = minspeed;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.D) && moveflag)
+            {
+                speed += 0.1f;
+                if (speed > maxspeed)
+                {
+                    speed = maxspeed;
+                }
             }
         }
-        if (Input.GetKeyDown(KeyCode.D) && moveflag)
+        if (conveyor.selectSpeed == SelectSpeed.State)
         {
-            speed += 0.1f;
-            if(speed>maxspeed)
+            if (Input.GetKey(KeyCode.A) && moveflag)
             {
-                speed = maxspeed;
+                speed -= 0.1f;
+                if (speed < minspeed)
+                {
+                    speed = minspeed;
+                }
+            }
+            if (Input.GetKey(KeyCode.D) && moveflag)
+            {
+                speed += 0.1f;
+                if (speed > maxspeed)
+                {
+                    speed = maxspeed;
+                }
             }
         }
     }

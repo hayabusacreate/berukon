@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum SelectSpeed
+{
+    Tap,
+    State,
+}
 public class ConveyorChoce : MonoBehaviour
 {
+    public SelectSpeed selectSpeed;
     public Conveyor[] conveyors;
     private int conveyorCount;
     // Start is called before the first frame update

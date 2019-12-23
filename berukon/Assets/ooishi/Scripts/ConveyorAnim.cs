@@ -13,9 +13,9 @@ public class ConveyorAnim : MonoBehaviour
     private Conveyor conveyor;
     private Direction conveyorcheck;
     private bool RLChange;
-    private int speed;
     public Anim state;
     private Animator anim;
+    private float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +24,11 @@ public class ConveyorAnim : MonoBehaviour
             if(conveyor.direction==Direction.Right)
         {
             conveyorcheck= conveyor.direction;
-            speed = 1;
             anim.SetBool("LR",true);
         }
         else
         {
             conveyorcheck= conveyor.direction;
-            speed = -1;
             anim.SetBool("LR",false);
         }
     }
@@ -63,7 +61,7 @@ public class ConveyorAnim : MonoBehaviour
                 anim.Play(Animator.StringToHash("Base Layer.berukonlefft 1"), 0, 1.0f);
             }
         }
-
+        anim.speed = conveyor.speed;
 
 
     }

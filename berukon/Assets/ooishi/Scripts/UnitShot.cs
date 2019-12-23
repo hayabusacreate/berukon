@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UnitSelect
+{
+    NomalShot,
+    ThreeShot,
+}
 public class UnitShot : MonoBehaviour
 {
+    public UnitSelect unitSelect;
     public GameObject shot;
     public GameObject target;
     public float shotTime;
+    private float count;
     private float time;
     private bool hitfrag;
     private Dictionary<int,GameObject> enemys;
@@ -17,6 +24,7 @@ public class UnitShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        count = 0;
         time = 0;
         hitfrag = false;
         enemys = new Dictionary<int, GameObject>();
@@ -40,11 +48,28 @@ public class UnitShot : MonoBehaviour
         if (time >= shotTime&&hitfrag&&!healfrag)
         {
             // Do anything
-
-            time = 0.0f;
-            // プレハブからインスタンスを生成
-            GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
-            obj.transform.parent = transform;
+            if(unitSelect==UnitSelect.NomalShot)
+            {
+                time = 0.0f;
+                // プレハブからインスタンスを生成
+                GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+            }
+            if(unitSelect==UnitSelect.ThreeShot)
+            {
+                if(count>3)
+                {
+                    time = 0.0f;
+                    count = 0;
+                }else
+                {
+                    time = (time / 6.0f)*5;
+                }
+                // プレハブからインスタンスを生成
+                GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+                count++;
+            }
         }
     }
 

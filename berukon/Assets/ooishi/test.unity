@@ -1128,6 +1128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   target: {fileID: 0}
   shotTime: 0.3
@@ -1441,9 +1442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitSelect: 1
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   target: {fileID: 0}
-  shotTime: 0.3
+  shotTime: 1
 --- !u!212 &1145346334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1671,6 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   target: {fileID: 0}
   shotTime: 0.3
@@ -2227,9 +2230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitSelect: 1
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   target: {fileID: 0}
-  shotTime: 0.3
+  shotTime: 1
 --- !u!212 &1852426849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2545,6 +2549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   target: {fileID: 0}
   shotTime: 0.3
@@ -2823,6 +2828,16 @@ PrefabInstance:
         type: 3}
       propertyPath: direction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098167466929210820, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: unitSelect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098167466952394793, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: unitSelect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4098167467615610002, guid: dc90f4cbd290dd4439254f749f43adea,
         type: 3}

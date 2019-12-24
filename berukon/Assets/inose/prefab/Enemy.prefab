@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: -1
-  EnemyLife: 3
+  EnemyLife: 7
 --- !u!1 &9129401099773280450
 GameObject:
   m_ObjectHideFlags: 0

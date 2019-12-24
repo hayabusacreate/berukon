@@ -16,6 +16,7 @@ public class NomalBullet : MonoBehaviour
     private float rad;
     public int damege;
     private Vector2 Position;
+    private int UnitLife = 25;
 
     // Start is called before the first frame update
     void Start()
@@ -79,5 +80,9 @@ public class NomalBullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    public void UnitLife_Manager(int Life)
+    {
+        UnitLife = UnitLife + Life;
     }
 }

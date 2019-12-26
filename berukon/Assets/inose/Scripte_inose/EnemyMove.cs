@@ -66,5 +66,6 @@ public class EnemyMove : MonoBehaviour
             //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
            // deathFrag = true;
         }
+       
     }
 }

@@ -196,6 +196,10 @@ public class UnitMove : MonoBehaviour
                 LRfrag = true;
             }
         }
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            UnitLife_Manager(-1);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

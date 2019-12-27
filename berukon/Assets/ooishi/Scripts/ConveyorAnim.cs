@@ -16,6 +16,7 @@ public class ConveyorAnim : MonoBehaviour
     public Anim state;
     private Animator anim;
     private float speed;
+    private float r, g, b;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,9 @@ public class ConveyorAnim : MonoBehaviour
             conveyorcheck= conveyor.direction;
             anim.SetBool("LR",false);
         }
+        r = GetComponent<Renderer>().material.color.r;
+        g = GetComponent<Renderer>().material.color.g;
+        b = GetComponent<Renderer>().material.color.b;
     }
 
     // Update is called once per frame
@@ -63,6 +67,17 @@ public class ConveyorAnim : MonoBehaviour
         }
         anim.speed = conveyor.speed;
 
-
+        ChangeColor();
+    }
+    private void ChangeColor()
+    {
+        if (conveyor.moveflag)
+        {
+            GetComponent<Renderer>().material.color = new Color(256, g, b);
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = new Color(r, g, b);
+        }
     }
 }

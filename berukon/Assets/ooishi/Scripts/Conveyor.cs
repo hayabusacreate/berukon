@@ -14,6 +14,7 @@ public class Conveyor : MonoBehaviour
     public float maxspeed,nomalspeed,minspeed;
     public float speed;
     public bool moveflag;
+    private float r, g, b;
     // Start is called before the first frame update
     void Start()
     {

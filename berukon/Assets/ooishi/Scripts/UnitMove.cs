@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum Vrtical
 {
     Up,
@@ -20,6 +22,7 @@ public class UnitMove : MonoBehaviour
     public float HealTime = 0;
     public int cooltime = 2;
     public int UnityLife = 30;
+    public Slider _slider;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +41,14 @@ public class UnitMove : MonoBehaviour
         LRfrag = true;
         rb = GetComponent<Rigidbody2D>();
         healfrag = false;
+        _slider.maxValue = UnityLife;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // HPゲージに値を設定
+        _slider.value = UnityLife;
         Move();
         if (healfrag == true && UnityLife <= 29)
         {
@@ -60,6 +66,7 @@ public class UnitMove : MonoBehaviour
         {
             HealTime = 0;
         }
+
     }
     void Move()
     {

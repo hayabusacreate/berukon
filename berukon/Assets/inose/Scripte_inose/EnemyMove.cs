@@ -35,17 +35,40 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(EnemyLife <= 0)
+        if (enemySelect == EnemySelect.Drone_enemy)
         {
-            //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
-            deathFrag = true;
-        }
-        if(deathFrag)
-        {
-            transform.position = Vector3.Lerp(transform.position, deathPos, speed);
-            if (transform.position.z <19)
+            if (EnemyLife <= 0)
             {
-                Destroy(gameObject);
+                //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
+                deathFrag = true;
+            }
+            if (deathFrag)
+            {
+                transform.position = Vector3.Lerp(transform.position, deathPos, speed);
+                if (transform.position.z < 19)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+        else
+        {
+            rb.velocity = new Vector2(x, 0);
+        }
+        if (enemySelect == EnemySelect.Nazca_Enemy)
+        {
+            if (EnemyLife <= 0)
+            {
+                //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
+                deathFrag = true;
+            }
+            if (deathFrag)
+            {
+                transform.position = Vector3.Lerp(transform.position, deathPos, speed);
+                if (transform.position.z < 19)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         else
@@ -59,19 +82,43 @@ public class EnemyMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "AttackArea")
+        if (enemySelect == EnemySelect.Drone_enemy)
         {
-            nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
-            EnemyLife_Manager(-nomalBullet.damege);
-            //Debug.Log("ダメージを食らう");
+            if (collision.gameObject.tag == "AttackArea")
+            {
+                nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
+                EnemyLife_Manager(-nomalBullet.damege);
+                //Debug.Log("ダメージを食らう");
+            }
         }
-        if(collision.gameObject.tag == "Core")
+        if (enemySelect == EnemySelect.Nazca_Enemy)
         {
-            Debug.Log("コアに侵入");
-            Destroy(gameObject);
-            //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
-           // deathFrag = true;
+            if (collision.gameObject.tag == "AttackArea")
+            {
+                nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
+                EnemyLife_Manager(-nomalBullet.damege);
+                //Debug.Log("ダメージを食らう");
+            }
         }
-       
+        if (enemySelect == EnemySelect.Nazca_Enemy)
+        {
+            if (collision.gameObject.tag == "Core")
+            {
+                Debug.Log("コアに侵入");
+                Destroy(gameObject);
+                //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
+                // deathFrag = true;
+            }
+        }
+        if (enemySelect == EnemySelect.Drone_enemy)
+        {
+            if (collision.gameObject.tag == "Core")
+            {
+                Debug.Log("コアに侵入");
+                Destroy(gameObject);
+                //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
+                // deathFrag = true;
+            }
+        }
     }
 }

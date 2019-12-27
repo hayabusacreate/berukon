@@ -24,17 +24,20 @@ public class EnemyMove : MonoBehaviour
     private Color color;
     private bool deathFrag;
     private NomalBullet nomalBullet;
+    public Slider slider;
     void Start()
     {
         deathFrag = false;
         deathPos = new Vector3(20, 0, 0);
         speed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
+        slider.maxValue = EnemyLife;
     }
 
     // Update is called once per frame
     void Update()
     {
+        slider.value = EnemyLife;
         if (enemySelect == EnemySelect.Drone_enemy)
         {
             if (EnemyLife <= 0)

@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: vrtical
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5013944557875547783, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: unitSelect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc90f4cbd290dd4439254f749f43adea, type: 3}
 --- !u!1 &221630278 stripped
@@ -1312,6 +1317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: vrtical
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013944557875547783, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: unitSelect
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc90f4cbd290dd4439254f749f43adea, type: 3}

@@ -17,7 +17,7 @@ public class NomalBullet : MonoBehaviour
     public int damege;
     private Vector2 Position;
     private int UnitLife = 25;
-
+    private Vector3 vec;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,7 @@ public class NomalBullet : MonoBehaviour
         rad = Mathf.Atan2(
     target.transform.position.y - transform.position.y,
     target.transform.position.x - transform.position.x);
+         vec = (targetpos - transform.position).normalized;
     }
 
     // Update is called once per frame
@@ -43,9 +44,11 @@ public class NomalBullet : MonoBehaviour
     }
     void Move()
     {
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, vec);
+
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(unit.target.transform.position - transform.position), 0.3f);
         //targetに向かって進む
-        if(ballet==Ballet.Nomal)
+        if (ballet==Ballet.Nomal)
         {
             transform.position = Vector3.Lerp(transform.position, targetpos, speed);
             if (transform.position == targetpos)

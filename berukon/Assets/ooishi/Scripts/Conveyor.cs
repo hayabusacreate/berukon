@@ -68,4 +68,18 @@ public class Conveyor : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag=="Enemy")
+        {
+            if(direction==Direction.Right)
+            {
+                collision.gameObject.GetComponent<EnemyMove>().speed -= speed;
+            }
+            if (direction == Direction.Left)
+            {
+                collision.gameObject.GetComponent<EnemyMove>().speed += speed;
+            }
+        }
+    }
 }

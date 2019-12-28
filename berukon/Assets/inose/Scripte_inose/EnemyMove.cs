@@ -13,10 +13,10 @@ public class EnemyMove : MonoBehaviour
     // Start is called before the first frame update
     public EnemySelect enemySelect;
     Rigidbody2D rb;
-    public float x;
+    public float x,y;
     public int EnemyLife = 3;
     private Vector3 deathPos;
-    private float speed;
+    public float speed;
     float changeRed = 1.0f;
     float changeGreen = 1.0f;
     float cahngeBlue = 1.0f;
@@ -25,6 +25,8 @@ public class EnemyMove : MonoBehaviour
     private bool deathFrag;
     private NomalBullet nomalBullet;
     public Slider slider;
+    private Conveyor conveyor;
+    public bool conflag;
     void Start()
     {
         deathFrag = false;
@@ -32,6 +34,7 @@ public class EnemyMove : MonoBehaviour
         speed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;
+        conflag = false;
     }
 
     // Update is called once per frame
@@ -78,6 +81,20 @@ public class EnemyMove : MonoBehaviour
         {
             rb.velocity = new Vector2(x, 0);
         }
+        if(conflag)
+        {
+            if(conveyor.direction==Direction.Right)
+            {
+                x =-1+ conveyor.speed/2;
+            }
+            if (conveyor.direction == Direction.Left)
+            {
+                x =-1- conveyor.speed/2;
+            }
+        }else
+        {
+            x = -1;
+        }
     }
     public void EnemyLife_Manager(int Life)
     {
@@ -93,6 +110,13 @@ public class EnemyMove : MonoBehaviour
                 EnemyLife_Manager(-nomalBullet.damege);
                 //Debug.Log("ダメージを食らう");
             }
+            if (collision.gameObject.tag == "Core")
+            {
+                Debug.Log("コアに侵入");
+                Destroy(gameObject);
+                //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
+                // deathFrag = true;
+            }
         }
         if (enemySelect == EnemySelect.Nazca_Enemy)
         {
@@ -101,10 +125,8 @@ public class EnemyMove : MonoBehaviour
                 nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
                 EnemyLife_Manager(-nomalBullet.damege);
                 //Debug.Log("ダメージを食らう");
+
             }
-        }
-        if (enemySelect == EnemySelect.Nazca_Enemy)
-        {
             if (collision.gameObject.tag == "Core")
             {
                 Debug.Log("コアに侵入");
@@ -112,16 +134,26 @@ public class EnemyMove : MonoBehaviour
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
                 // deathFrag = true;
             }
+
         }
-        if (enemySelect == EnemySelect.Drone_enemy)
+        if (collision.gameObject.tag == "wall")
         {
-            if (collision.gameObject.tag == "Core")
+            if (conflag)
             {
-                Debug.Log("コアに侵入");
-                Destroy(gameObject);
-                //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
-                // deathFrag = true;
+                conflag = false;
             }
+            else
+            {
+                conflag = true;
+            }
+            conveyor = collision.transform.root.gameObject.GetComponent<Conveyor>();
         }
+       // Debug.Log(collision.gameObject.tag);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+
+        
     }
 }

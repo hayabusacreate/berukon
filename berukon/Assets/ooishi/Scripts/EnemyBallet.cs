@@ -23,8 +23,7 @@ public class EnemyBallet : MonoBehaviour
     }
     void Move()
     {
-
-            transform.position = Vector3.Lerp(transform.position, targetpos, speed);
+        transform.position = Vector3.Lerp(transform.position, targetpos, speed);
             if (transform.position == targetpos)
             {
                 Destroy(gameObject);

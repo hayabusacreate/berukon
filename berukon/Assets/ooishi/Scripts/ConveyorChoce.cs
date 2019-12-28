@@ -60,7 +60,7 @@ public class ConveyorChoce : MonoBehaviour
             {
                 conveyorCount = 0;
             }
-            for (int i = 0; i < conveyors.Length-1; i++)
+            for (int i = 0; i < conveyors.Length; i++)
             {
                 if (conveyorCount == i)
                 {

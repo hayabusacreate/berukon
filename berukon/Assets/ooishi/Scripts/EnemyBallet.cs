@@ -14,6 +14,13 @@ public class EnemyBallet : MonoBehaviour
         target = enemy.target;
         gameObject.transform.parent = null;
         targetpos = target.transform.position;
+        if (transform.position.y > targetpos.y)
+        {
+            targetpos.y += 0.5f;
+        }else
+        {
+            targetpos.y -= 0.5f;
+        }
     }
 
         // Update is called once per frame

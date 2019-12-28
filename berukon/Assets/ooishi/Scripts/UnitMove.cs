@@ -21,7 +21,7 @@ public class UnitMove : MonoBehaviour
     public bool healfrag;
     public float HealTime = 0;
     public int cooltime = 2;
-    public int UnityLife = 30;
+    public int UnityLife;
     public Slider _slider;
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class UnitMove : MonoBehaviour
         // HPゲージに値を設定
         _slider.value = UnityLife;
         Move();
-        if (healfrag == true && UnityLife <= 29)
+        if (healfrag == true && UnityLife <= _slider.maxValue)
         {
             HealTime += Time.deltaTime;
             if (cooltime < HealTime)

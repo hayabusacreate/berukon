@@ -6,14 +6,21 @@ public class Wave_Manager : MonoBehaviour
 {
     public List<GameObject> EnemyList = new List<GameObject>();
     private float x;
-    public float purasu;
+    public float purasu,y;
     void Start()
     {
         x= 0;
             foreach(GameObject gb in EnemyList)
         {
-            Instantiate(gb, new Vector2(transform.position.x + x, transform.position.y), Quaternion.identity);
-            x+=purasu;
+            if(gb.GetComponent<EnemyMove>().enemySelect==EnemySelect.Drone_enemy)
+            {
+                Instantiate(gb, new Vector2(transform.position.x + x, transform.position.y), Quaternion.identity);
+            }else
+            if (gb.GetComponent<EnemyMove>().enemySelect == EnemySelect.Nazca_Enemy)
+            {
+                Instantiate(gb, new Vector2(transform.position.x + x, transform.position.y-y), Quaternion.identity);
+            }
+            x +=purasu;
         }
     }
 

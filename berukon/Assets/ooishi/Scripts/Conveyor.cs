@@ -15,6 +15,7 @@ public class Conveyor : MonoBehaviour
     public float speed;
     public bool moveflag;
     private float r, g, b;
+    private bool x, y,x2,y2;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +65,58 @@ public class Conveyor : MonoBehaviour
                 if (speed > maxspeed)
                 {
                     speed = maxspeed;
+                }
+            }
+        }
+        if (conveyor.selectSpeed == SelectSpeed.Rotat)
+        {
+            if (moveflag)
+            {
+                if(Input.GetAxis("Horizontal")==1||Input.GetAxis("Vertical") == 1)
+                {
+                    x = true;
+                }
+                if (Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == -1)
+                {
+                    y = true;
+                }
+                if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+                {
+                    x = false;
+                    y = false;
+                }
+                if(x&&y)
+                {
+                    speed += 0.1f;
+                    if (speed > maxspeed)
+                    {
+                        speed = maxspeed;
+                    }
+                    x = false;
+                    y = false;
+                }
+                if (Input.GetAxis("Horizontal2") == 1 || Input.GetAxis("Vertical2") == 1)
+                {
+                    x2 = true;
+                }
+                if (Input.GetAxis("Horizontal2") == -1 || Input.GetAxis("Vertical2") == -1)
+                {
+                    y2 = true;
+                }
+                if (Input.GetAxis("Horizontal2") == 0 && Input.GetAxis("Vertical2") == 0)
+                {
+                    x2 = false;
+                    y2 = false;
+                }
+                if (x2 && y2)
+                {
+                    speed -= 0.1f;
+                    if (speed < minspeed)
+                    {
+                        speed = minspeed;
+                    }
+                    x2 = false;
+                    y2 = false;
                 }
             }
         }

@@ -5,6 +5,7 @@ public enum SelectSpeed
 {
     Tap,
     State,
+    Rotat
 }
 public class ConveyorChoce : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class ConveyorChoce : MonoBehaviour
     }
     private void Choce()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown("joystick button 5"))
         {
             conveyorCount++;
             if(conveyorCount>=conveyors.Length)
@@ -53,7 +54,7 @@ public class ConveyorChoce : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown("joystick button 4"))
         {
             conveyorCount--;
             if (conveyorCount < 0)

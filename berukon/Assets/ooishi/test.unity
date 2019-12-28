@@ -1213,6 +1213,11 @@ PrefabInstance:
       propertyPath: conveyors.Array.data[2]
       value: 
       objectReference: {fileID: 5013944558387320037}
+    - target: {fileID: 2261891684533070534, guid: dd2efc0c33e24364cb44d74392d74d89,
+        type: 3}
+      propertyPath: selectSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd2efc0c33e24364cb44d74392d74d89, type: 3}
 --- !u!1 &5013944557246048553
@@ -2167,6 +2172,10 @@ MonoBehaviour:
   minspeed: 0.1
   speed: 0
   moveflag: 0
+  x: 0
+  y: 0
+  x2: 0
+  y2: 0
 --- !u!1 &5013944558829474200
 GameObject:
   m_ObjectHideFlags: 0

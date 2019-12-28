@@ -219,6 +219,31 @@ PrefabInstance:
       propertyPath: unitSelect
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1947211224000098536, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211224000098536, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211224000098536, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211225342021425, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211224108435674, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc90f4cbd290dd4439254f749f43adea, type: 3}
 --- !u!1001 &335969363
@@ -228,7 +253,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5013944559281546440, guid: dc90f4cbd290dd4439254f749f43adea,
+    - target: {fileID: 1947211224000098543, guid: dc90f4cbd290dd4439254f749f43adea,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -322,6 +347,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013944559281546440, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211224000098536, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211225342021425, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211224108435674, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc90f4cbd290dd4439254f749f43adea, type: 3}
@@ -1081,7 +1126,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5013944559281546440, guid: dc90f4cbd290dd4439254f749f43adea,
+    - target: {fileID: 1947211224000098543, guid: dc90f4cbd290dd4439254f749f43adea,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1151,10 +1196,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.62
       objectReference: {fileID: 0}
+    - target: {fileID: 5013944559281546440, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 376812364287510690, guid: dc90f4cbd290dd4439254f749f43adea,
         type: 3}
       propertyPath: direction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211225342021425, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947211224108435674, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc90f4cbd290dd4439254f749f43adea, type: 3}
@@ -1224,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261891684533070534, guid: dd2efc0c33e24364cb44d74392d74d89,
+        type: 3}
+      propertyPath: conveyors.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2261891684533070534, guid: dd2efc0c33e24364cb44d74392d74d89,
         type: 3}

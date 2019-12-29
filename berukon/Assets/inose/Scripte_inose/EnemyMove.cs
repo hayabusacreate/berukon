@@ -27,6 +27,7 @@ public class EnemyMove : MonoBehaviour
     public Slider slider;
     private Conveyor conveyor;
     public bool conflag;
+    private Wave_Manager wave;
     void Start()
     {
         deathFrag = false;
@@ -130,7 +131,7 @@ public class EnemyMove : MonoBehaviour
             if (collision.gameObject.tag == "Core")
             {
                 Debug.Log("コアに侵入");
-                Destroy(gameObject);
+                deathFrag = true;
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
                 // deathFrag = true;
             }

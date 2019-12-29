@@ -38,9 +38,12 @@ public class UnitShot : MonoBehaviour
         healfrag = unitMove.healfrag;
         if(!healfrag)
         {
+            Sort();
             Shot();
+        }else
+        {
+            Start();
         }
-        Sort();
     }
     void Shot()
     {

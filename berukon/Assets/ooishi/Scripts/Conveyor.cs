@@ -32,7 +32,7 @@ public class Conveyor : MonoBehaviour
     {
         if(conveyor.selectSpeed==SelectSpeed.Tap)
         {
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0") && moveflag)
+            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0") )&& moveflag)
             {
                 speed -= 0.1f;
                 if (speed < minspeed)
@@ -40,7 +40,7 @@ public class Conveyor : MonoBehaviour
                     speed = minspeed;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1") && moveflag)
+            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1") )&& moveflag)
             {
                 speed += 0.1f;
                 if (speed > maxspeed)
@@ -51,7 +51,7 @@ public class Conveyor : MonoBehaviour
         }
         if (conveyor.selectSpeed == SelectSpeed.State)
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0") && moveflag)
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0") )&& moveflag)
             {
                 speed -= 0.1f;
                 if (speed < minspeed)
@@ -59,7 +59,7 @@ public class Conveyor : MonoBehaviour
                     speed = minspeed;
                 }
             }
-            if (Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1") && moveflag)
+            if ((Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1") )&& moveflag)
             {
                 speed += 0.1f;
                 if (speed > maxspeed)

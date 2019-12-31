@@ -14,7 +14,7 @@ public class SceneChange : MonoBehaviour
 {
     public Scene scene;
     public Core_Manager core;
-    public Wave_Manager wave;
+    public Wave wave;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +44,7 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GamePlay)
         {
-            if (core.CoreLife<0||wave.enemyflag)
+            if (core.CoreLife<0||wave.endflag==true)
             {
                 SceneManager.LoadScene("Title");
             }

@@ -249,7 +249,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 1
+<<<<<<< HEAD
+  x: -1
+  y: -4
+  EnemyLife: 100
+=======
   EnemyLife: 7
+>>>>>>> origin/hayabusa
   speed: 2
   slider: {fileID: 8250789535798370874}
   conflag: 1

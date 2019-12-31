@@ -519,8 +519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  x: -5
-  y: 0
   EnemyLife: 50
   speed: 1
   slider: {fileID: 4755122634502328684}
@@ -555,7 +553,7 @@ GameObject:
   - component: {fileID: 9129401099773280449}
   - component: {fileID: 9129401099773280448}
   - component: {fileID: 2574752604933608980}
-  - component: {fileID: 4222617939043504853}
+  - component: {fileID: 436487235585578005}
   m_Layer: 9
   m_Name: New Sprite
   m_TagString: EnemyBullet
@@ -640,8 +638,8 @@ MonoBehaviour:
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
   target: {fileID: 0}
   shotTime: 0.3
---- !u!58 &4222617939043504853
-CircleCollider2D:
+--- !u!70 &436487235585578005
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -650,9 +648,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
+  m_Offset: {x: -0.072709136, y: -0.39186147}
+  m_Size: {x: 6.0268936, y: 3.7221618}
+  m_Direction: 1

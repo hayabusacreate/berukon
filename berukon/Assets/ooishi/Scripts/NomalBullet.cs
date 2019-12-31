@@ -50,11 +50,21 @@ public class NomalBullet : MonoBehaviour
         //targetに向かって進む
         if (ballet==Ballet.Nomal)
         {
-            transform.position = Vector3.Lerp(transform.position, targetpos, speed);
-            if (transform.position == targetpos)
-            {
-                Destroy(gameObject);
-            }
+            //transform.position = Vector3.Lerp(transform.position, targetpos, speed);
+            //if (transform.position == targetpos)
+            //{
+            //    Destroy(gameObject);
+            //}
+            //transform.position += transform.forward * speed;
+            // 現在位置をPositionに代入
+            Position = transform.position;
+            // x += SPEED * cos(ラジアン)
+            // y += SPEED * sin(ラジアン)
+            // これで特定の方向へ向かって進んでいく。
+            Position.x += speed * Mathf.Cos(rad);
+            Position.y += speed * Mathf.Sin(rad);
+            // 現在の位置に加算減算を行ったPositionを代入する
+            transform.position = Position;
         }
         if(ballet==Ballet.kantuu)
         {

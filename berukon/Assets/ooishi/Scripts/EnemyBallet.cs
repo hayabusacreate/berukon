@@ -7,6 +7,9 @@ public class EnemyBallet : MonoBehaviour
     private Vector3 targetpos;
     public float speed;
     private EnemyShot enemy;
+    private Vector3 vec;
+    private float rad;
+    private Vector2 Position;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,10 @@ public class EnemyBallet : MonoBehaviour
         {
             targetpos.y -= 0.5f;
         }
+        rad = Mathf.Atan2(
+target.transform.position.y - transform.position.y,
+target.transform.position.x - transform.position.x);
+        vec = (targetpos - transform.position).normalized;
     }
 
         // Update is called once per frame
@@ -35,9 +42,18 @@ public class EnemyBallet : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        
+        //transform.position += transform.forward * speed;
+        // 現在位置をPositionに代入
+        Position = transform.position;
+        // x += SPEED * cos(ラジアン)
+        // y += SPEED * sin(ラジアン)
+        // これで特定の方向へ向かって進んでいく。
+        Position.x += speed * Mathf.Cos(rad);
+        Position.y += speed * Mathf.Sin(rad);
+        // 現在の位置に加算減算を行ったPositionを代入する
+        transform.position = Position;
 
-            transform.position += transform.forward * speed;
+        transform.position += transform.forward * speed;
         
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(unit.target.transform.position - transform.position), 0.3f);
         //targetに向かって進む

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Wave_Manager : MonoBehaviour
 {
     public List<GameObject> EnemyList = new List<GameObject>();
-    private float x;
-    public float purasu,y;
+    private float x,y;
+    public float purasu;
     public bool enemyflag;
     void Start()
     {
         x= 0;
+        y = 1.5f;
         enemyflag = false;
             foreach(GameObject gb in EnemyList)
         {

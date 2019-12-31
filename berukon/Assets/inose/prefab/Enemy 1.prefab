@@ -141,9 +141,7 @@ GameObject:
   - component: {fileID: 9129401098835871407}
   - component: {fileID: 9129401098835871392}
   - component: {fileID: 9129401098835871393}
-  - component: {fileID: 9129401098835871394}
   - component: {fileID: 9129401098835871406}
-  - component: {fileID: 6873806253594182604}
   - component: {fileID: 6008045325315000975}
   - component: {fileID: 3927866603107999822}
   m_Layer: 11
@@ -238,22 +236,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &9129401098835871394
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9129401098835871395}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.32
 --- !u!114 &9129401098835871406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,38 +249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 1
-  x: -1
-  y: -4
   EnemyLife: 7
   speed: 2
   slider: {fileID: 8250789535798370874}
   conflag: 1
---- !u!61 &6873806253594182604
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9129401098835871395}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 1}
-  m_EdgeRadius: 0
 --- !u!70 &6008045325315000975
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -345,7 +299,7 @@ GameObject:
   - component: {fileID: 9129401099773280449}
   - component: {fileID: 9129401099773280448}
   - component: {fileID: 2574752604933608980}
-  - component: {fileID: 4222617939043504853}
+  - component: {fileID: 7951328130856544583}
   m_Layer: 9
   m_Name: New Sprite
   m_TagString: EnemyBullet
@@ -430,8 +384,8 @@ MonoBehaviour:
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
   target: {fileID: 0}
   shotTime: 0.3
---- !u!58 &4222617939043504853
-CircleCollider2D:
+--- !u!61 &7951328130856544583
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -443,9 +397,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010286093, y: 1.3159378}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 3
+  m_Size: {x: 5.964248, y: 3.6142068}
+  m_EdgeRadius: 0
 --- !u!1001 &4185232502302238710
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class EnemyMove : MonoBehaviour
     // Start is called before the first frame update
     public EnemySelect enemySelect;
     Rigidbody2D rb;
-    public float x,y;
+    private float x;
     public int EnemyLife = 3;
     private Vector3 deathPos;
     private float deathspeed;

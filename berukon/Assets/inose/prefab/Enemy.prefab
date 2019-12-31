@@ -505,8 +505,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySelect: 0
   x: -1
+  y: 0
   EnemyLife: 7
+  speed: 1
   slider: {fileID: 4755122634502328684}
+  conflag: 0
 --- !u!1 &9129401099773280450
 GameObject:
   m_ObjectHideFlags: 0

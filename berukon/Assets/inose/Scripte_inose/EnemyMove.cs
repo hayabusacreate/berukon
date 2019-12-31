@@ -16,6 +16,7 @@ public class EnemyMove : MonoBehaviour
     public float x,y;
     public int EnemyLife = 3;
     private Vector3 deathPos;
+    private float deathspeed;
     public float speed;
     float changeRed = 1.0f;
     float changeGreen = 1.0f;
@@ -32,10 +33,11 @@ public class EnemyMove : MonoBehaviour
     {
         deathFrag = false;
         deathPos = new Vector3(20, 0, 0);
-        speed = 0.5f;
+        deathspeed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;
         conflag = false;
+        x = -speed;
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class EnemyMove : MonoBehaviour
             }
             if (deathFrag)
             {
-                transform.position = Vector3.Lerp(transform.position, deathPos, speed);
+                transform.position = Vector3.Lerp(transform.position, deathPos, deathspeed);
                 if (transform.position.z < 19)
                 {
                     Destroy(gameObject);
@@ -71,7 +73,7 @@ public class EnemyMove : MonoBehaviour
             }
             if (deathFrag)
             {
-                transform.position = Vector3.Lerp(transform.position, deathPos, speed);
+                transform.position = Vector3.Lerp(transform.position, deathPos, deathspeed);
                 if (transform.position.z < 19)
                 {
                     Destroy(gameObject);
@@ -86,15 +88,15 @@ public class EnemyMove : MonoBehaviour
         {
             if(conveyor.direction==Direction.Right)
             {
-                x =-1+ conveyor.speed/2;
+                x =-speed+ conveyor.speed/2;
             }
             if (conveyor.direction == Direction.Left)
             {
-                x =-1- conveyor.speed/2;
+                x =-speed- conveyor.speed/2;
             }
         }else
         {
-            x = -1;
+            x = -speed;
         }
     }
     public void EnemyLife_Manager(int Life)

@@ -41,7 +41,7 @@ public class ConveyorChoce : MonoBehaviour
             conveyorCount++;
             if(conveyorCount>=conveyors.Length)
             {
-                conveyorCount = conveyors.Length-1;
+                conveyorCount = 0;
             }
             for (int i = 0; i < conveyors.Length; i++)
             {
@@ -59,7 +59,7 @@ public class ConveyorChoce : MonoBehaviour
             conveyorCount--;
             if (conveyorCount < 0)
             {
-                conveyorCount = 0;
+                conveyorCount = conveyors.Length-1;
             }
             for (int i = 0; i < conveyors.Length; i++)
             {

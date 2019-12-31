@@ -505,9 +505,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  x: -1
+  x: -5
   y: 0
-  EnemyLife: 7
+  EnemyLife: 50
   speed: 0
   slider: {fileID: 4755122634502328684}
   conflag: 0

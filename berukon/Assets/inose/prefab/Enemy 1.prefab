@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11948c79649018742b8fa04cfdbb5a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySelect: 0
+  enemySelect: 1
   EnemyLife: 7
   speed: 1
   slider: {fileID: 4755122634502328684}

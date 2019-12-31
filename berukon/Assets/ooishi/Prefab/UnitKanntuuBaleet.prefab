@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballet: 1
-  speed: 0.1
+  speed: 0.3
   damege: 1
 --- !u!50 &1698739887062142922
 Rigidbody2D:

@@ -269,7 +269,7 @@ MonoBehaviour:
   enemySelect: 1
   x: -1
   y: -4
-  EnemyLife: 7
+  EnemyLife: 100
   speed: 2
   slider: {fileID: 8250789535798370874}
   conflag: 1

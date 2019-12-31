@@ -1151,8 +1151,7 @@ MonoBehaviour:
   - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
   - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
   - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
-  purasu: 2
-  y: 1.5
+  wavetime: 1
   enemyflag: 0
 --- !u!4 &604622204
 Transform:
@@ -1268,8 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyList:
   - {fileID: 9129401098835871395, guid: 048d49879d84bc14b99f7791d6a70868, type: 3}
-  purasu: 2
-  y: 1.5
+  wavetime: 0
   enemyflag: 0
 --- !u!4 &618424215
 Transform:
@@ -2866,7 +2864,12 @@ PrefabInstance:
     - target: {fileID: 185361230579291769, guid: dc90f4cbd290dd4439254f749f43adea,
         type: 3}
       propertyPath: shotTime
-      value: 0.3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 185361230579291769, guid: dc90f4cbd290dd4439254f749f43adea,
+        type: 3}
+      propertyPath: threeshottime
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc90f4cbd290dd4439254f749f43adea, type: 3}
@@ -4204,6 +4207,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499476059848209855, guid: a9ec48fbe06878149b8fc3a528de14a1,
+        type: 3}
+      propertyPath: threeshottime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499476059848209855, guid: a9ec48fbe06878149b8fc3a528de14a1,
+        type: 3}
+      propertyPath: shotTime
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9ec48fbe06878149b8fc3a528de14a1, type: 3}

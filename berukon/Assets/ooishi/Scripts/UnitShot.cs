@@ -15,13 +15,13 @@ public class UnitShot : MonoBehaviour
     public GameObject target;
     public float shotTime;
     private float count;
-    private float time;
+    private float time,vrast;
     private bool hitfrag;
     private Dictionary<int,GameObject> enemys;
     private GameObject enemysave,enesave2;
     private UnitMove unitMove;
     private bool healfrag;
-
+    public float threeshottime;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,18 +61,23 @@ public class UnitShot : MonoBehaviour
             }
             if(unitSelect==UnitSelect.ThreeShot)
             {
-                if(count>3)
+                count++;
+                if (count>3)
                 {
                     time = 0.0f;
                     count = 0;
+                    vrast = 0.0f;
                 }else
                 {
-                    time = (time / 6.0f)*5;
+                    vrast += Time.deltaTime;
                 }
-                // プレハブからインスタンスを生成
-                GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
-                obj.transform.parent = transform;
-                count++;
+                if(vrast>threeshottime)
+                {
+                    vrast = 0.0f;
+                    // プレハブからインスタンスを生成
+                    GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
+                    obj.transform.parent = transform;
+                }
             }
             if(unitSelect==UnitSelect.kanntuuShot)
             {
@@ -117,7 +122,7 @@ public class UnitShot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag=="Enemy"&&healfrag==false)
+        if (collision.gameObject.tag=="Enemy")
         {
             float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
             if (enemys.Count==0)
@@ -136,10 +141,6 @@ public class UnitShot : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Heal")
-        {
-            healfrag = false;
-        }
         if (collision.gameObject.tag=="Enemy")
         {
             if(enemys.Count==1)

@@ -7,6 +7,7 @@ public enum EnemySelect
 {
     Drone_enemy,
     Nazca_Enemy,
+    Null_Enemy
 }
 public class EnemyMove : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class EnemyMove : MonoBehaviour
         slider.maxValue = EnemyLife;
         conflag = false;
         x = -speed;
+        if(enemySelect==EnemySelect.Null_Enemy)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

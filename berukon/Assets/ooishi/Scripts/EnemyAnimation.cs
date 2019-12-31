@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyAnimation : MonoBehaviour
 {
     public float y;
+    public int speed;
+    private int sp;
     private float count;
     private bool flag;
     // Start is called before the first frame update
     void Start()
     {
         flag = true;
+        sp = speed;
     }
 
     // Update is called once per frame
@@ -20,22 +23,27 @@ public class EnemyAnimation : MonoBehaviour
     }
     void Move()
     {
-        if(flag)
+        if(sp<0)
         {
-            count++;
-            if (count > y)
+            if (flag)
             {
-                flag = false;
+                count++;
+                if (count > y)
+                {
+                    flag = false;
+                }
             }
-        }
-        else
-        {
-            count--;
-            if (count < -y)
+            else
             {
-                flag = true;
+                count--;
+                if (count < -y)
+                {
+                    flag = true;
+                }
             }
+            sp = speed;
         }
+        sp--;
 
         gameObject.transform.position=Vector3.Lerp(transform.position,new Vector3(transform.position.x,transform.position.y+count/100,transform.position.z),1) ;
     }

@@ -7,6 +7,7 @@ public class Core_Manager : MonoBehaviour
     public int CoreLife = 5;
     public SpriteRenderer main, shadow;
     public Sprite[] mains,shadows;
+    public GameObject obj;
     private int count;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class Core_Manager : MonoBehaviour
     {
        if(collision.gameObject.tag == "Enemy")
         {
+            Instantiate(obj,new Vector3(transform.position.x+3,transform.position.y,transform.position.z),Quaternion.identity);
             CoreLife_Manager(-1);
             if(mains.Length-1>count)
             {

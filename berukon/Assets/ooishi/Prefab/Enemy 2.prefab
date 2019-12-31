@@ -522,7 +522,7 @@ MonoBehaviour:
   x: -5
   y: 0
   EnemyLife: 50
-  speed: 3
+  speed: 1
   slider: {fileID: 4755122634502328684}
   conflag: 0
 --- !u!95 &1028559307965533970

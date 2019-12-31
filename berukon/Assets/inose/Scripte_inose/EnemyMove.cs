@@ -115,8 +115,8 @@ public class EnemyMove : MonoBehaviour
             }
             if (collision.gameObject.tag == "Core")
             {
-                Debug.Log("コアに侵入");
-                Destroy(gameObject);
+                //Debug.Log("コアに侵入");
+                deathFrag = true;
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
                 // deathFrag = true;
             }

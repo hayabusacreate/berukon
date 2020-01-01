@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  EnemyLife: 15
+  EnemyLife: 10
   speed: 1.5
   slider: {fileID: 4755122634502328684}
   conflag: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
   target: {fileID: 0}
-  shotTime: 0.3
+  shotTime: 1
 --- !u!70 &436487235585578005
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

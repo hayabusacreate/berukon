@@ -505,8 +505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a6affc6e2b61f45af0d906aca7e75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  y: 5
-  speed: 1
+  y: 2
+  speed: 5
 --- !u!114 &9129401098835871406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  EnemyLife: 50
-  speed: 5
+  EnemyLife: 5
+  speed: 1.5
   slider: {fileID: 4755122634502328684}
   conflag: 0
 --- !u!95 &1028559307965533970
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
   target: {fileID: 0}
-  shotTime: 0.3
+  shotTime: 1
 --- !u!70 &436487235585578005
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

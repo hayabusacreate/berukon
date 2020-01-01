@@ -20,7 +20,7 @@ public class UnitShot : MonoBehaviour
     private Dictionary<int,GameObject> enemys;
     private GameObject enemysave,enesave2;
     private UnitMove unitMove;
-    private bool healfrag;
+    private bool healfrag,deathflag;
     public float threeshottime;
     // Start is called before the first frame update
     void Start()
@@ -30,13 +30,15 @@ public class UnitShot : MonoBehaviour
         hitfrag = false;
         enemys = new Dictionary<int, GameObject>();
         unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
+        deathflag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        deathflag = unitMove.Deathflag;
         healfrag = unitMove.healfrag;
-        if(!healfrag)
+        if(!healfrag&&!deathflag)
         {
             Sort();
             Shot();

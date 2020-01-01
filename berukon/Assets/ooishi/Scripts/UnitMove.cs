@@ -19,6 +19,7 @@ public class UnitMove : MonoBehaviour
     private Conveyor conveyor;
     private float angle, an;
     public bool healfrag;
+    public bool Deathflag;
     public float HealTime = 0;
     public int cooltime = 2;
     public int UnityLife;
@@ -62,6 +63,24 @@ public class UnitMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Deathflag)
+        {
+            if(UnityLife>=_slider.maxValue)
+            {
+                Deathflag = false;
+            }
+        }
+        else
+        {
+            if(UnityLife<=0)
+            {
+                Deathflag = true;
+            }
+        }
+        if(UnityLife<=0)
+        {
+            UnityLife = 0;
+        }
         // HPゲージに値を設定
         _slider.value = UnityLife;
         Move();

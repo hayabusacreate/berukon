@@ -998,10 +998,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList:
-  - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
+  - {fileID: 9129401098835871395, guid: 49143667f8e389041a02281a4d95fd56, type: 3}
+  - {fileID: 9129401098835871395, guid: 49143667f8e389041a02281a4d95fd56, type: 3}
+  - {fileID: 9129401098835871395, guid: 49143667f8e389041a02281a4d95fd56, type: 3}
+  - {fileID: 9129401098835871395, guid: 49143667f8e389041a02281a4d95fd56, type: 3}
   - {fileID: 9129401098835871395, guid: 8f2bc00f3f7da96448cbb01662bc3303, type: 3}
   wavetime: 1
   enemyflag: 0

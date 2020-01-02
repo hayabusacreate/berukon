@@ -246,7 +246,7 @@ public class UnitMove : MonoBehaviour
                 LRfrag = true;
             }
         }
-        if (collision.gameObject.tag == "EnemyBullet")
+        if (collision.gameObject.tag == "EnemyBullet"&&!healfrag)
         {
             UnitLife_Manager(-1);
         }

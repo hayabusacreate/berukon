@@ -12,6 +12,7 @@ public class ConveyorAnim : MonoBehaviour
 {
     private Conveyor conveyor;
     private Direction conveyorcheck;
+    private GameObject ani;
     private bool RLChange;
     public Anim state;
     private Animator anim;
@@ -35,6 +36,11 @@ public class ConveyorAnim : MonoBehaviour
         r = GetComponent<Renderer>().material.color.r;
         g = GetComponent<Renderer>().material.color.g;
         b = GetComponent<Renderer>().material.color.b;
+        foreach (Transform child in transform)
+        {
+            //child is your child transform
+            ani = child.gameObject;
+        }
     }
 
     // Update is called once per frame
@@ -73,11 +79,13 @@ public class ConveyorAnim : MonoBehaviour
     {
         if (conveyor.moveflag)
         {
-            GetComponent<Renderer>().material.color = new Color(256, g, b);
+            //GetComponent<Renderer>().material.color = new Color(256, g, b);
+            ani.SetActive(true);
         }
         else
         {
-            GetComponent<Renderer>().material.color = new Color(r, g, b);
+            //GetComponent<Renderer>().material.color = new Color(r, g, b);
+            ani.SetActive(false);
         }
     }
 }

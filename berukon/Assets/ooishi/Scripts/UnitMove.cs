@@ -21,9 +21,10 @@ public class UnitMove : MonoBehaviour
     public bool healfrag;
     public bool Deathflag;
     public float HealTime = 0;
-    public int cooltime = 2;
+    public float cooltime = 2;
     public int UnityLife;
     public Slider _slider;
+    private float rote;
     // Start is called before the first frame update
     void Start()
     {
@@ -113,10 +114,10 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, -1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, rote);
                         //transform.Rotate(0, 0, -1);
                     }
                 }
@@ -124,10 +125,10 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount <90)
+                    if (rotecount <=180)
                     {
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, 1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, -rote);
                         //transform.Rotate(0, 0, 1 );
                     }
                 }
@@ -138,21 +139,21 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
                         //transform.Rotate(0, 0, -1);
-                        transform.Rotate(0, 0, -1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, rote);
                     }
                 }
                 if (conveyor.direction == Direction.Left)
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, 1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, -rote);
                         //transform.Rotate(0, 0, 1 );
                     }
                 }
@@ -167,9 +168,9 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
-                        transform.Rotate(0, 0, -1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, rote);
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
                         //transform.Rotate(0, 0, -1 );
                     }
@@ -178,10 +179,10 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, 1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, -rote);
                         //transform.Rotate(0, 0, 1 );
                     }
                 }
@@ -192,9 +193,9 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
-                        transform.Rotate(0, 0, -1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, rote);
                         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
                         //transform.Rotate(0, 0, -1);
                     }
@@ -203,11 +204,11 @@ public class UnitMove : MonoBehaviour
                 {
                     if (Rotefrag == false)
                         rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount < 90)
+                    if (rotecount <= 180)
                     {
                         //transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(0, 0, an), angle);
                         // 回転速度分回す
-                        transform.Rotate(0, 0, 1 * conveyor.speed*2);
+                        transform.Rotate(0, 0, -rote);
                         //transform.Rotate(0, 0, 1);
                     }
                 }
@@ -215,11 +216,17 @@ public class UnitMove : MonoBehaviour
         }
         if (Rotefrag == true)
             rb.velocity = new Vector2(0, 0);
-        if (rotecount >= 90)
+        if (rotecount >= 180)
         {
             Rotefrag = false;
         }
         rotecount += 1 * conveyor.speed;
+        rote = 1 * conveyor.speed;
+        if (rotecount>180)
+        {
+            rote -= rotecount - 180;
+            rotecount = 180;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -63,7 +63,6 @@ public class UnitShot : MonoBehaviour
             }
             if(unitSelect==UnitSelect.ThreeShot)
             {
-                count++;
                 if (count>3)
                 {
                     time = 0.0f;
@@ -79,6 +78,7 @@ public class UnitShot : MonoBehaviour
                     // プレハブからインスタンスを生成
                     GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
                     obj.transform.parent = transform;
+                    count++;
                 }
             }
             if(unitSelect==UnitSelect.kanntuuShot)

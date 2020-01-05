@@ -21,7 +21,7 @@ public class UnitMove : MonoBehaviour
     public bool healfrag;
     public bool Deathflag;
     public float HealTime = 0;
-    public int cooltime = 2;
+    public float cooltime = 2;
     public int UnityLife;
     public Slider _slider;
     private float rote;

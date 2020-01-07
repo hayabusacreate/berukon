@@ -22,6 +22,7 @@ public class UnitShot : MonoBehaviour
     private UnitMove unitMove;
     private bool healfrag,deathflag;
     public float threeshottime;
+    private GameObject housin;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,11 @@ public class UnitShot : MonoBehaviour
         enemys = new Dictionary<int, GameObject>();
         unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
         deathflag = false;
+        foreach (Transform child in transform)
+        {
+            //child is your child transfor
+            housin = child.gameObject;
+        }
     }
 
     // Update is called once per frame
@@ -42,7 +48,28 @@ public class UnitShot : MonoBehaviour
         {
             Sort();
             Shot();
-        }else
+            //float angle = GetAngle(housin.transform.position, enemys[0].transform.position);
+            if(enemys.Count>0)
+            {
+                if(unitMove.vrtical==Vrtical.Up)
+                {
+                    Vector3 posDif = housin.transform.position - enemys[0].transform.position;
+                    float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
+                    Vector3 euler = new Vector3(0, 0, angle+90);
+
+                    housin.transform.rotation = Quaternion.Euler(euler);
+                }else
+                {
+                    Vector3 posDif = housin.transform.position - enemys[0].transform.position;
+                    float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
+                    Vector3 euler = new Vector3(0, 0, angle+90);
+
+                    housin.transform.rotation = Quaternion.Euler(euler);
+                }
+            }
+
+        }
+        else
         {
             Start();
         }

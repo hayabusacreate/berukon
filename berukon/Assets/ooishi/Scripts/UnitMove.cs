@@ -256,6 +256,7 @@ public class UnitMove : MonoBehaviour
         }
         if (collision.gameObject.tag == "EnemyBullet"&&!healfrag)
         {
+            if(!Deathflag)
             UnitLife_Manager(-1);
         }
     }

@@ -25,9 +25,17 @@ public class UnitMove : MonoBehaviour
     public int UnityLife;
     public Slider _slider;
     private float rote;
+    public GameObject healobj,deathobj;
+    public SpriteRenderer unit;
+    public SpriteRenderer uni;
     // Start is called before the first frame update
     void Start()
     {
+
+        
+        healobj.SetActive(false);
+        deathobj.SetActive(false);
+
         con = transform.root.gameObject;
         conveyor = con.gameObject.GetComponent<Conveyor>();
         rotecount = 720;
@@ -70,6 +78,9 @@ public class UnitMove : MonoBehaviour
             if(UnityLife>=_slider.maxValue-1)
             {
                 Deathflag = false;
+                deathobj.SetActive(false);
+                uni.color  = new Color32(255, 255, 255, 255);
+                unit.color = new Color32(255, 255, 255, 255);
             }
         }
         else
@@ -77,6 +88,9 @@ public class UnitMove : MonoBehaviour
             if(UnityLife<=0)
             {
                 Deathflag = true;
+                deathobj.SetActive(true);
+                uni.color = new Color32(170, 170, 170, 255);
+                unit.color = new Color32(170, 170, 170, 255);
             }
         }
         if(UnityLife<=0)
@@ -234,7 +248,7 @@ public class UnitMove : MonoBehaviour
         if (collision.gameObject.tag == "Heal")
         {
             healfrag = true;
-
+            healobj.SetActive(true);
         }
         if (collision.tag == "wall")
         {
@@ -266,7 +280,7 @@ public class UnitMove : MonoBehaviour
         {
             //falseが上の状態
             healfrag = false;
-
+            healobj.SetActive(false);
         }
     }
     private void UnitLife_Manager(int Life)

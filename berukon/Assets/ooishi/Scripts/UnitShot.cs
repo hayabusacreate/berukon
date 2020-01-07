@@ -22,7 +22,7 @@ public class UnitShot : MonoBehaviour
     private UnitMove unitMove;
     private bool healfrag,deathflag;
     public float threeshottime;
-    private GameObject housin;
+    public GameObject housin;
     // Start is called before the first frame update
     void Start()
     {

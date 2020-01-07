@@ -405,6 +405,11 @@ MonoBehaviour:
   cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 912346144}
+  healobj: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac, type: 3}
+  deathobj: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+    type: 3}
+  unit: {fileID: 1967425842}
+  uni: {fileID: 0}
 --- !u!50 &66713004
 Rigidbody2D:
   serializedVersion: 4
@@ -514,6 +519,11 @@ MonoBehaviour:
   cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 300604805}
+  healobj: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac, type: 3}
+  deathobj: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+    type: 3}
+  unit: {fileID: 1570481429}
+  uni: {fileID: 1346445743}
 --- !u!50 &78617943
 Rigidbody2D:
   serializedVersion: 4
@@ -606,6 +616,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 1
+  housin: {fileID: 0}
 --- !u!212 &83727917
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2181,6 +2192,11 @@ MonoBehaviour:
   cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 148608703}
+  healobj: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac, type: 3}
+  deathobj: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+    type: 3}
+  unit: {fileID: 83727917}
+  uni: {fileID: 0}
 --- !u!50 &221294538
 Rigidbody2D:
   serializedVersion: 4
@@ -3159,6 +3175,11 @@ MonoBehaviour:
   cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 2125071975}
+  healobj: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac, type: 3}
+  deathobj: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+    type: 3}
+  unit: {fileID: 623000285}
+  uni: {fileID: 0}
 --- !u!50 &410539007
 Rigidbody2D:
   serializedVersion: 4
@@ -4064,6 +4085,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b1bb58d751c2f429a10b07611c6eeb, type: 3}
+--- !u!212 &570877942 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 570877941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &576146706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +4560,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
+  housin: {fileID: 0}
 --- !u!212 &623000285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5500,6 +5528,10 @@ MonoBehaviour:
   cooltime: 0.5
   UnityLife: 30
   _slider: {fileID: 322623878}
+  healobj: {fileID: 0}
+  deathobj: {fileID: 0}
+  unit: {fileID: 0}
+  uni: {fileID: 0}
 --- !u!50 &876394315
 Rigidbody2D:
   serializedVersion: 4
@@ -5934,6 +5966,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0
+  housin: {fileID: 0}
 --- !u!212 &978432334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6154,6 +6187,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
+  housin: {fileID: 0}
 --- !u!212 &1025058128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7173,6 +7207,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b1bb58d751c2f429a10b07611c6eeb, type: 3}
+--- !u!212 &1346445743 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1346445742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1378951396
 GameObject:
   m_ObjectHideFlags: 0
@@ -7507,6 +7547,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b1bb58d751c2f429a10b07611c6eeb, type: 3}
+--- !u!212 &1398500086 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1398500085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1426044786
 GameObject:
   m_ObjectHideFlags: 0
@@ -8147,6 +8193,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
+  housin: {fileID: 0}
 --- !u!212 &1570481429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9655,6 +9702,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
+  housin: {fileID: 0}
 --- !u!212 &1967425842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9796,6 +9844,11 @@ MonoBehaviour:
   cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 2047027186}
+  healobj: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac, type: 3}
+  deathobj: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+    type: 3}
+  unit: {fileID: 978432334}
+  uni: {fileID: 0}
 --- !u!50 &1994733216
 Rigidbody2D:
   serializedVersion: 4
@@ -10803,11 +10856,55 @@ PrefabInstance:
       propertyPath: cooltime
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 914512949170701333, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: uni
+      value: 
+      objectReference: {fileID: 1398500086}
+    - target: {fileID: 914512949170701333, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 914512949187520902}
+    - target: {fileID: 914512949170701333, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: healobj
+      value: 
+      objectReference: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac,
+        type: 3}
+    - target: {fileID: 914512949170701333, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: deathobj
+      value: 
+      objectReference: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+        type: 3}
     - target: {fileID: 914512949886844063, guid: bead098f01fa0f8438bb9dd5fb03357f,
         type: 3}
       propertyPath: cooltime
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 914512949886844063, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: uni
+      value: 
+      objectReference: {fileID: 570877942}
+    - target: {fileID: 914512949886844063, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 914512949187520901}
+    - target: {fileID: 914512949886844063, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: deathobj
+      value: 
+      objectReference: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+        type: 3}
+    - target: {fileID: 914512949886844063, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: healobj
+      value: 
+      objectReference: {fileID: 4184673844039315310, guid: 729fdb177d006e64eb8c10095d6b1cac,
+        type: 3}
     - target: {fileID: 914512950359366297, guid: bead098f01fa0f8438bb9dd5fb03357f,
         type: 3}
       propertyPath: shotTime
@@ -10815,6 +10912,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bead098f01fa0f8438bb9dd5fb03357f, type: 3}
+--- !u!212 &914512949187520901 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 914512950359366298, guid: bead098f01fa0f8438bb9dd5fb03357f,
+    type: 3}
+  m_PrefabInstance: {fileID: 914512949187520900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &914512949187520902 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 914512950020657706, guid: bead098f01fa0f8438bb9dd5fb03357f,
+    type: 3}
+  m_PrefabInstance: {fileID: 914512949187520900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2266069166173277399 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1424176830258636115, guid: bead098f01fa0f8438bb9dd5fb03357f,

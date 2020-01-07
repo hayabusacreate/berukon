@@ -249,6 +249,8 @@ public class UnitMove : MonoBehaviour
         {
             healfrag = true;
             healobj.SetActive(true);
+            Vector3 euler = new Vector3(-45, 0, 0);
+            //healobj.transform.rotation = Quaternion.Euler(euler);
         }
         if (collision.tag == "wall")
         {

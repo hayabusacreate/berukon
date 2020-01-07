@@ -12,6 +12,7 @@ public class EnemyShot : MonoBehaviour
     public Dictionary<int, GameObject>units;
     private GameObject unitsave, unitsave2;
     private EnemyMove eneMove;
+    private int targetcount;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,8 @@ public class EnemyShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shot();
         Sort();
+        Shot();
     }
     void Shot()
     {
@@ -72,11 +73,37 @@ public class EnemyShot : MonoBehaviour
             }
             target = units[0];
         }
+        if(units.Count>0)
+        {
+            if (target.GetComponent<UnitMove>().Deathflag == true)
+            {
+                if (units.Count == 1)
+                {
+                    units.Remove(units.Count - 1);
+                    hitfrag = false;
+                }
+                else
+                {
+                    for (int i = 0; i < units.Count - 1; i++)
+                    {
+                        if (i < units.Count - 1)
+                        {
+                            units.Remove(i);
+                            units.Add(i, units[i + 1]);
+                        }
+                        else
+                        {
+                            units.Remove(i);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Unit")
+        if (collision.gameObject.tag == "Unit"&&collision.gameObject.GetComponent<UnitMove>().Deathflag==false)
         {
             float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
             if (units.Count == 0)

@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 9129401099773280448}
   - component: {fileID: 2574752604933608980}
   - component: {fileID: 4222617939043504853}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: New Sprite
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}

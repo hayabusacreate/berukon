@@ -69,7 +69,7 @@ public class UnitShot : MonoBehaviour
             }
 
         }
-        else
+        else if (hitfrag == false)
         {
             Start();
         }

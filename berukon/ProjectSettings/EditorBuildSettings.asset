@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ooishi/Scene/test.unity
     guid: 378d388380535a343a802f8f10691196
+  - enabled: 1
+    path: Assets/inose/Stage1.unity
+    guid: 1fa6e6f57529b0a4cb4d2882b0ffd94d
   m_configObjects: {}

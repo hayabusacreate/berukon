@@ -7,15 +7,21 @@ public enum Direction
     Right,
     Left,
 }
+public enum UpDown
+{
+    Up,
+    Down
+}
 public class Conveyor : MonoBehaviour
 {
     public Direction direction;
-    private  ConveyorChoce conveyor;
-    public float maxspeed,nomalspeed,minspeed;
+    private ConveyorChoce conveyor;
+    public float maxspeed, nomalspeed, minspeed;
     public float speed;
     public bool moveflag;
     private float r, g, b;
-    private bool x, y,x2,y2;
+    private bool x, y, x2, y2;
+    public UpDown upDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +36,9 @@ public class Conveyor : MonoBehaviour
     }
     void ChangeSpeed()
     {
-        if(conveyor.selectSpeed==SelectSpeed.Tap)
+        if (conveyor.selectSpeed == SelectSpeed.Tap)
         {
-            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0") )&& moveflag)
+            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0")) && moveflag)
             {
                 speed -= 0.1f;
                 if (speed < minspeed)
@@ -40,7 +46,7 @@ public class Conveyor : MonoBehaviour
                     speed = minspeed;
                 }
             }
-            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1") )&& moveflag)
+            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1")) && moveflag)
             {
                 speed += 0.1f;
                 if (speed > maxspeed)
@@ -51,7 +57,7 @@ public class Conveyor : MonoBehaviour
         }
         if (conveyor.selectSpeed == SelectSpeed.State)
         {
-            if ((Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0") )&& moveflag)
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0")) && moveflag)
             {
                 speed -= 0.1f;
                 if (speed < minspeed)
@@ -59,7 +65,7 @@ public class Conveyor : MonoBehaviour
                     speed = minspeed;
                 }
             }
-            if ((Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1") )&& moveflag)
+            if ((Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1")) && moveflag)
             {
                 speed += 0.1f;
                 if (speed > maxspeed)
@@ -72,7 +78,7 @@ public class Conveyor : MonoBehaviour
         {
             if (moveflag)
             {
-                if(Input.GetAxis("Horizontal")==1||Input.GetAxis("Vertical") == 1)
+                if (Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Vertical") == 1)
                 {
                     x = true;
                 }
@@ -85,7 +91,7 @@ public class Conveyor : MonoBehaviour
                     x = false;
                     y = false;
                 }
-                if(x&&y)
+                if (x && y)
                 {
                     speed += 0.1f;
                     if (speed > maxspeed)
@@ -120,12 +126,78 @@ public class Conveyor : MonoBehaviour
                 }
             }
         }
+        if (conveyor.selectSpeed == SelectSpeed.hayabusa)
+        {
+            if (moveflag)
+            {
+                if (Input.GetAxis("Horizontal") >0)
+                {
+                    if(direction==Direction.Right)
+                    {
+                        if(upDown==UpDown.Up)
+                        {
+                            speed -= 0.1f;
+                        }
+                        else
+                        {
+                            speed += 0.1f;
+                        }
+                    }else
+                    {
+                        if (upDown == UpDown.Up)
+                        {
+                            speed += 0.1f;
+                        }
+                        else
+                        {
+                            speed -= 0.1f;
+                        }
+                    }
+                }
+                else
+                if (Input.GetAxis("Horizontal") <0)
+                {
+                    if (direction == Direction.Right)
+                    {
+                        if (upDown == UpDown.Up)
+                        {
+                            speed += 0.1f;
+                        }
+                        else
+                        {
+                            speed -= 0.1f;
+                        }
+                    }
+                    else
+                    {
+                        if (upDown == UpDown.Up)
+                        {
+                            speed -= 0.1f;
+                        }
+                        else
+                        {
+                            speed += 0.1f;
+                        }
+                    }
+                }
+                if (speed < minspeed)
+                {
+                    speed = minspeed;
+                }
+                if (speed > maxspeed)
+                {
+                    speed = maxspeed;
+                }
+            }
+
+        }
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag=="Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            if(direction==Direction.Right)
+            if (direction == Direction.Right)
             {
                 collision.gameObject.GetComponent<EnemyMove>().speed -= speed;
             }

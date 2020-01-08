@@ -5,7 +5,8 @@ public enum SelectSpeed
 {
     Tap,
     State,
-    Rotat
+    Rotat,
+    hayabusa,
 }
 public class ConveyorChoce : MonoBehaviour
 {
@@ -36,30 +37,19 @@ public class ConveyorChoce : MonoBehaviour
     }
     private void Choce()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown("joystick button 5"))
+        if (selectSpeed == SelectSpeed.hayabusa)
         {
-            conveyorCount++;
-            if(conveyorCount>=conveyors.Length)
+            if(Input.GetKeyDown("joystick button 2"))
             {
                 conveyorCount = 0;
             }
-            for (int i = 0; i < conveyors.Length; i++)
+            if (Input.GetKeyDown("joystick button 0"))
             {
-                if(conveyorCount==i)
-                {
-                    conveyors[i].moveflag = true;
-                }else
-                {
-                    conveyors[i].moveflag = false;
-                }
+                conveyorCount = 1;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown("joystick button 4"))
-        {
-            conveyorCount--;
-            if (conveyorCount < 0)
+            if (Input.GetKeyDown("joystick button 1"))
             {
-                conveyorCount = conveyors.Length-1;
+                conveyorCount = 2;
             }
             for (int i = 0; i < conveyors.Length; i++)
             {
@@ -73,5 +63,47 @@ public class ConveyorChoce : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown("joystick button 5"))
+            {
+                conveyorCount++;
+                if (conveyorCount >= conveyors.Length)
+                {
+                    conveyorCount = 0;
+                }
+                for (int i = 0; i < conveyors.Length; i++)
+                {
+                    if (conveyorCount == i)
+                    {
+                        conveyors[i].moveflag = true;
+                    }
+                    else
+                    {
+                        conveyors[i].moveflag = false;
+                    }
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 4"))
+            {
+                conveyorCount--;
+                if (conveyorCount < 0)
+                {
+                    conveyorCount = conveyors.Length - 1;
+                }
+                for (int i = 0; i < conveyors.Length; i++)
+                {
+                    if (conveyorCount == i)
+                    {
+                        conveyors[i].moveflag = true;
+                    }
+                    else
+                    {
+                        conveyors[i].moveflag = false;
+                    }
+                }
+            }
+        }
+
     }
 }

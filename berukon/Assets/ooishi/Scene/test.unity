@@ -4228,6 +4228,7 @@ MonoBehaviour:
   minspeed: 0.1
   speed: 0
   moveflag: 0
+  upDown: 0
 --- !u!1 &714298423
 GameObject:
   m_ObjectHideFlags: 0
@@ -7121,11 +7122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f14a227d99b2844fbc3a862c145cdcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectSpeed: 1
+  selectSpeed: 3
   conveyors:
-  - {fileID: 636464821}
-  - {fileID: 2266069166173277399}
   - {fileID: 1596707342}
+  - {fileID: 2266069166173277399}
+  - {fileID: 636464821}
 --- !u!4 &1563233615
 Transform:
   m_ObjectHideFlags: 0
@@ -7153,12 +7154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8509e5c8897601448a3fdca9c6c8fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
   maxspeed: 2
   nomalspeed: 1
   minspeed: 0.1
   speed: 0
   moveflag: 0
+  upDown: 0
 --- !u!1 &1610368466
 GameObject:
   m_ObjectHideFlags: 0
@@ -7191,6 +7193,7 @@ MonoBehaviour:
   scene: 2
   core: {fileID: 912221505}
   wave: {fileID: 150349995}
+  stagenum: 0
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0
@@ -7511,6 +7514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2266069166240948567, guid: 42b7aff18869606429b52fc6ba1982f8,
+        type: 3}
+      propertyPath: direction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266069167900409627, guid: 42b7aff18869606429b52fc6ba1982f8,
         type: 3}
@@ -9504,10 +9512,10 @@ PrefabInstance:
       propertyPath: direction
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 914512950282445754, guid: bead098f01fa0f8438bb9dd5fb03357f,
+    - target: {fileID: 1424176830258636115, guid: bead098f01fa0f8438bb9dd5fb03357f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.74
+      propertyPath: upDown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 914512949170701333, guid: bead098f01fa0f8438bb9dd5fb03357f,
         type: 3}
@@ -9558,6 +9566,11 @@ PrefabInstance:
       propertyPath: unit
       value: 
       objectReference: {fileID: 2045069735}
+    - target: {fileID: 914512950282445754, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.74
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bead098f01fa0f8438bb9dd5fb03357f, type: 3}
 --- !u!1001 &1583098857122295395

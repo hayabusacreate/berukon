@@ -4873,7 +4873,7 @@ MonoBehaviour:
   direction: 1
   maxspeed: 2.5
   nomalspeed: 1.5
-  minspeed: 1
+  minspeed: 0.8
   speed: 0
   moveflag: 0
 --- !u!4 &696765444 stripped
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   direction: 1
   maxspeed: 2.5
   nomalspeed: 1.5
-  minspeed: 1
+  minspeed: 0.8
   speed: 0
   moveflag: 0
 --- !u!1 &1610368466
@@ -10890,7 +10890,7 @@ PrefabInstance:
     - target: {fileID: 1424176830258636115, guid: bead098f01fa0f8438bb9dd5fb03357f,
         type: 3}
       propertyPath: minspeed
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1424176830258636115, guid: bead098f01fa0f8438bb9dd5fb03357f,
         type: 3}

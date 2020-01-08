@@ -8685,6 +8685,7 @@ MonoBehaviour:
   scene: 2
   core: {fileID: 912221505}
   wave: {fileID: 150349995}
+  stagenum: 0
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0

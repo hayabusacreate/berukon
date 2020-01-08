@@ -32,7 +32,7 @@ public class SceneChange : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene("test");
+                SceneManager.LoadScene("Stage1");
             }
         }
         if (scene == Scene.StageSlect)

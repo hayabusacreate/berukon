@@ -322,9 +322,13 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0
-  UnityLife: 10
+  cooltime: 0.5
+  UnityLife: 30
   _slider: {fileID: 914512950164658535}
+  healobj: {fileID: 0}
+  deathobj: {fileID: 0}
+  unit: {fileID: 0}
+  uni: {fileID: 0}
 --- !u!58 &914512949170701332
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1226,9 +1230,13 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 2
+  cooltime: 0.5
   UnityLife: 30
   _slider: {fileID: 914512950597994784}
+  healobj: {fileID: 0}
+  deathobj: {fileID: 0}
+  unit: {fileID: 0}
+  uni: {fileID: 0}
 --- !u!58 &914512949886844062
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1397,6 +1405,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
+  housin: {fileID: 0}
 --- !u!58 &914512950020657704
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2859,8 +2868,9 @@ MonoBehaviour:
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
   target: {fileID: 0}
-  shotTime: 0.3
+  shotTime: 1
   threeshottime: 0
+  housin: {fileID: 0}
 --- !u!58 &914512950359366296
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3267,7 +3277,7 @@ GameObject:
   - component: {fileID: 914512950736084346}
   - component: {fileID: 1424176830258636115}
   m_Layer: 0
-  m_Name: berukon (1)
+  m_Name: upberu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3310,8 +3320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2
-  nomalspeed: 1
-  minspeed: 0.1
+  maxspeed: 2.5
+  nomalspeed: 1.5
+  minspeed: 1
   speed: 0
   moveflag: 0

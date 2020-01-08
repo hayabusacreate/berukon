@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 3580179588263739577}
   - component: {fileID: 757033788135878720}
   m_Layer: 11
-  m_Name: Enemy 3
+  m_Name: NaZca_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 1
-  EnemyLife: 5
+  EnemyLife: 4
   speed: 1
   slider: {fileID: 4755122634502328684}
   conflag: 0

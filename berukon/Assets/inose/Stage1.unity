@@ -395,8 +395,8 @@ MonoBehaviour:
   _slider: {fileID: 912346144}
   healobj: {fileID: 390505674}
   deathobj: {fileID: 1986640602}
-  unit: {fileID: 2041641632}
-  uni: {fileID: 1967425842}
+  unit: {fileID: 1967425842}
+  uni: {fileID: 2041641632}
 --- !u!50 &66713004
 Rigidbody2D:
   serializedVersion: 4
@@ -10956,6 +10956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 914512950020657705, guid: bead098f01fa0f8438bb9dd5fb03357f,
+        type: 3}
+      propertyPath: unitSelect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bead098f01fa0f8438bb9dd5fb03357f, type: 3}

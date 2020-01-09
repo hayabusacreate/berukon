@@ -114,12 +114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  x: -1
-  y: 0
   EnemyLife: 10
   speed: 0
   slider: {fileID: 5229910169963546060, guid: 32bd60552d814b6438fb49a7c351daa0, type: 3}
   conflag: 0
+  DeathEffect: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
+    type: 3}
 --- !u!50 &3405136768331979561
 Rigidbody2D:
   serializedVersion: 4

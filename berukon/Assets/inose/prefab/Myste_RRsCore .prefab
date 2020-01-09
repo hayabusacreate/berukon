@@ -524,6 +524,8 @@ MonoBehaviour:
   speed: 1.3
   slider: {fileID: 4755122634502328684}
   conflag: 0
+  DeathEffect: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
+    type: 3}
 --- !u!95 &1028559307965533970
 Animator:
   serializedVersion: 3

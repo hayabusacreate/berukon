@@ -22,11 +22,14 @@ public class Conveyor : MonoBehaviour
     private float r, g, b;
     private bool x, y, x2, y2;
     public UpDown upDown;
+    public GameObject up, down;
     // Start is called before the first frame update
     void Start()
     {
         conveyor = GameObject.Find("BerukonChoce").GetComponent<ConveyorChoce>();
         speed = nomalspeed;
+        up.SetActive(false);
+        down.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class Conveyor : MonoBehaviour
         {
             if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0")) && moveflag)
             {
+                up.SetActive(true);
                 speed -= 0.1f;
                 if (speed < minspeed)
                 {
@@ -48,6 +52,7 @@ public class Conveyor : MonoBehaviour
             }
             if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1")) && moveflag)
             {
+                down.SetActive(true);
                 speed += 0.1f;
                 if (speed > maxspeed)
                 {
@@ -60,6 +65,8 @@ public class Conveyor : MonoBehaviour
             if ((Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0")) && moveflag)
             {
                 speed -= 0.1f;
+                up.SetActive(false);
+                down.SetActive(true);
                 if (speed < minspeed)
                 {
                     speed = minspeed;
@@ -68,10 +75,17 @@ public class Conveyor : MonoBehaviour
             if ((Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1")) && moveflag)
             {
                 speed += 0.1f;
+                down.SetActive(false);
+                up.SetActive(true);
                 if (speed > maxspeed)
                 {
                     speed = maxspeed;
                 }
+            }
+            if(!moveflag)
+            {
+                down.SetActive(false);
+                up.SetActive(false);
             }
         }
         if (conveyor.selectSpeed == SelectSpeed.Rotat)

@@ -30,6 +30,7 @@ public class EnemyMove : MonoBehaviour
     private Conveyor conveyor;
     public bool conflag;
     private Wave_Manager wave;
+    public GameObject DeathEffect;
     void Start()
     {
         deathFrag = false;
@@ -58,6 +59,7 @@ public class EnemyMove : MonoBehaviour
             }
             if (deathFrag)
             {
+                Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
                 transform.position = Vector3.Lerp(transform.position, deathPos, deathspeed);
                 if (transform.position.z < 19)
                 {
@@ -78,6 +80,7 @@ public class EnemyMove : MonoBehaviour
             }
             if (deathFrag)
             {
+                Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
                 transform.position = Vector3.Lerp(transform.position, deathPos, deathspeed);
                 if (transform.position.z < 19)
                 {

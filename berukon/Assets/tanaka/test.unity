@@ -3106,6 +3106,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: smoke_particle
       objectReference: {fileID: 0}
+    - target: {fileID: 3219167529209835550, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3219167529209835555, guid: 9cd55fc5b6258e1458fa3adbe7fb6d59,
         type: 3}
       propertyPath: m_LocalPosition.x

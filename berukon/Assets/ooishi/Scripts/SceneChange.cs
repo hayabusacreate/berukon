@@ -16,6 +16,10 @@ public class SceneChange : MonoBehaviour
     public Core_Manager core;
     public Wave wave;
     public int stagenum;
+    public GameObject[] stage;
+    public float speed;
+    public bool movefrag;
+    private float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,7 @@ public class SceneChange : MonoBehaviour
     }
     void Change()
     {
+        time += Time.deltaTime/60;
         if(scene==Scene.Title)
         {
             if(Input.GetKeyDown(KeyCode.Space))
@@ -38,17 +43,33 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSlect)
         {
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            if(Input.GetKeyDown(KeyCode.LeftArrow)&&stagenum>0&&movefrag)
             {
+                time = 0;
                 stagenum--;
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow)&&stagenum<stage.Length-1&&movefrag)
             {
+                time = 0;
                 stagenum++;
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene("test");
+            }
+            if (stagenum<stage.Length-1)
+            stage[stagenum+1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0),time);
+
+            stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
+            if(stagenum-1>=0)
+            stage[stagenum-1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-20, 0, 0), time);
+            speed = stage[stagenum].transform.position.x;
+            if(stage[stagenum].transform.position==new Vector3(0,0,0))
+            {
+                movefrag = true;
+            }else
+            {
+                movefrag=false;
             }
         }
         if (scene == Scene.GamePlay)

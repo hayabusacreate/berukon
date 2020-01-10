@@ -9,6 +9,7 @@ public class SerectAnim : MonoBehaviour
     private Animator anim;
     private float speed;
     private bool changeflag;
+    private int count;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class SerectAnim : MonoBehaviour
         speed = 0;
         anim.speed = speed;
         anim.SetBool("LR", true);
+        changeflag = false;
     }
 
     // Update is called once per frame
@@ -32,13 +34,17 @@ public class SerectAnim : MonoBehaviour
             }
             else
             {
-                speed -= 0.01f;
-                anim.speed = speed;
-                anim.SetBool("LR", true);
-                if (speed < 0)
+                count++;
+
+                anim.speed = -sceneChange.speed;
+                anim.SetBool("LR", false);
+                if (sceneChange.movefrag)
                 {
                     changeflag = false;
                     stage = sceneChange.stagenum;
+                    speed = 0;
+                    count = 0;
+                    anim.speed = speed;
                 }
             }
         }
@@ -51,11 +57,14 @@ public class SerectAnim : MonoBehaviour
             }
             else
             {
-                speed -= 0.01f;
-                anim.speed = speed;
-                anim.SetBool("LR", false);
-                if (speed < 0)
+                count++;
+                anim.speed = sceneChange.speed;
+                anim.SetBool("LR", true);
+                if (sceneChange.movefrag)
                 {
+                    speed = 0;
+                    anim.speed = speed;
+                    count = 0;
                     changeflag = false;
                     stage = sceneChange.stagenum;
                 }

@@ -26,6 +26,7 @@ public class EnemyMove : MonoBehaviour
     private Color color;
     private bool deathFrag;
     private NomalBullet nomalBullet;
+    private Bom bom;
     public Slider slider;
     private Conveyor conveyor;
     public bool conflag;
@@ -127,6 +128,11 @@ public class EnemyMove : MonoBehaviour
                 deathFrag = true;
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
                 // deathFrag = true;
+            }
+            if(collision.gameObject.tag == "Bom")
+            {
+                bom = collision.gameObject.GetComponent<Bom>();
+                EnemyLife_Manager(bom.damege);
             }
         }
         if (enemySelect == EnemySelect.Nazca_Enemy)

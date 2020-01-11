@@ -139,7 +139,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9bab46cb97a3dbd4b8eaa234aea1904c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cde403594ef73a64c919ba0c03895ad5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -184,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.36}
+  m_AnchoredPosition: {x: 0, y: -0.569}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7683783205234940861
@@ -318,8 +318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -21.42}
-  m_SizeDelta: {x: 160, y: 26.63}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4755122634502328684
 MonoBehaviour:
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 9129401098835871406}
   - component: {fileID: 1028559307965533970}
   m_Layer: 11
-  m_Name: Myste_RsCore 1
+  m_Name: MysteCore 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72403ffd6144fe34e88883c9e2c9383e, type: 3}
-  m_Color: {r: 0.9987322, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  EnemyLife: 10
+  EnemyLife: 3
   speed: 1.5
   slider: {fileID: 4755122634502328684}
   conflag: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 9129401099773280448}
   - component: {fileID: 2574752604933608980}
   - component: {fileID: 436487235585578005}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: New Sprite
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -638,10 +638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef77f14cd650dcc4b8673e72238a6d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballet: 0
+  ballet: 2
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
   kantuu: {fileID: 0}
-  Bom: {fileID: 0}
+  Bom: {fileID: 2243565898536668125, guid: e6a7ffc1a79ff2749ba504e5f33690ee, type: 3}
   Area: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1

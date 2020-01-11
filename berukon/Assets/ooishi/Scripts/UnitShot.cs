@@ -8,6 +8,7 @@ public enum UnitSelect
     ThreeShot,
     kanntuuShot,
     BomShot,
+    AreaShot,
 }
 public class UnitShot : MonoBehaviour
 {

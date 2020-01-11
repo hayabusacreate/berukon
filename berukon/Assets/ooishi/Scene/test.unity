@@ -4682,11 +4682,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList:
-  - {fileID: 9129401098835871395, guid: d04bac2314cc4c84eae61d3a93c25ce9, type: 3}
-  - {fileID: 9129401098835871395, guid: d04bac2314cc4c84eae61d3a93c25ce9, type: 3}
-  - {fileID: 9129401098835871395, guid: d04bac2314cc4c84eae61d3a93c25ce9, type: 3}
-  - {fileID: 9129401098835871395, guid: d04bac2314cc4c84eae61d3a93c25ce9, type: 3}
-  - {fileID: 9129401098835871395, guid: d04bac2314cc4c84eae61d3a93c25ce9, type: 3}
+  - {fileID: 9129401098835871395, guid: 72497d713cf0d0e4c9cf9d3771edf53b, type: 3}
+  - {fileID: 9129401098835871395, guid: 72497d713cf0d0e4c9cf9d3771edf53b, type: 3}
+  - {fileID: 9129401098835871395, guid: 72497d713cf0d0e4c9cf9d3771edf53b, type: 3}
+  - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
+  - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
   wavetime: 1
   enemyflag: 0
 --- !u!4 &604622204
@@ -4812,9 +4812,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList:
-  - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
+  - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
+  - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
+  - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
   - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
   - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
   wavetime: 1

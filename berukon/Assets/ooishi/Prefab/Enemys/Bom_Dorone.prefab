@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 9129401098835871406}
   - component: {fileID: 1028559307965533970}
   m_Layer: 11
-  m_Name: MysteCore 1
+  m_Name: Bom_Dorone
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 436487235585578005}
   m_Layer: 14
   m_Name: New Sprite
-  m_TagString: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -132,7 +132,7 @@ public class EnemyMove : MonoBehaviour
             if(collision.gameObject.tag == "Bom")
             {
                 bom = collision.gameObject.GetComponent<Bom>();
-                EnemyLife_Manager(bom.damege);
+                EnemyLife_Manager(-bom.damege);
             }
         }
         if (enemySelect == EnemySelect.Nazca_Enemy)

@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 4222617939043504853}
   m_Layer: 14
   m_Name: New Sprite
-  m_TagString: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

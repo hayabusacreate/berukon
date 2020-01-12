@@ -318,8 +318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -21.42}
-  m_SizeDelta: {x: 160, y: 26.63}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4755122634502328684
 MonoBehaviour:
@@ -382,11 +382,11 @@ GameObject:
   - component: {fileID: 9129401098835871392}
   - component: {fileID: 9129401098835871393}
   - component: {fileID: 9129401098835871394}
-  - component: {fileID: 8299515710130949071}
   - component: {fileID: 9129401098835871406}
-  - component: {fileID: 1028559307965533970}
+  - component: {fileID: 3580179588263739577}
+  - component: {fileID: 757033788135878720}
   m_Layer: 11
-  m_Name: Myste_RsCore 1
+  m_Name: Kanntuu_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,8 +445,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72403ffd6144fe34e88883c9e2c9383e, type: 3}
-  m_Color: {r: 0.9987322, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 795330af55d24044abf3a0154cd66da0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -484,7 +484,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9129401098835871395}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -493,20 +493,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!114 &8299515710130949071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9129401098835871395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a6affc6e2b61f45af0d906aca7e75d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  y: 2
-  speed: 5
 --- !u!114 &9129401098835871406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,14 +505,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11948c79649018742b8fa04cfdbb5a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySelect: 0
-  EnemyLife: 10
-  speed: 1.5
+  enemySelect: 1
+  EnemyLife: 4
+  speed: 1
   slider: {fileID: 4755122634502328684}
   conflag: 0
   DeathEffect: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
     type: 3}
---- !u!95 &1028559307965533970
+--- !u!95 &3580179588263739577
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -536,7 +522,7 @@ Animator:
   m_GameObject: {fileID: 9129401098835871395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 077868ed35ed7f5418faf825f5efbee6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71027a0f8410654429beb658209a86f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -545,6 +531,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &757033788135878720
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129401098835871395}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.50705147}
+  m_Size: {x: 1, y: 2.014103}
+  m_Direction: 0
 --- !u!1 &9129401099773280450
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,10 +558,10 @@ GameObject:
   - component: {fileID: 9129401099773280449}
   - component: {fileID: 9129401099773280448}
   - component: {fileID: 2574752604933608980}
-  - component: {fileID: 436487235585578005}
-  m_Layer: 9
+  - component: {fileID: 4222617939043504853}
+  m_Layer: 14
   m_Name: New Sprite
-  m_TagString: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,15 +640,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef77f14cd650dcc4b8673e72238a6d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballet: 0
+  ballet: 1
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
-  kantuu: {fileID: 0}
+  kantuu: {fileID: 2243565898536668125, guid: cd4a8d47ed335ea4e809b3ef4788fbf4, type: 3}
   Bom: {fileID: 0}
   Area: {fileID: 0}
   target: {fileID: 0}
-  shotTime: 1
---- !u!70 &436487235585578005
-CapsuleCollider2D:
+  shotTime: 0.8
+--- !u!58 &4222617939043504853
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -658,6 +660,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.072709136, y: -0.39186147}
-  m_Size: {x: 6.0268936, y: 3.7221618}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3

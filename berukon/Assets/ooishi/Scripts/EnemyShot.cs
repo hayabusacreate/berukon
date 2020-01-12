@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BalletChoce
+{
+    nomal,
+    kantuu,
+    Bom,
+    Area
+}
 public class EnemyShot : MonoBehaviour
 {
-    public GameObject shot;
+    public BalletChoce ballet;
+    public GameObject shot,kantuu,Bom,Area;
     public GameObject target;
     public float shotTime;
     private float time;
@@ -35,11 +43,34 @@ public class EnemyShot : MonoBehaviour
         if (time >= shotTime && hitfrag)
         {
             // Do anything
-
-            time = 0.0f;
-            // プレハブからインスタンスを生成
-            GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
-            obj.transform.parent = transform;
+            if(ballet==BalletChoce.nomal)
+            {
+                time = 0.0f;
+                // プレハブからインスタンスを生成
+                GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+            }
+            if(ballet==BalletChoce.kantuu)
+            {
+                time = 0.0f;
+                // プレハブからインスタンスを生成
+                GameObject obj = Instantiate(kantuu, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+            }
+            if (ballet == BalletChoce.Bom)
+            {
+                time = 0.0f;
+                // プレハブからインスタンスを生成
+                GameObject obj = Instantiate(Bom, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+            }
+            if (ballet == BalletChoce.Area)
+            {
+                time = 0.0f;
+                // プレハブからインスタンスを生成
+                GameObject obj = Instantiate(Area, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+            }
         }
     }
 

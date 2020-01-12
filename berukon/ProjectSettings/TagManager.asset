@@ -14,6 +14,7 @@ TagManager:
   - ConveyorRight
   - ConveyorLeft
   - EnemyBullet
+  - Bom
   layers:
   - Default
   - TransparentFX

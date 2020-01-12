@@ -275,6 +275,11 @@ public class UnitMove : MonoBehaviour
             if(!Deathflag)
             UnitLife_Manager(-1);
         }
+        if(collision.gameObject.tag == "Bom" && !healfrag)
+        {
+            if (!Deathflag)
+                UnitLife_Manager(-collision.gameObject.GetComponent<Bom>().damege);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

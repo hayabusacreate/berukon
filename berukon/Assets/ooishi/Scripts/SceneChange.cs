@@ -20,10 +20,12 @@ public class SceneChange : MonoBehaviour
     public float speed;
     public bool movefrag;
     private float time;
+    private bool changeflag;
     // Start is called before the first frame update
     void Start()
     {
         stagenum = 0;
+        changeflag = false;
     }
 
     // Update is called once per frame
@@ -55,22 +57,35 @@ public class SceneChange : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene("test");
+                changeflag = true;
             }
-            if (stagenum<stage.Length-1)
-            stage[stagenum+1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0),time);
-
-            stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
-            if(stagenum-1>=0)
-            stage[stagenum-1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-20, 0, 0), time);
-            speed = stage[stagenum].transform.position.x;
-            if(stage[stagenum].transform.position==new Vector3(0,0,0))
+            if(!changeflag)
             {
-                movefrag = true;
+                if (stagenum < stage.Length - 1)
+                    stage[stagenum + 1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0), time);
+
+                stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
+                if (stagenum - 1 >= 0)
+                    stage[stagenum - 1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-20, 0, 0), time);
+                speed = stage[stagenum].transform.position.x;
+                if (stage[stagenum].transform.position == new Vector3(0, 0, 0))
+                {
+                    movefrag = true;
+                }
+                else
+                {
+                    movefrag = false;
+                }
             }else
             {
-                movefrag=false;
+                stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, -1, 0), time);
+                if (stage[stagenum].transform.position == new Vector3(0, -1, 0))
+                {
+                    stagenum++;
+                    SceneManager.LoadScene("Stage" + stagenum);
+                }
             }
+
         }
         if (scene == Scene.GamePlay)
         {

@@ -5,6 +5,7 @@ public enum Ballet
 {
     Nomal,
     kantuu,
+    Bom,
 }
 public class NomalBullet : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class NomalBullet : MonoBehaviour
     private Vector2 Position;
     private int UnitLife = 25;
     private Vector3 vec;
+    public GameObject Bom;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,16 +52,8 @@ public class NomalBullet : MonoBehaviour
         //targetに向かって進む
         if (ballet==Ballet.Nomal)
         {
-            //transform.position = Vector3.Lerp(transform.position, targetpos, speed);
-            //if (transform.position == targetpos)
-            //{
-            //    Destroy(gameObject);
-            //}
-            //transform.position += transform.forward * speed;
             // 現在位置をPositionに代入
             Position = transform.position;
-            // x += SPEED * cos(ラジアン)
-            // y += SPEED * sin(ラジアン)
             // これで特定の方向へ向かって進んでいく。
             Position.x += speed * Mathf.Cos(rad);
             Position.y += speed * Mathf.Sin(rad);
@@ -68,14 +62,21 @@ public class NomalBullet : MonoBehaviour
         }
         if(ballet==Ballet.kantuu)
         {
-            //transform.position += transform.forward * speed;
             // 現在位置をPositionに代入
             Position = transform.position;
-            // x += SPEED * cos(ラジアン)
-            // y += SPEED * sin(ラジアン)
             // これで特定の方向へ向かって進んでいく。
             Position.x += speed* Mathf.Cos(rad);
             Position.y += speed* Mathf.Sin(rad);
+            // 現在の位置に加算減算を行ったPositionを代入する
+            transform.position = Position;
+        }
+        if(ballet==Ballet.Bom)
+        {
+            // 現在位置をPositionに代入
+            Position = transform.position;
+            // これで特定の方向へ向かって進んでいく。
+            Position.x += speed * Mathf.Cos(rad);
+            Position.y += speed * Mathf.Sin(rad);
             // 現在の位置に加算減算を行ったPositionを代入する
             transform.position = Position;
         }
@@ -90,6 +91,14 @@ public class NomalBullet : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
+                Destroy(gameObject);
+            }
+        }
+        if(ballet==Ballet.Bom)
+        {
+            if(collision.gameObject.tag=="Enemy")
+            {
+                Instantiate(Bom, gameObject.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

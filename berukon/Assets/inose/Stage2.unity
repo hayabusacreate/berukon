@@ -5966,7 +5966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSelect: 2
+  unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
   Bom: {fileID: 0}
@@ -14532,7 +14532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSelect: 2
+  unitSelect: 1
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
   Bom: {fileID: 0}

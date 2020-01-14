@@ -392,7 +392,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.5
+  cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 1205743843}
   healobj: {fileID: 273921008}
@@ -506,7 +506,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.5
+  cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 912346144}
   healobj: {fileID: 390505674}
@@ -711,6 +711,7 @@ MonoBehaviour:
   unitSelect: 1
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 1
@@ -4171,7 +4172,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.5
+  cooltime: 0.3
   UnityLife: 30
   _slider: {fileID: 2125071975}
   healobj: {fileID: 998546977}
@@ -5604,6 +5605,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
@@ -7388,6 +7390,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0
@@ -7813,6 +7816,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
@@ -9356,6 +9360,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0
@@ -11476,6 +11481,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
@@ -11672,6 +11678,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1
@@ -11778,6 +11785,9 @@ MonoBehaviour:
   core: {fileID: 912221505}
   wave: {fileID: 150349995}
   stagenum: 0
+  stage: []
+  speed: 0
+  movefrag: 0
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0
@@ -13134,6 +13144,7 @@ MonoBehaviour:
   unitSelect: 0
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
+  Bom: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.1

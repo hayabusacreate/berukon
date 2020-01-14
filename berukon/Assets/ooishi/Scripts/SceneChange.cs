@@ -21,6 +21,9 @@ public class SceneChange : MonoBehaviour
     public bool movefrag;
     private float time;
     private bool changeflag;
+    public GameObject cam;
+    private float camtime;
+    public GameObject gameover, gameclear, nodamege;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,12 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Change();
+        camtime += Time.deltaTime/3;
+        if (scene == Scene.GamePlay)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 0, -10), camtime);
+        }
+            Change();
     }
     void Change()
     {
@@ -89,9 +97,27 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GamePlay)
         {
-            if (core.CoreLife<0||wave.endflag==true)
+            if (core.CoreLife<0)
             {
-                SceneManager.LoadScene("Title");
+                gameover.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SceneManager.LoadScene("Title");
+                }
+            }
+            if(wave.endflag == true)
+            {
+                if(core.CoreLife==5)
+                {
+                    nodamege.SetActive(true);
+                }else
+                {
+                    gameclear.SetActive(true);
+                }
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    SceneManager.LoadScene("Title");
+                }
             }
         }
         if (scene == Scene.GameOver)

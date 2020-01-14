@@ -506,7 +506,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.3
+  cooltime: 0.4
   UnityLife: 30
   _slider: {fileID: 912346144}
   healobj: {fileID: 390505674}
@@ -7438,6 +7438,7 @@ MonoBehaviour:
   - {fileID: 21300006, guid: d0b39843c747aa046afc5994534bf5a5, type: 3}
   - {fileID: 21300008, guid: d0b39843c747aa046afc5994534bf5a5, type: 3}
   obj: {fileID: 2162245268841209210, guid: 073a0347f965a7d4aadf314660bc915a, type: 3}
+  timeline: {fileID: 0}
 --- !u!212 &912221506 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4928900734205510927, guid: 3eb8c1323225892498d6a09d183f4718,

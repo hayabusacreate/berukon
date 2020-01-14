@@ -92,7 +92,7 @@ public class UnitShot : MonoBehaviour
             }
             if(unitSelect==UnitSelect.ThreeShot)
             {
-                if (count>3)
+                if (count>2)
                 {
                     time = 0.0f;
                     count = 0;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class Core_Manager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Core_Manager : MonoBehaviour
     public Sprite[] mains,shadows;
     public GameObject obj;
     private int count;
+    public TimelineAsset timeline;
     // Start is called before the first frame update
     void Start()
     {

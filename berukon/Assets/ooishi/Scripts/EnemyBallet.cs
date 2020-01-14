@@ -18,13 +18,18 @@ public class EnemyBallet : MonoBehaviour
     private Vector3 vec;
     private float rad;
     private Vector2 Position;
-    public GameObject Bom;
+    public GameObject Bom,Area;
+    private float time;
+    private bool area;
     // Start is called before the first frame update
     void Start()
     {
         enemy = gameObject.transform.parent.GetComponent<EnemyShot>();
         target = enemy.target;
-        gameObject.transform.parent = null;
+        if(ballet!=Bal.Area)
+        {
+            gameObject.transform.parent = null;
+        }
         targetpos = target.transform.position;
         if (transform.position.y > targetpos.y)
         {
@@ -38,6 +43,7 @@ public class EnemyBallet : MonoBehaviour
 target.transform.position.y - transform.position.y,
 target.transform.position.x - transform.position.x);
         vec = (targetpos - transform.position).normalized;
+        area = false;
     }
 
     // Update is called once per frame
@@ -80,6 +86,22 @@ target.transform.position.x - transform.position.x);
             if (transform.position == new Vector3(transform.position.x, -2f, transform.position.z))
             {
                 Instantiate(Bom, gameObject.transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
+        if (ballet == Bal.Area)
+        {
+            gameObject.transform.position = gameObject.transform.parent.transform.position;
+            time += Time.deltaTime;
+            if(!area)
+            {
+                area = true;
+                //Instantiate(Bom, gameObject.transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(Area, transform.position, Quaternion.identity);
+                obj.transform.parent = transform;
+            }
+            if(time>=1.5f)
+            {
                 Destroy(gameObject);
             }
         }

@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Colision
+{
+    Circle,
+    Box,
+}
 public class Bom : MonoBehaviour
 {
     private CircleCollider2D col;
+    private BoxCollider2D box;
+    public Colision colision;
     public float hitArea;
     public int damege;
     // Start is called before the first frame update
@@ -16,10 +23,17 @@ public class Bom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        col.radius += 0.01f;
-        if(col.radius>hitArea)
+        if(colision==Colision.Circle)
         {
-            Destroy(gameObject);
+            col.radius += 0.01f;
+            if (col.radius > hitArea)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (colision == Colision.Box)
+        {
+            gameObject.transform.localScale += new Vector3(0, 0.1f, 0);
         }
     }
 }

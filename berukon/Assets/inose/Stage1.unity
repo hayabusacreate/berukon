@@ -392,7 +392,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.5
+  cooltime: 0.4
   UnityLife: 30
   _slider: {fileID: 1205743843}
   healobj: {fileID: 273921008}
@@ -506,7 +506,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.5
+  cooltime: 0.4
   UnityLife: 30
   _slider: {fileID: 912346144}
   healobj: {fileID: 390505674}
@@ -4172,7 +4172,7 @@ MonoBehaviour:
   healfrag: 0
   Deathflag: 0
   HealTime: 0
-  cooltime: 0.5
+  cooltime: 0.4
   UnityLife: 30
   _slider: {fileID: 2125071975}
   healobj: {fileID: 998546977}

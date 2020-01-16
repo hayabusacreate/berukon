@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
 public class Core_Manager : MonoBehaviour
@@ -10,7 +11,7 @@ public class Core_Manager : MonoBehaviour
     public Sprite[] mains,shadows;
     public GameObject obj;
     private int count;
-    public TimelineAsset timeline;
+    public PlayableDirector playableDirector;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class Core_Manager : MonoBehaviour
                 main.sprite = mains[count];
                 shadow.sprite = shadows[count];
             }
+            playableDirector.Play();
         }
     }
 }

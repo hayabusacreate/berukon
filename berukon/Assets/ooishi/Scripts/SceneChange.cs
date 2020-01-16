@@ -16,6 +16,7 @@ public class SceneChange : MonoBehaviour
     public Core_Manager core;
     public Wave wave;
     public int stagenum;
+    public static int sta;
     public GameObject[] stage;
     public float speed;
     public bool movefrag;
@@ -29,11 +30,13 @@ public class SceneChange : MonoBehaviour
     {
         stagenum = 0;
         changeflag = false;
+        stagenum = sta;
     }
 
     // Update is called once per frame
     void Update()
     {
+        sta = stagenum;
         camtime += Time.deltaTime/3;
         if (scene == Scene.GamePlay)
         {
@@ -86,12 +89,8 @@ public class SceneChange : MonoBehaviour
                 }
             }else
             {
-                stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, -1, 0), time);
-                if (stage[stagenum].transform.position == new Vector3(0, -1, 0))
-                {
-                    stagenum++;
-                    SceneManager.LoadScene("Stage" + stagenum);
-                }
+                stage[stagenum].transform.gameObject.GetComponent<StageAnim>().flag = true;
+                //stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, -100, 0), time);
             }
 
         }

@@ -2839,12 +2839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HOUSIN
       objectReference: {fileID: 0}
-    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e60669ed086597c46b17ae6ac7d89859,
-        type: 3}
     - target: {fileID: 1583098856610029929, guid: 99b1bb58d751c2f429a10b07611c6eeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2900,6 +2894,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e60669ed086597c46b17ae6ac7d89859,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b1bb58d751c2f429a10b07611c6eeb, type: 3}
 --- !u!4 &264849838 stripped
@@ -3101,12 +3101,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HOUSIN
       objectReference: {fileID: 0}
-    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7ea81e79f4f8b684bbee2e1f6741ebf8,
-        type: 3}
     - target: {fileID: 1583098856610029929, guid: 99b1bb58d751c2f429a10b07611c6eeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3162,6 +3156,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ea81e79f4f8b684bbee2e1f6741ebf8,
+        type: 3}
     - target: {fileID: 1583098855897122735, guid: 99b1bb58d751c2f429a10b07611c6eeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6057,8 +6057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2.5
-  nomalspeed: 1.5
+  maxspeed: 2.8
+  nomalspeed: 2
   minspeed: 0.8
   speed: 0
   moveflag: 0
@@ -11230,12 +11230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HOUSIN
       objectReference: {fileID: 0}
-    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7ea81e79f4f8b684bbee2e1f6741ebf8,
-        type: 3}
     - target: {fileID: 1583098856610029929, guid: 99b1bb58d751c2f429a10b07611c6eeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11291,6 +11285,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ea81e79f4f8b684bbee2e1f6741ebf8,
+        type: 3}
     - target: {fileID: 1583098855897122735, guid: 99b1bb58d751c2f429a10b07611c6eeb,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -12687,8 +12687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2.5
-  nomalspeed: 1.5
+  maxspeed: 2.8
+  nomalspeed: 2
   minspeed: 0.8
   speed: 0
   moveflag: 0
@@ -14958,12 +14958,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HOUSIN
       objectReference: {fileID: 0}
-    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e60669ed086597c46b17ae6ac7d89859,
-        type: 3}
     - target: {fileID: 1583098856610029929, guid: 99b1bb58d751c2f429a10b07611c6eeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15019,6 +15013,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1583098855897122734, guid: 99b1bb58d751c2f429a10b07611c6eeb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e60669ed086597c46b17ae6ac7d89859,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b1bb58d751c2f429a10b07611c6eeb, type: 3}
 --- !u!4 &2041641631 stripped
@@ -16147,8 +16147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2.5
-  nomalspeed: 1.5
+  maxspeed: 2.8
+  nomalspeed: 2
   minspeed: 0.8
   speed: 0
   moveflag: 0

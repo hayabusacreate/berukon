@@ -5672,7 +5672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxspeed: 2.8
-  nomalspeed: 2
+  nomalspeed: 1
   minspeed: 0.8
   speed: 0
   moveflag: 0
@@ -11904,7 +11904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxspeed: 2.8
-  nomalspeed: 2
+  nomalspeed: 1
   minspeed: 0.8
   speed: 0
   moveflag: 0
@@ -15134,7 +15134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxspeed: 2.8
-  nomalspeed: 2
+  nomalspeed: 1
   minspeed: 0.8
   speed: 0
   moveflag: 0

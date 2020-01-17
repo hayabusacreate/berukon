@@ -21,18 +21,32 @@ public class EnemyShot : MonoBehaviour
     private GameObject unitsave, unitsave2;
     private EnemyMove eneMove;
     private int targetcount;
-
+    private GameObject housin;
     // Start is called before the first frame update
     void Start()
     {
         time = 0;
         hitfrag = false;
         units = new Dictionary<int, GameObject>();
+        eneMove = gameObject.transform.parent.gameObject.GetComponent<EnemyMove>();
+        foreach (Transform child in transform)
+        {
+            //child is your child transfor
+            housin = child.gameObject;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(eneMove.enemySelect==EnemySelect.Nazca_Enemy&&hitfrag)
+        {
+            Vector3 posDif = housin.transform.position - units[0].transform.position;
+            float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
+            Vector3 euler = new Vector3(0, 0, angle);
+
+            housin.transform.rotation = Quaternion.Euler(euler);
+        }
         Sort();
         Shot();
     }

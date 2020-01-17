@@ -25,12 +25,14 @@ public class SceneChange : MonoBehaviour
     public GameObject cam;
     private float camtime;
     public GameObject gameover, gameclear, nodamege;
+    private bool endflag;
     // Start is called before the first frame update
     void Start()
     {
         stagenum = 0;
         changeflag = false;
         stagenum = sta;
+        endflag = false;
     }
 
     // Update is called once per frame
@@ -96,26 +98,30 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GamePlay)
         {
-            if (core.CoreLife<0)
+            if(endflag)
             {
-                gameover.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     SceneManager.LoadScene("Title");
                 }
-            }
-            if(wave.endflag == true)
+            }else
             {
-                if(core.CoreLife==5)
+                if (core.CoreLife < 0)
                 {
-                    nodamege.SetActive(true);
-                }else
-                {
-                    gameclear.SetActive(true);
+                    gameover.SetActive(true);
+                    endflag = true;
                 }
-                if(Input.GetKeyDown(KeyCode.Space))
+                if (wave.endflag == true)
                 {
-                    SceneManager.LoadScene("Title");
+                    if (core.CoreLife == 2)
+                    {
+                        nodamege.SetActive(true);
+                    }
+                    else
+                    {
+                        gameclear.SetActive(true);
+                    }
+                    endflag = true;
                 }
             }
         }

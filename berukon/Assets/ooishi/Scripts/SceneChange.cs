@@ -46,12 +46,12 @@ public class SceneChange : MonoBehaviour
     }
     void Change()
     {
-        time += Time.deltaTime/60;
+        time += Time.deltaTime;
         if(scene==Scene.Title)
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene("Stage1");
+                SceneManager.LoadScene("StageSelect");
             }
         }
         if (scene == Scene.StageSlect)

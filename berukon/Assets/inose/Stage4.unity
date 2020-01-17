@@ -8343,7 +8343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4008c546799ac498af83a7badea157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoreLife: 5
+  CoreLife: 2
   main: {fileID: 912221506}
   shadow: {fileID: 848973387}
   mains:

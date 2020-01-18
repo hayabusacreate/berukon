@@ -24,8 +24,8 @@ public class Bom : MonoBehaviour
     {
         if(colision==Colision.Circle)
         {
-            col.transform.localScale += new Vector3(0.1f,0.1f,0.1f);
-            if (col.transform.localScale.x > hitArea)
+            gameObject.transform.localScale += new Vector3(0.1f,0.1f,0.1f);
+            if (gameObject.transform.localScale.x > hitArea)
             {
                 Destroy(gameObject);
             }

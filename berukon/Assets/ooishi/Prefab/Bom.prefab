@@ -147,6 +147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: blast_particle
       objectReference: {fileID: 0}
+    - target: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5832007426883773313, guid: ec07d7f29d000c84ca80b75685631469,
         type: 3}
       propertyPath: m_LocalPosition.x

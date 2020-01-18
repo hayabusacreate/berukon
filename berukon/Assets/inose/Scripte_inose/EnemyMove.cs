@@ -35,7 +35,7 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         deathFrag = false;
-        deathPos = new Vector3(30, 0, 0);
+        deathPos = new Vector3(0, 100, 0);
         deathspeed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;
@@ -61,8 +61,8 @@ public class EnemyMove : MonoBehaviour
             if (deathFrag)
             {
                 Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
-                transform.position = Vector3.Lerp(transform.position, deathPos, deathspeed);
-                if (transform.position.z < 29)
+                transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,deathPos.y,transform.position.z), deathspeed);
+                if (transform.position.y > 88)
                 {
                     Destroy(gameObject);
                 }
@@ -82,8 +82,8 @@ public class EnemyMove : MonoBehaviour
             if (deathFrag)
             {
                 Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
-                transform.position = Vector3.Lerp(transform.position, deathPos, deathspeed);
-                if (transform.position.z < 19)
+                transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, deathPos.y, transform.position.z), deathspeed);
+                if (transform.position.y > 88)
                 {
                     Destroy(gameObject);
                 }

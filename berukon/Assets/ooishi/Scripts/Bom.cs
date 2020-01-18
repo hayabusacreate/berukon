@@ -9,7 +9,7 @@ public enum Colision
 }
 public class Bom : MonoBehaviour
 {
-    private CircleCollider2D col;
+    private GameObject col;
     private BoxCollider2D box;
     public Colision colision;
     public float hitArea;
@@ -17,7 +17,6 @@ public class Bom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        col = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -25,8 +24,8 @@ public class Bom : MonoBehaviour
     {
         if(colision==Colision.Circle)
         {
-            col.radius += 0.01f;
-            if (col.radius > hitArea)
+            col.transform.localScale += new Vector3(0.1f,0.1f,0.1f);
+            if (col.transform.localScale.x > hitArea)
             {
                 Destroy(gameObject);
             }

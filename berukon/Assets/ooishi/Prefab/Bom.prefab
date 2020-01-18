@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colision: 0
-  hitArea: 20
+  hitArea: 30
   damege: 5
-  AreaSpeed: 0.5
+  AreaSpeed: 1
 --- !u!1001 &5324301188248535920
 PrefabInstance:
   m_ObjectHideFlags: 0

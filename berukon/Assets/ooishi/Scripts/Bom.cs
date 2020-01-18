@@ -14,6 +14,7 @@ public class Bom : MonoBehaviour
     public Colision colision;
     public float hitArea;
     public int damege;
+    public float AreaSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class Bom : MonoBehaviour
     {
         if(colision==Colision.Circle)
         {
-            gameObject.transform.localScale += new Vector3(0.1f,0.1f,0.1f);
+            gameObject.transform.localScale += new Vector3(AreaSpeed,AreaSpeed,AreaSpeed);
             if (gameObject.transform.localScale.x > hitArea)
             {
                 Destroy(gameObject);
@@ -32,7 +33,7 @@ public class Bom : MonoBehaviour
         }
         if (colision == Colision.Box)
         {
-            gameObject.transform.localScale += new Vector3(0, 0.1f, 0);
+            gameObject.transform.localScale += new Vector3(0, AreaSpeed, 0);
         }
     }
 }

@@ -16463,10 +16463,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3b7cc4095a434a9500a832b104ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSelect: 1
+  unitSelect: 3
   shot: {fileID: 2243565898536668125, guid: d6c2a7b0f93bc0c4a88d17c713099e75, type: 3}
   kanntuu: {fileID: 2243565898536668125, guid: bbc7713a4d688a64b9bda9f1d502c350, type: 3}
-  Bom: {fileID: 0}
+  Bom: {fileID: 2243565898536668125, guid: a77003b79504fbe45a5840e87afda84b, type: 3}
   target: {fileID: 0}
   shotTime: 1
   threeshottime: 0.3

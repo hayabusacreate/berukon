@@ -48,7 +48,7 @@ public class SceneChange : MonoBehaviour
     }
     void Change()
     {
-        time += Time.deltaTime;
+        time += Time.deltaTime*10;
         if(scene==Scene.Title)
         {
             if(Input.GetKeyDown(KeyCode.Space))

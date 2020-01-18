@@ -445,7 +445,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72403ffd6144fe34e88883c9e2c9383e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b342ffadee10ba145b9f54f81846a033, type: 3}
   m_Color: {r: 0.9987322, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -536,7 +536,7 @@ Animator:
   m_GameObject: {fileID: 9129401098835871395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 077868ed35ed7f5418faf825f5efbee6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 24d841d40b4107e448e48c5b31dfbe15, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -638,7 +638,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef77f14cd650dcc4b8673e72238a6d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballet: 0
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
+  kantuu: {fileID: 0}
+  Bom: {fileID: 0}
+  Area: {fileID: 0}
   target: {fileID: 0}
   shotTime: 1.5
 --- !u!70 &436487235585578005

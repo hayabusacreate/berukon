@@ -29,6 +29,8 @@ public class SceneChange : MonoBehaviour
     private GameObject Text;
     private StageAnim stageAnim;
     private bool frag;
+    private static Dictionary<int, int> stagebach=new Dictionary<int, int>();
+    public static bool start;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +75,14 @@ public class SceneChange : MonoBehaviour
         }
         frag = false;
         changefrag = false;
+        if(start==false)
+        {
+            for (int i = 1; i < 6; i++)
+            {
+                stagebach.Add(i, 0);
+            }
+            start = true;
+        }
     }
 
     // Update is called once per frame
@@ -173,10 +183,14 @@ public class SceneChange : MonoBehaviour
                 {
                     if (core.CoreLife == 2)
                     {
+                        if (stagebach[sta] < 2)
+                            stagebach[sta]=2;
                         nodamege.SetActive(true);
                     }
                     else
                     {
+                        if (stagebach[sta] < 1)
+                            stagebach[sta] = 1;
                         gameclear.SetActive(true);
                     }
                     endflag = true;
@@ -194,5 +208,9 @@ public class SceneChange : MonoBehaviour
     public void StageNumChange(int num)
     {
         sta = num;
+    }
+    public int StageBach(int stage)
+    {
+        return stagebach[stage];
     }
 }

@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class SerectNumber : MonoBehaviour
 {
-    public GameObject serect;
+    private GameObject serect;
+    public GameObject clear, nodamege;
     public int num;
     private SceneChange sceneChange;
     // Start is called before the first frame update
     void Start()
     {
         sceneChange = gameObject.transform.parent.gameObject.GetComponent<SceneChange>();
+        foreach(Transform child in transform)
+        {
+            serect = child.gameObject;
+        }
         serect.SetActive(false);
     }
 
@@ -23,6 +28,14 @@ public class SerectNumber : MonoBehaviour
         }else
         {
             serect.SetActive(false);
+        }
+        if(sceneChange.StageBach(num)>=1)
+        {
+            clear.SetActive(true);
+            if(sceneChange.StageBach(num) >= 2)
+            {
+                nodamege.SetActive(true);
+            }
         }
     }
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/ooishi/Scene/Title.unity
     guid: de263ecd380e0074ea73420733b243fc
   - enabled: 1
+    path: Assets/ooishi/Scene/StageSelect.unity
+    guid: 0270d3574aea583459da83fa600f97a6
+  - enabled: 1
     path: Assets/inose/Stage1.unity
     guid: b2210af350308e440b50fea140ad7fdd
   - enabled: 1

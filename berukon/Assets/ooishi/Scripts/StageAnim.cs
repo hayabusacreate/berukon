@@ -39,6 +39,7 @@ public class StageAnim : MonoBehaviour
             if (gam.transform.position.y <= -8)
             {
                 sceneChange.stagenum++;
+                sceneChange.StageNumChange(sceneChange.stagenum);
                 SceneManager.LoadScene("Stage" + sceneChange.stagenum);
                 flag = false;
             }

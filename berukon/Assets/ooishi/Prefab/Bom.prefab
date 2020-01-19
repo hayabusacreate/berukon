@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colision: 0
   hitArea: 30
-  damege: 5
+  damege: 1
   AreaSpeed: 1
 --- !u!1001 &5324301188248535920
 PrefabInstance:
@@ -143,16 +143,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2116745752554457911}
     m_Modifications:
-    - target: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
-        type: 3}
-      propertyPath: m_Name
-      value: blast_particle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5832007426883773313, guid: ec07d7f29d000c84ca80b75685631469,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,6 +196,16 @@ PrefabInstance:
     - target: {fileID: 5832007426883773313, guid: ec07d7f29d000c84ca80b75685631469,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
+        type: 3}
+      propertyPath: m_Name
+      value: blast_particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

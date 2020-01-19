@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum UnitSelect
 {
@@ -25,9 +26,11 @@ public class UnitShot : MonoBehaviour
     private bool healfrag,deathflag;
     public float threeshottime;
     public GameObject housin;
+    public Slider _slider;
     // Start is called before the first frame update
     void Start()
     {
+        _slider.maxValue = shotTime;
         count = 0;
         time = 0;
         hitfrag = false;
@@ -78,6 +81,7 @@ public class UnitShot : MonoBehaviour
     }
     void Shot()
     {
+        _slider.value = time;
         time += Time.deltaTime;
 
         if (time >= shotTime&&hitfrag&&!healfrag)

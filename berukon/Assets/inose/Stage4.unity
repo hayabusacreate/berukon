@@ -16469,7 +16469,7 @@ MonoBehaviour:
   Bom: {fileID: 2243565898536668125, guid: a77003b79504fbe45a5840e87afda84b, type: 3}
   target: {fileID: 0}
   shotTime: 1
-  threeshottime: 0.3
+  threeshottime: 0.2
   housin: {fileID: 0}
 --- !u!212 &1967425842
 SpriteRenderer:

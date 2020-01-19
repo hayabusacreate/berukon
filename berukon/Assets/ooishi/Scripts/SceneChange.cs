@@ -25,9 +25,10 @@ public class SceneChange : MonoBehaviour
     public GameObject cam;
     private float camtime;
     public GameObject gameover, gameclear, nodamege;
-    private bool endflag;
+    private bool endflag,changefrag;
     private GameObject Text;
     private StageAnim stageAnim;
+    private bool frag;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,15 +71,29 @@ public class SceneChange : MonoBehaviour
                 }
             }
         }
+        frag = false;
+        changefrag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         camtime += Time.deltaTime/3;
-        if (scene == Scene.GamePlay)
+        if (scene == Scene.GamePlay&&frag==false)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 0, -10), camtime);
+            if(cam.transform.position== new Vector3(0, 0, -10))
+            {
+                frag = true;
+            }
+        }
+        if(changefrag)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 23, -10), camtime);
+            if(cam.transform.position.y>=18)
+            {
+                SceneManager.LoadScene("StageSelect");
+            }
         }
             Change();
     }
@@ -139,11 +154,12 @@ public class SceneChange : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown("joystick button 1"))
                 {
-                    SceneManager.LoadScene("StageSelect");
+                    camtime = 0;
+                    changefrag = true;
                 }
                 if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown("joystick button 0"))
                 {
-                    SceneManager.LoadScene("Stage"+sta);
+                    SceneManager.LoadScene("Stage" + sta);
                 }
                 Text.SetActive(true);
             }else

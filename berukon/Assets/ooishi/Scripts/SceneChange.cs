@@ -26,6 +26,7 @@ public class SceneChange : MonoBehaviour
     private float camtime;
     public GameObject gameover, gameclear, nodamege;
     private bool endflag;
+    private GameObject Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +34,19 @@ public class SceneChange : MonoBehaviour
         changeflag = false;
         stagenum = sta;
         endflag = false;
+        if(scene==Scene.GamePlay)
+        {
+            foreach (Transform child in transform)
+            {
+                Text = child.transform.gameObject;
+            }
+            Text.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        sta = stagenum;
         camtime += Time.deltaTime/3;
         if (scene == Scene.GamePlay)
         {
@@ -100,10 +108,15 @@ public class SceneChange : MonoBehaviour
         {
             if(endflag)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown("joystick button 1"))
                 {
-                    SceneManager.LoadScene("Title");
+                    SceneManager.LoadScene("StageSelect");
                 }
+                if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown("joystick button 0"))
+                {
+                    SceneManager.LoadScene("Stage"+sta);
+                }
+                Text.SetActive(true);
             }else
             {
                 if (core.CoreLife < 0)
@@ -132,5 +145,9 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene("Title");
             }
         }
+    }
+    public void StageNumChange(int num)
+    {
+        sta = num;
     }
 }

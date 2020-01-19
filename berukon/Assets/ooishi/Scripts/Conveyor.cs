@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Direction
 {
@@ -23,6 +24,7 @@ public class Conveyor : MonoBehaviour
     private bool x, y, x2, y2;
     public UpDown upDown;
     public GameObject up, down;
+    public Slider _slider;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class Conveyor : MonoBehaviour
         speed = nomalspeed;
         up.SetActive(false);
         down.SetActive(false);
+        _slider.maxValue = maxspeed;
+        _slider.minValue = minspeed-0.1f;
     }
 
     // Update is called once per frame
@@ -39,6 +43,7 @@ public class Conveyor : MonoBehaviour
     }
     void ChangeSpeed()
     {
+        _slider.value = speed;
         if (conveyor.selectSpeed == SelectSpeed.Tap)
         {
             if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0")) && moveflag)

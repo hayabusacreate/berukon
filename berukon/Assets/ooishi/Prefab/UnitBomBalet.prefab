@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballet: 2
   speed: 0.18
-  damege: 1
+  damege: 2
   Bom: {fileID: 2243565898536668125, guid: 3b6a202764405514c94f975bb01563d2, type: 3}
 --- !u!50 &1698739887062142922
 Rigidbody2D:

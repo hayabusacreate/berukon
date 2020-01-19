@@ -27,12 +27,12 @@ public class SceneChange : MonoBehaviour
     public GameObject gameover, gameclear, nodamege;
     private bool endflag;
     private GameObject Text;
+    private StageAnim stageAnim;
     // Start is called before the first frame update
     void Start()
     {
         stagenum = 0;
         changeflag = false;
-        stagenum = sta;
         endflag = false;
         if(scene==Scene.GamePlay)
         {
@@ -41,6 +41,34 @@ public class SceneChange : MonoBehaviour
                 Text = child.transform.gameObject;
             }
             Text.SetActive(false);
+        }
+        if (scene == Scene.StageSlect)
+        {
+            for(int i=0;i<stage.Length-1;i++)
+            {
+                if(sta!=0)
+                {
+                    if(i<sta-1)
+                    {
+                        stage[i].transform.position = new Vector3(-20, 0, 0);
+                    }
+                    if(i == sta-1)
+                    {
+                        stage[i].transform.position = new Vector3(0, 0, 0);
+                    }
+                    if(i > sta - 1)
+                    {
+                        stage[i].transform.position = new Vector3(20, 0, 0);
+                    }
+                    stageAnim= stage[i].transform.GetComponent<StageAnim>();
+                    stageAnim.Eflag = true;
+                    stagenum = sta-1;
+                }
+                else
+                {
+                    stagenum = sta;
+                }
+            }
         }
     }
 
@@ -86,6 +114,7 @@ public class SceneChange : MonoBehaviour
                     stage[stagenum + 1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0), time);
 
                 stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
+
                 if (stagenum - 1 >= 0)
                     stage[stagenum - 1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-20, 0, 0), time);
                 speed = stage[stagenum].transform.position.x;
@@ -99,7 +128,7 @@ public class SceneChange : MonoBehaviour
                 }
             }else
             {
-                stage[stagenum].transform.gameObject.GetComponent<StageAnim>().flag = true;
+                stage[stagenum].transform.gameObject.GetComponent<StageAnim>().Sflag = true;
                 //stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, -100, 0), time);
             }
 

@@ -122,14 +122,11 @@ public class EnemyMove : MonoBehaviour
             {
                 nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
                 EnemyLife_Manager(-nomalBullet.damege);
-                //Debug.Log("ダメージを食らう");
             }
             if (collision.gameObject.tag == "Core")
             {
-                //Debug.Log("コアに侵入");
                 deathFrag = true;
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
-                // deathFrag = true;
             }
             if(collision.gameObject.tag == "Bom")
             {
@@ -148,7 +145,6 @@ public class EnemyMove : MonoBehaviour
             }
             if (collision.gameObject.tag == "Core")
             {
-                Debug.Log("コアに侵入");
                 deathFrag = true;
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
                 // deathFrag = true;

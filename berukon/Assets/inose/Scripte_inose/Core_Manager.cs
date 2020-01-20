@@ -7,9 +7,9 @@ using UnityEngine.Timeline;
 public class Core_Manager : MonoBehaviour
 {
     public int CoreLife = 5;
-    public SpriteRenderer main, shadow;
-    public Sprite[] mains,shadows;
-    public GameObject obj;
+    public SpriteRenderer main, shadow,core;
+    public Sprite[] mains,shadows,cores;
+    public GameObject obj,smoke;
     private int count;
     public PlayableDirector playableDirector;
     public AudioSource se;
@@ -18,7 +18,9 @@ public class Core_Manager : MonoBehaviour
     {
         main.sprite = mains[0];
         shadow.sprite = shadows[0];
+        core.sprite = cores[0];
         count = 0;
+        smoke.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,6 +44,11 @@ public class Core_Manager : MonoBehaviour
                 count++;
                 main.sprite = mains[count];
                 shadow.sprite = shadows[count];
+            }
+            if(CoreLife==-1)
+            {
+                core.sprite = cores[1];
+                smoke.SetActive(true);
             }
             playableDirector.Play();
         }

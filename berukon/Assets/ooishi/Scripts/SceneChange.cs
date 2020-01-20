@@ -78,7 +78,7 @@ public class SceneChange : MonoBehaviour
         changefrag = false;
         if(start==false)
         {
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 7; i++)
             {
                 stagebach.Add(i, 0);
             }
@@ -113,27 +113,27 @@ public class SceneChange : MonoBehaviour
         time += Time.deltaTime*10;
         if(scene==Scene.Title)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 0"))
             {
                 SceneManager.LoadScene("StageSelect");
             }
         }
         if (scene == Scene.StageSlect)
         {
-            if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)&& stagenum > 0 && movefrag)
+            if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f)&& stagenum > 0 && movefrag)
             {
                     time = 0;
                     stagenum--;
                 
             }
-            if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0)&& stagenum < stage.Length - 1 && movefrag)
+            if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& stagenum < stage.Length - 1 && movefrag)
             {
 
                     time = 0;
                     stagenum++;
                 
             }
-            if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 1")) 
+            if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 0")) 
             {
                 changeflag = true;
             }

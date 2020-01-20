@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colision: 1
-  hitArea: 2
-  damege: 2
+  hitArea: 3
+  damege: 5
   AreaSpeed: 5
 --- !u!61 &5239047124674345912
 BoxCollider2D:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum UnitSelect
 {
@@ -17,7 +18,7 @@ public class UnitShot : MonoBehaviour
     public GameObject target;
     public float shotTime;
     private float count;
-    private float time,vrast;
+    private float time=0,vrast;
     private bool hitfrag;
     private Dictionary<int,GameObject> enemys;
     private GameObject enemysave,enesave2;
@@ -25,11 +26,14 @@ public class UnitShot : MonoBehaviour
     private bool healfrag,deathflag;
     public float threeshottime;
     public GameObject housin;
+    public Slider _slider;
+    public AudioSource se;
     // Start is called before the first frame update
     void Start()
     {
+        _slider.maxValue = shotTime;
         count = 0;
-        time = 0;
+        //time = 0;
         hitfrag = false;
         enemys = new Dictionary<int, GameObject>();
         unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
@@ -46,7 +50,12 @@ public class UnitShot : MonoBehaviour
     {
         deathflag = unitMove.Deathflag;
         healfrag = unitMove.healfrag;
-        if(!healfrag&&!deathflag)
+        if(!deathflag)
+        {
+            _slider.value = time;
+            time += Time.deltaTime;
+        }
+        if (!healfrag&&!deathflag)
         {
             Sort();
             Shot();
@@ -78,13 +87,13 @@ public class UnitShot : MonoBehaviour
     }
     void Shot()
     {
-        time += Time.deltaTime;
 
         if (time >= shotTime&&hitfrag&&!healfrag)
         {
             // Do anything
             if(unitSelect==UnitSelect.NomalShot)
             {
+                se.PlayOneShot(se.clip);
                 time = 0.0f;
                 // プレハブからインスタンスを生成
                 GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
@@ -103,6 +112,7 @@ public class UnitShot : MonoBehaviour
                 }
                 if(vrast>threeshottime)
                 {
+                    se.PlayOneShot(se.clip);
                     vrast = 0.0f;
                     // プレハブからインスタンスを生成
                     GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
@@ -112,12 +122,14 @@ public class UnitShot : MonoBehaviour
             }
             if(unitSelect==UnitSelect.kanntuuShot)
             {
+                se.PlayOneShot(se.clip);
                 time = 0.0f;
                 GameObject obj = Instantiate(kanntuu, transform.position, Quaternion.identity);
                 obj.transform.parent = transform;
             }
             if (unitSelect == UnitSelect.BomShot)
             {
+                se.PlayOneShot(se.clip);
                 time = 0.0f;
                 GameObject obj = Instantiate(Bom, transform.position, Quaternion.identity);
                 obj.transform.parent = transform;

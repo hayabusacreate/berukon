@@ -32,10 +32,11 @@ public class EnemyMove : MonoBehaviour
     public bool conflag;
     private Wave_Manager wave;
     public GameObject DeathEffect;
+    public AudioSource death;
     void Start()
     {
         deathFrag = false;
-        deathPos = new Vector3(0, 100, 0);
+        deathPos = new Vector3(0, -100, 0);
         deathspeed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;
@@ -57,12 +58,13 @@ public class EnemyMove : MonoBehaviour
             {
                 //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
                 deathFrag = true;
+                death.PlayOneShot(death.clip);
             }
             if (deathFrag)
             {
                 Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
                 transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,deathPos.y,transform.position.z), deathspeed);
-                if (transform.position.y > 88)
+                if (transform.position.y < -88)
                 {
                     Destroy(gameObject);
                 }
@@ -83,7 +85,7 @@ public class EnemyMove : MonoBehaviour
             {
                 Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, deathPos.y, transform.position.z), deathspeed);
-                if (transform.position.y > 88)
+                if (transform.position.y <- 88)
                 {
                     Destroy(gameObject);
                 }

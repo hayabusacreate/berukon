@@ -31,8 +31,6 @@ public class UnitMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
         healobj.SetActive(false);
         deathobj.SetActive(false);
 

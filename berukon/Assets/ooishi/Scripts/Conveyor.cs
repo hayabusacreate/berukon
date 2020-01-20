@@ -25,6 +25,7 @@ public class Conveyor : MonoBehaviour
     public UpDown upDown;
     public GameObject up, down;
     public Slider _slider;
+    public float speedup=0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,7 @@ public class Conveyor : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0")) && moveflag)
             {
                 up.SetActive(true);
-                speed -= 0.1f;
+                speed -= speedup;
                 if (speed < minspeed)
                 {
                     speed = minspeed;
@@ -58,7 +59,7 @@ public class Conveyor : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1")) && moveflag)
             {
                 down.SetActive(true);
-                speed += 0.1f;
+                speed += speedup;
                 if (speed > maxspeed)
                 {
                     speed = maxspeed;
@@ -69,7 +70,7 @@ public class Conveyor : MonoBehaviour
         {
             if ((Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0")) && moveflag)
             {
-                speed -= 0.1f;
+                speed -= speedup;
                 up.SetActive(false);
                 down.SetActive(true);
                 if (speed < minspeed)
@@ -79,7 +80,7 @@ public class Conveyor : MonoBehaviour
             }
             if ((Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1")) && moveflag)
             {
-                speed += 0.1f;
+                speed += speedup;
                 down.SetActive(false);
                 up.SetActive(true);
                 if (speed > maxspeed)
@@ -112,7 +113,7 @@ public class Conveyor : MonoBehaviour
                 }
                 if (x && y)
                 {
-                    speed += 0.1f;
+                    speed += speedup;
                     if (speed > maxspeed)
                     {
                         speed = maxspeed;
@@ -155,21 +156,21 @@ public class Conveyor : MonoBehaviour
                     {
                         if(upDown==UpDown.Up)
                         {
-                            speed -= 0.1f;
+                            speed -= speedup;
                         }
                         else
                         {
-                            speed += 0.1f;
+                            speed += speedup;
                         }
                     }else
                     {
                         if (upDown == UpDown.Up)
                         {
-                            speed += 0.1f;
+                            speed += speedup;
                         }
                         else
                         {
-                            speed -= 0.1f;
+                            speed -= speedup;
                         }
                     }
                 }
@@ -180,22 +181,22 @@ public class Conveyor : MonoBehaviour
                     {
                         if (upDown == UpDown.Up)
                         {
-                            speed += 0.1f;
+                            speed += speedup;
                         }
                         else
                         {
-                            speed -= 0.1f;
+                            speed -= speedup;
                         }
                     }
                     else
                     {
                         if (upDown == UpDown.Up)
                         {
-                            speed -= 0.1f;
+                            speed -= speedup;
                         }
                         else
                         {
-                            speed += 0.1f;
+                            speed += speedup;
                         }
                     }
                 }

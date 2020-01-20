@@ -120,17 +120,20 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSlect)
         {
-            if(Input.GetKeyDown(KeyCode.LeftArrow)&&stagenum>0&&movefrag)
+            if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)&& stagenum > 0 && movefrag)
             {
-                time = 0;
-                stagenum--;
+                    time = 0;
+                    stagenum--;
+                
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow)&&stagenum<stage.Length-1&&movefrag)
+            if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0)&& stagenum < stage.Length - 1 && movefrag)
             {
-                time = 0;
-                stagenum++;
+
+                    time = 0;
+                    stagenum++;
+                
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 1")) 
             {
                 changeflag = true;
             }

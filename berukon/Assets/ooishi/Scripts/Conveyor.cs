@@ -25,10 +25,11 @@ public class Conveyor : MonoBehaviour
     public UpDown upDown;
     public GameObject up, down;
     public Slider _slider;
-    public float speedup=0.1f;
+    private float speedup;
     // Start is called before the first frame update
     void Start()
     {
+        speedup = 0.05f;
         conveyor = GameObject.Find("BerukonChoce").GetComponent<ConveyorChoce>();
         speed = nomalspeed;
         up.SetActive(false);

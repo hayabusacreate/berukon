@@ -15,14 +15,20 @@ public class Bom : MonoBehaviour
     public float hitArea;
     public int damege;
     public float AreaSpeed;
+    private float time;
     // Start is called before the first frame update
     void Start()
     {
+        if(colision == Colision.Box)
+        {
+            box = gameObject.transform.GetComponent<BoxCollider2D>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
         if(colision==Colision.Circle)
         {
             gameObject.transform.localScale += new Vector3(AreaSpeed,AreaSpeed,AreaSpeed);
@@ -33,7 +39,12 @@ public class Bom : MonoBehaviour
         }
         if (colision == Colision.Box)
         {
-            gameObject.transform.localScale += new Vector3(0, AreaSpeed, 0);
+            box.size += new Vector2(0, AreaSpeed);
+            //gameObject.transform.localScale += new Vector3(0, AreaSpeed, 0);
+            if(time>hitArea)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

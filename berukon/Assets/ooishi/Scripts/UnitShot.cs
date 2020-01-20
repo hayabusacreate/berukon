@@ -27,6 +27,7 @@ public class UnitShot : MonoBehaviour
     public float threeshottime;
     public GameObject housin;
     public Slider _slider;
+    public AudioSource se;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +93,7 @@ public class UnitShot : MonoBehaviour
             // Do anything
             if(unitSelect==UnitSelect.NomalShot)
             {
+                se.PlayOneShot(se.clip);
                 time = 0.0f;
                 // プレハブからインスタンスを生成
                 GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
@@ -110,6 +112,7 @@ public class UnitShot : MonoBehaviour
                 }
                 if(vrast>threeshottime)
                 {
+                    se.PlayOneShot(se.clip);
                     vrast = 0.0f;
                     // プレハブからインスタンスを生成
                     GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
@@ -119,12 +122,14 @@ public class UnitShot : MonoBehaviour
             }
             if(unitSelect==UnitSelect.kanntuuShot)
             {
+                se.PlayOneShot(se.clip);
                 time = 0.0f;
                 GameObject obj = Instantiate(kanntuu, transform.position, Quaternion.identity);
                 obj.transform.parent = transform;
             }
             if (unitSelect == UnitSelect.BomShot)
             {
+                se.PlayOneShot(se.clip);
                 time = 0.0f;
                 GameObject obj = Instantiate(Bom, transform.position, Quaternion.identity);
                 obj.transform.parent = transform;

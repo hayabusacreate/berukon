@@ -12,6 +12,7 @@ public class Core_Manager : MonoBehaviour
     public GameObject obj;
     private int count;
     public PlayableDirector playableDirector;
+    public AudioSource se;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class Core_Manager : MonoBehaviour
     }
     private void CoreLife_Manager(int Life)
     {
+        se.PlayOneShot(se.clip);
         CoreLife = CoreLife + Life;
     }
     private void OnTriggerEnter2D(Collider2D collision)

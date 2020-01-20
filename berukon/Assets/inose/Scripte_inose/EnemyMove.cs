@@ -32,6 +32,7 @@ public class EnemyMove : MonoBehaviour
     public bool conflag;
     private Wave_Manager wave;
     public GameObject DeathEffect;
+    public AudioSource death;
     void Start()
     {
         deathFrag = false;
@@ -57,6 +58,7 @@ public class EnemyMove : MonoBehaviour
             {
                 //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
                 deathFrag = true;
+                death.PlayOneShot(death.clip);
             }
             if (deathFrag)
             {

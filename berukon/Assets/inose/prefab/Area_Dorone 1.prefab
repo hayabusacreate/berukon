@@ -521,8 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 0
-  EnemyLife: 8
-  speed: 0.5
+  EnemyLife: 6
+  speed: 1
   slider: {fileID: 4755122634502328684}
   conflag: 0
   DeathEffect: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,

@@ -18,7 +18,7 @@ public class UnitShot : MonoBehaviour
     public GameObject target;
     public float shotTime;
     private float count;
-    private float time,vrast;
+    private float time=0,vrast;
     private bool hitfrag;
     private Dictionary<int,GameObject> enemys;
     private GameObject enemysave,enesave2;
@@ -32,7 +32,7 @@ public class UnitShot : MonoBehaviour
     {
         _slider.maxValue = shotTime;
         count = 0;
-        time = 0;
+        //time = 0;
         hitfrag = false;
         enemys = new Dictionary<int, GameObject>();
         unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
@@ -49,7 +49,12 @@ public class UnitShot : MonoBehaviour
     {
         deathflag = unitMove.Deathflag;
         healfrag = unitMove.healfrag;
-        if(!healfrag&&!deathflag)
+        if(!deathflag)
+        {
+            _slider.value = time;
+            time += Time.deltaTime;
+        }
+        if (!healfrag&&!deathflag)
         {
             Sort();
             Shot();
@@ -81,8 +86,6 @@ public class UnitShot : MonoBehaviour
     }
     void Shot()
     {
-        _slider.value = time;
-        time += Time.deltaTime;
 
         if (time >= shotTime&&hitfrag&&!healfrag)
         {

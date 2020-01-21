@@ -26,11 +26,14 @@ public class UnitShot : MonoBehaviour
     private bool healfrag,deathflag;
     public float threeshottime;
     public GameObject housin;
+    public GameObject[] housins;
     public Slider _slider;
     public AudioSource se;
+    private int hou;
     // Start is called before the first frame update
     void Start()
     {
+        hou = 0;
         _slider.maxValue = shotTime;
         count = 0;
         //time = 0;
@@ -38,10 +41,22 @@ public class UnitShot : MonoBehaviour
         enemys = new Dictionary<int, GameObject>();
         unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
         deathflag = false;
-        foreach (Transform child in transform)
+        if(unitSelect==UnitSelect.ThreeShot)
         {
-            //child is your child transfor
-            housin = child.gameObject;
+            foreach (Transform child in transform)
+            {
+                //child is your child transfor
+                housins[hou] = child.gameObject;
+                hou++;
+            }
+        }
+        else
+        {
+            foreach (Transform child in transform)
+            {
+                //child is your child transfor
+                housin = child.gameObject;
+            }
         }
     }
 
@@ -62,13 +77,15 @@ public class UnitShot : MonoBehaviour
             //float angle = GetAngle(housin.transform.position, enemys[0].transform.position);
             if(enemys.Count>0)
             {
-                if(unitMove.vrtical==Vrtical.Up)
+                if(unitSelect==UnitSelect.ThreeShot)
                 {
-                    Vector3 posDif = housin.transform.position - enemys[0].transform.position;
-                    float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
-                    Vector3 euler = new Vector3(0, 0, angle+90);
-
-                    housin.transform.rotation = Quaternion.Euler(euler);
+                    for(int i=0;i<3;i++)
+                    {
+                        Vector3 posDif = housins[i].transform.position - enemys[0].transform.position;
+                        float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
+                        Vector3 euler = new Vector3(0, 0, angle + 90);
+                        housins[i].transform.rotation = Quaternion.Euler(euler);
+                    }
                 }else
                 {
                     Vector3 posDif = housin.transform.position - enemys[0].transform.position;
@@ -83,6 +100,30 @@ public class UnitShot : MonoBehaviour
         else if (hitfrag == false)
         {
             Start();
+        }
+        if(unitSelect==UnitSelect.ThreeShot)
+        {
+            if (deathflag)
+            {
+
+                for (int i = 0; i < 3; i++)
+                {
+                    foreach (Transform child in housins[i].transform)
+                    {
+                        child.gameObject.transform.GetComponent<SpriteRenderer>().color = new Color32(170, 170, 170, 255);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    foreach (Transform child in housins[i].transform)
+                    {
+                        child.gameObject.transform.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+                    }
+                }
+            }
         }
     }
     void Shot()

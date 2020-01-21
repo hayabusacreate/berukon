@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 1028559307965533970}
   - component: {fileID: 7282546983816139404}
   m_Layer: 11
-  m_Name: MysteCore 1
+  m_Name: WarpEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef77f14cd650dcc4b8673e72238a6d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballet: 0
+  ballet: 4
   shot: {fileID: 2243565898536668125, guid: dce9d33c3abf9b64882c4f72df7f8205, type: 3}
   kantuu: {fileID: 0}
   Bom: {fileID: 0}

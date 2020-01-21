@@ -7,7 +7,8 @@ public enum BalletChoce
     nomal,
     kantuu,
     Bom,
-    Area
+    Area,
+    None
 }
 public class EnemyShot : MonoBehaviour
 {

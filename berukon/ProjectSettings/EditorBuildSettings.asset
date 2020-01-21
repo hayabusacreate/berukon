@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/inose/Stage5.unity
     guid: 909546f60c328d34598f2d0d0c857db3
+  - enabled: 1
+    path: Assets/inose/Stage6.unity
+    guid: 46b2a9c77949bd54b80dac949f498b28
   m_configObjects: {}

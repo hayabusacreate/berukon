@@ -32,6 +32,8 @@ public class SceneChange : MonoBehaviour
     private static Dictionary<int, int> stagebach=new Dictionary<int, int>();
     public static bool start;
     public AudioSource over,clear,no;
+    private bool clearfrag;
+    public GameObject Ex;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +50,15 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSlect)
         {
+            clearfrag = true;
             for(int i=0;i<stage.Length-1;i++)
             {
                 if(sta!=0)
                 {
+                    if (stagebach[i+1]==0)
+                    {
+                        clearfrag = false;
+                    }
                     if(i<sta-1)
                     {
                         stage[i].transform.position = new Vector3(-20, 0, 0);
@@ -70,6 +77,7 @@ public class SceneChange : MonoBehaviour
                 }
                 else
                 {
+                    clearfrag = false;
                     stagenum = sta;
                 }
             }
@@ -120,17 +128,27 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSlect)
         {
-            if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f)&& stagenum > 0 && movefrag)
+            if (clearfrag)
+            {
+                Ex.SetActive(true);
+            }
+            else
+            {
+                Ex.SetActive(false);
+            }
+            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f)&& stagenum > 0 && movefrag)
             {
                     time = 0;
                     stagenum--;
                 
             }
-            if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& stagenum < stage.Length - 1 && movefrag)
+            if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& movefrag)
             {
-
+                if(stagenum < stage.Length - 2 || (stagenum < stage.Length-1 && clearfrag))
+                {
                     time = 0;
                     stagenum++;
+                }
                 
             }
             if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 0")) 

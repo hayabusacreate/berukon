@@ -1115,7 +1115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u305F\u3042\u30FC\u306E\u30FC\u3057\u30FC"
+  m_Text: "\u8AAC\u660E\u6587\u3068\u30A2\u30C9\u30D0\u30A4\u30B9\u306F\u4F5C\u6210\u8005\u306E\u53E3\u304B\u3089"
 --- !u!222 &234193757
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2884,7 +2884,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u96C6\u5927\u6210"
+  m_Text: 1minute batlte
 --- !u!222 &552692454
 CanvasRenderer:
   m_ObjectHideFlags: 0

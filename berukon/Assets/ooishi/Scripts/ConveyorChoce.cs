@@ -40,15 +40,15 @@ public class ConveyorChoce : MonoBehaviour
     {
         if (selectSpeed == SelectSpeed.hayabusa|| selectSpeed == SelectSpeed.State)
         {
-            if((Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown("joystick button 1"))&&right)
+            if((Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown("joystick button 1"))&&left)
             {
                 conveyorCount = 0;
             }
-            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 0"))&&left)
+            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 0"))&&down)
             {
                 conveyorCount = 1;
             }
-            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("joystick button 2"))&&down)
+            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("joystick button 2"))&&right)
             {
                 conveyorCount = 2;
             }

@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballet: 0
-  speed: 0.18
+  speed: 0.25
   damege: 1
   Bom: {fileID: 0}
 --- !u!50 &1698739887062142922

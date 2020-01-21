@@ -14,16 +14,16 @@ public enum UnitSelect
 public class UnitShot : MonoBehaviour
 {
     public UnitSelect unitSelect;
-    public GameObject shot,kanntuu,Bom;
+    public GameObject shot, kanntuu, Bom;
     public GameObject target;
     public float shotTime;
     private float count;
-    private float time=0,vrast;
+    private float time = 0, vrast;
     private bool hitfrag;
-    private Dictionary<int,GameObject> enemys;
-    private GameObject enemysave,enesave2;
+    private Dictionary<int, GameObject> enemys;
+    private GameObject enemysave, enesave2;
     private UnitMove unitMove;
-    private bool healfrag,deathflag;
+    private bool healfrag, deathflag;
     public float threeshottime;
     public GameObject housin;
     public GameObject[] housins;
@@ -41,7 +41,7 @@ public class UnitShot : MonoBehaviour
         enemys = new Dictionary<int, GameObject>();
         unitMove = gameObject.transform.parent.GetComponent<UnitMove>();
         deathflag = false;
-        if(unitSelect==UnitSelect.ThreeShot)
+        if (unitSelect == UnitSelect.ThreeShot)
         {
             foreach (Transform child in transform)
             {
@@ -65,32 +65,36 @@ public class UnitShot : MonoBehaviour
     {
         deathflag = unitMove.Deathflag;
         healfrag = unitMove.healfrag;
-        if(!deathflag)
+        if (!deathflag)
         {
             _slider.value = time;
             time += Time.deltaTime;
         }
-        if (!healfrag&&!deathflag)
+        if (!healfrag && !deathflag)
         {
             Sort();
             Shot();
             //float angle = GetAngle(housin.transform.position, enemys[0].transform.position);
-            if(enemys.Count>0)
+            if (enemys.Count > 0)
             {
-                if(unitSelect==UnitSelect.ThreeShot)
+                if (unitSelect == UnitSelect.ThreeShot)
                 {
-                    for(int i=0;i<3;i++)
+                    for (int i = 0; i < 3; i++)
                     {
-                        Vector3 posDif = housins[i].transform.position - enemys[0].transform.position;
-                        float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
-                        Vector3 euler = new Vector3(0, 0, angle + 90);
-                        housins[i].transform.rotation = Quaternion.Euler(euler);
+                        if (enemys.Count > 0)
+                        {
+                            Vector3 posDif = housins[i].transform.position - enemys[0].transform.position;
+                            float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
+                            Vector3 euler = new Vector3(0, 0, angle + 90);
+                            housins[i].transform.rotation = Quaternion.Euler(euler);
+                        }
                     }
-                }else
+                }
+                else
                 {
                     Vector3 posDif = housin.transform.position - enemys[0].transform.position;
                     float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
-                    Vector3 euler = new Vector3(0, 0, angle+90);
+                    Vector3 euler = new Vector3(0, 0, angle + 90);
 
                     housin.transform.rotation = Quaternion.Euler(euler);
                 }
@@ -101,7 +105,7 @@ public class UnitShot : MonoBehaviour
         {
             Start();
         }
-        if(unitSelect==UnitSelect.ThreeShot)
+        if (unitSelect == UnitSelect.ThreeShot)
         {
             if (deathflag)
             {
@@ -129,10 +133,10 @@ public class UnitShot : MonoBehaviour
     void Shot()
     {
 
-        if (time >= shotTime&&hitfrag&&!healfrag)
+        if (time >= shotTime && hitfrag && !healfrag)
         {
             // Do anything
-            if(unitSelect==UnitSelect.NomalShot)
+            if (unitSelect == UnitSelect.NomalShot)
             {
                 se.PlayOneShot(se.clip);
                 time = 0.0f;
@@ -140,18 +144,19 @@ public class UnitShot : MonoBehaviour
                 GameObject obj = Instantiate(shot, transform.position, Quaternion.identity);
                 obj.transform.parent = transform;
             }
-            if(unitSelect==UnitSelect.ThreeShot)
+            if (unitSelect == UnitSelect.ThreeShot)
             {
-                if (count>2)
+                if (count > 2)
                 {
                     time = 0.0f;
                     count = 0;
                     vrast = 0.0f;
-                }else
+                }
+                else
                 {
                     vrast += Time.deltaTime;
                 }
-                if(vrast>threeshottime)
+                if (vrast > threeshottime)
                 {
                     se.PlayOneShot(se.clip);
                     vrast = 0.0f;
@@ -161,7 +166,7 @@ public class UnitShot : MonoBehaviour
                     count++;
                 }
             }
-            if(unitSelect==UnitSelect.kanntuuShot)
+            if (unitSelect == UnitSelect.kanntuuShot)
             {
                 se.PlayOneShot(se.clip);
                 time = 0.0f;
@@ -180,7 +185,7 @@ public class UnitShot : MonoBehaviour
 
     void Sort()
     {
-        if(enemys.Count>=2)
+        if (enemys.Count >= 2)
         {
             bool isEnd = false;
             int finAdjust = 1; // 最終添え字の調整値
@@ -189,15 +194,18 @@ public class UnitShot : MonoBehaviour
                 bool loopSwap = false;
                 for (int i = 0; i < enemys.Count - finAdjust; i++)
                 {
-                    float nierdistance = Vector2.Distance(transform.position, enemys[i].transform.position);
-                    float nowdistance = Vector2.Distance(transform.position, enemys[i + 1].transform.position);
-                    if (nierdistance > nowdistance)
+                    if (enemys.Count >= 2)
                     {
-                        enemysave = enemys[i];
-                        enesave2 = enemys[i + 1];
-                        enemys[i] = enesave2;
-                        enemys[i + 1] = enemysave;
-                        loopSwap = true;
+                        float nierdistance = Vector2.Distance(transform.position, enemys[i].transform.position);
+                        float nowdistance = Vector2.Distance(transform.position, enemys[i + 1].transform.position);
+                        if (nierdistance > nowdistance)
+                        {
+                            enemysave = enemys[i];
+                            enesave2 = enemys[i + 1];
+                            enemys[i] = enesave2;
+                            enemys[i + 1] = enemysave;
+                            loopSwap = true;
+                        }
                     }
                 }
                 if (!loopSwap) // Swapが一度も実行されなかった場合はソート終了
@@ -212,38 +220,39 @@ public class UnitShot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag=="Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            if(collision.gameObject.GetComponent<EnemyMove>().deathFrag==false)
+
+            //float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
+            if (enemys.Count == 0)
             {
-                float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
-                if (enemys.Count == 0)
-                {
-                    enemys.Add(0, collision.gameObject);
-                }
-                else
-                {
-                    enemys.Add(enemys.Count, collision.gameObject);
-                }
-                if (hitfrag == false)
-                {
-                    hitfrag = true;
-                }
-                target = enemys[0];
+                enemys.Add(0, collision.gameObject);
             }
+            else
+            {
+                enemys.Add(enemys.Count, collision.gameObject);
+            }
+            if (hitfrag == false)
+            {
+                hitfrag = true;
+            }
+            Sort();
+            target = enemys[0];
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag=="Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            if(enemys.Count==1)
+            if (enemys.Count == 1)
             {
                 hitfrag = false;
             }
             Sort();
-                enemys.Remove(enemys.Count-1);
-            
+            enemys.Remove(enemys.Count - 1);
+
+
         }
     }
 }

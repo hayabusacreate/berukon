@@ -33,10 +33,12 @@ public class EnemyMove : MonoBehaviour
     private Wave_Manager wave;
     public GameObject DeathEffect;
     public AudioSource death;
+    private SpriteRenderer sprite;
     void Start()
     {
+        sprite = gameObject.transform.GetComponent<SpriteRenderer>();
         deathFrag = false;
-        deathPos = new Vector3(0, -20, 0);
+        deathPos = new Vector3(20, 0, 0);
         deathspeed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;
@@ -54,17 +56,18 @@ public class EnemyMove : MonoBehaviour
         slider.value = EnemyLife;
         if (enemySelect == EnemySelect.Drone_enemy)
         {
-            if (EnemyLife <= 0)
+            if (EnemyLife <= 0&&!deathFrag)
             {
                 //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
                 deathFrag = true;
                 death.PlayOneShot(death.clip);
+                sprite.enabled=false;
+                Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
             }
             if (deathFrag)
             {
-                Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
-                transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,deathPos.y,transform.position.z), deathspeed);
-                if (transform.position.y < -15)
+                transform.position = Vector3.Lerp(transform.position,new Vector3(deathPos.x, transform.position.y, transform.position.z), deathspeed);
+                if (transform.position.x > 9)
                 {
                     Destroy(gameObject);
                 }
@@ -76,16 +79,18 @@ public class EnemyMove : MonoBehaviour
         }
         if (enemySelect == EnemySelect.Nazca_Enemy)
         {
-            if (EnemyLife <= 0)
+            if (EnemyLife <= 0 && !deathFrag)
             {
                 //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
                 deathFrag = true;
+                death.PlayOneShot(death.clip);
+                sprite.enabled = false;
+                Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
             }
             if (deathFrag)
             {
-                Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
-                transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, deathPos.y, transform.position.z), deathspeed);
-                if (transform.position.y <- 15)
+                transform.position = Vector3.Lerp(transform.position, new Vector3(deathPos.x, transform.position.y, transform.position.z), deathspeed);
+                if (transform.position.x > 9)
                 {
                     Destroy(gameObject);
                 }
@@ -95,19 +100,23 @@ public class EnemyMove : MonoBehaviour
         {
             rb.velocity = new Vector2(x, 0);
         }
-        if(conflag)
+        if(!deathFrag)
         {
-            if(conveyor.direction==Direction.Right)
+            if (conflag)
             {
-                x =-speed+ conveyor.speed/2;
+                if (conveyor.direction == Direction.Right)
+                {
+                    x = -speed + conveyor.speed / 2;
+                }
+                if (conveyor.direction == Direction.Left)
+                {
+                    x = -speed - conveyor.speed / 2;
+                }
             }
-            if (conveyor.direction == Direction.Left)
+            else
             {
-                x =-speed- conveyor.speed/2;
+                x = -speed;
             }
-        }else
-        {
-            x = -speed;
         }
     }
     public void EnemyLife_Manager(int Life)

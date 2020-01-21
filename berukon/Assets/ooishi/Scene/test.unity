@@ -613,6 +613,9 @@ MonoBehaviour:
   shotTime: 0.3
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
+  _slider: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &83727917
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4751,11 +4754,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList:
-  - {fileID: 9129401098835871395, guid: 2dcf055c5b4d8034692fd5013b85311d, type: 3}
-  - {fileID: 9129401098835871395, guid: 2dcf055c5b4d8034692fd5013b85311d, type: 3}
-  - {fileID: 9129401098835871395, guid: 2dcf055c5b4d8034692fd5013b85311d, type: 3}
-  - {fileID: 9129401098835871395, guid: 2dcf055c5b4d8034692fd5013b85311d, type: 3}
-  - {fileID: 9129401098835871395, guid: 2dcf055c5b4d8034692fd5013b85311d, type: 3}
+  - {fileID: 9129401098835871395, guid: 017a4867551f055409ea18f6dd444123, type: 3}
+  - {fileID: 9129401098835871395, guid: 017a4867551f055409ea18f6dd444123, type: 3}
+  - {fileID: 9129401098835871395, guid: 017a4867551f055409ea18f6dd444123, type: 3}
+  - {fileID: 9129401098835871395, guid: 017a4867551f055409ea18f6dd444123, type: 3}
+  - {fileID: 9129401098835871395, guid: 017a4867551f055409ea18f6dd444123, type: 3}
   wavetime: 1
   enemyflag: 0
 --- !u!4 &604622204
@@ -4881,7 +4884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList:
-  - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
+  - {fileID: 9129401098835871395, guid: 017a4867551f055409ea18f6dd444123, type: 3}
   - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
   - {fileID: 9129401098835871395, guid: 593c4f9a0d42f2941b0a7cb4b24e17a9, type: 3}
   - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
@@ -4972,6 +4975,9 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
+  _slider: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &623000285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5120,6 +5126,7 @@ MonoBehaviour:
   upDown: 0
   up: {fileID: 1897752803}
   down: {fileID: 415266676}
+  _slider: {fileID: 0}
 --- !u!1001 &649387404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6338,6 +6345,7 @@ MonoBehaviour:
   CoreLife: 5
   main: {fileID: 912221506}
   shadow: {fileID: 848973387}
+  core: {fileID: 0}
   mains:
   - {fileID: 21300000, guid: 2ffe053d0459e6b4c8b5e3539d6c476d, type: 3}
   - {fileID: 21300006, guid: 2ffe053d0459e6b4c8b5e3539d6c476d, type: 3}
@@ -6350,8 +6358,11 @@ MonoBehaviour:
   - {fileID: 21300004, guid: d0b39843c747aa046afc5994534bf5a5, type: 3}
   - {fileID: 21300006, guid: d0b39843c747aa046afc5994534bf5a5, type: 3}
   - {fileID: 21300008, guid: d0b39843c747aa046afc5994534bf5a5, type: 3}
+  cores: []
   obj: {fileID: 2162245268841209210, guid: 073a0347f965a7d4aadf314660bc915a, type: 3}
+  smoke: {fileID: 0}
   playableDirector: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &912221506 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4928900734205510927, guid: 3eb8c1323225892498d6a09d183f4718,
@@ -6693,6 +6704,9 @@ MonoBehaviour:
   shotTime: 0.3
   threeshottime: 0
   housin: {fileID: 0}
+  housins: []
+  _slider: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &978432334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8475,6 +8489,9 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0
   housin: {fileID: 0}
+  housins: []
+  _slider: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &1249587998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10222,6 +10239,9 @@ MonoBehaviour:
   - {fileID: 1596707342}
   - {fileID: 2266069166173277399}
   - {fileID: 636464821}
+  right: 1
+  left: 1
+  down: 1
 --- !u!4 &1563233615
 Transform:
   m_ObjectHideFlags: 0
@@ -10385,6 +10405,9 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
+  _slider: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &1588132782
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10454,6 +10477,7 @@ MonoBehaviour:
   upDown: 0
   up: {fileID: 678625740}
   down: {fileID: 83087502}
+  _slider: {fileID: 0}
 --- !u!1 &1610368466
 GameObject:
   m_ObjectHideFlags: 0
@@ -10494,6 +10518,10 @@ MonoBehaviour:
   gameover: {fileID: 0}
   gameclear: {fileID: 0}
   nodamege: {fileID: 0}
+  over: {fileID: 0}
+  clear: {fileID: 0}
+  no: {fileID: 0}
+  Ex: {fileID: 0}
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0
@@ -11854,6 +11882,9 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
+  _slider: {fileID: 0}
+  se: {fileID: 0}
 --- !u!212 &1967425842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13042,3 +13073,4 @@ MonoBehaviour:
   upDown: 1
   up: {fileID: 835186049}
   down: {fileID: 271065432}
+  _slider: {fileID: 0}

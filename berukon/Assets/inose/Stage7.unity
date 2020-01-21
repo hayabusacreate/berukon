@@ -12670,8 +12670,8 @@ MonoBehaviour:
   - {fileID: 2266069166173277399}
   - {fileID: 1596707342}
   right: 0
-  left: 1
-  down: 0
+  left: 0
+  down: 1
 --- !u!4 &1563233615
 Transform:
   m_ObjectHideFlags: 0

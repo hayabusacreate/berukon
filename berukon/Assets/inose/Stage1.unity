@@ -925,6 +925,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 1
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 0}
   se: {fileID: 0}
 --- !u!212 &83727917
@@ -6207,6 +6208,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 910771419}
   se: {fileID: 8187740621970224049}
 --- !u!212 &623000285
@@ -6271,7 +6273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxspeed: 2.8
-  nomalspeed: 1
+  nomalspeed: 0.8
   minspeed: 0.8
   speed: 0
   moveflag: 0
@@ -8369,6 +8371,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 0}
   se: {fileID: 0}
 --- !u!212 &978432334
@@ -8878,6 +8881,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 0}
   se: {fileID: 0}
 --- !u!212 &1025058128
@@ -10535,6 +10539,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 0}
   se: {fileID: 0}
 --- !u!212 &1249587998
@@ -12722,6 +12727,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 0}
   se: {fileID: 0}
 --- !u!212 &1570481429
@@ -12921,6 +12927,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 1128568852}
   se: {fileID: 8187740621970224049}
 --- !u!212 &1588132782
@@ -12985,7 +12992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxspeed: 2.8
-  nomalspeed: 1
+  nomalspeed: 0.8
   minspeed: 0.8
   speed: 0
   moveflag: 0
@@ -13036,6 +13043,7 @@ MonoBehaviour:
   over: {fileID: 1739790305274009906}
   clear: {fileID: 2820639138285117892}
   no: {fileID: 8395673055820913596}
+  Ex: {fileID: 0}
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0
@@ -14715,6 +14723,7 @@ MonoBehaviour:
   shotTime: 1
   threeshottime: 0.1
   housin: {fileID: 0}
+  housins: []
   _slider: {fileID: 1753368959}
   se: {fileID: 8187740621970224049}
 --- !u!212 &1967425842
@@ -16462,7 +16471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   maxspeed: 2.8
-  nomalspeed: 1
+  nomalspeed: 0.8
   minspeed: 0.8
   speed: 0
   moveflag: 0

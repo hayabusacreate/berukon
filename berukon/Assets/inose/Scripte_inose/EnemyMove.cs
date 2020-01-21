@@ -24,7 +24,7 @@ public class EnemyMove : MonoBehaviour
     float cahngeBlue = 1.0f;
     float cahngeAlpha = 0f;
     private Color color;
-    private bool deathFrag;
+    public bool deathFrag;
     private NomalBullet nomalBullet;
     private Bom bom;
     public Slider slider;
@@ -36,7 +36,7 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         deathFrag = false;
-        deathPos = new Vector3(0, -100, 0);
+        deathPos = new Vector3(0, -20, 0);
         deathspeed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;
@@ -64,7 +64,7 @@ public class EnemyMove : MonoBehaviour
             {
                 Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
                 transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,deathPos.y,transform.position.z), deathspeed);
-                if (transform.position.y < -88)
+                if (transform.position.y < -15)
                 {
                     Destroy(gameObject);
                 }
@@ -85,7 +85,7 @@ public class EnemyMove : MonoBehaviour
             {
                 Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, deathPos.y, transform.position.z), deathspeed);
-                if (transform.position.y <- 88)
+                if (transform.position.y <- 15)
                 {
                     Destroy(gameObject);
                 }

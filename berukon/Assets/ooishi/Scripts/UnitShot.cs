@@ -173,19 +173,23 @@ public class UnitShot : MonoBehaviour
     {
         if (collision.gameObject.tag=="Enemy")
         {
-            float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
-            if (enemys.Count==0)
+            if(collision.gameObject.GetComponent<EnemyMove>().deathFrag==false)
             {
-                enemys.Add(0,collision.gameObject);
-            }else
-            {
-                enemys.Add(enemys.Count, collision.gameObject);
+                float nierdistance = Vector2.Distance(transform.position, collision.gameObject.transform.position);
+                if (enemys.Count == 0)
+                {
+                    enemys.Add(0, collision.gameObject);
+                }
+                else
+                {
+                    enemys.Add(enemys.Count, collision.gameObject);
+                }
+                if (hitfrag == false)
+                {
+                    hitfrag = true;
+                }
+                target = enemys[0];
             }
-            if (hitfrag==false)
-            {
-                hitfrag = true;
-            }
-            target = enemys[0];
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

@@ -38,7 +38,7 @@ public class EnemyMove : MonoBehaviour
     {
         sprite = gameObject.transform.GetComponent<SpriteRenderer>();
         deathFrag = false;
-        deathPos = new Vector3(20, 0, 0);
+        deathPos = new Vector3(40, 0, 0);
         deathspeed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = EnemyLife;

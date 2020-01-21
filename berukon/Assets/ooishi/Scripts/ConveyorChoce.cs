@@ -13,6 +13,7 @@ public class ConveyorChoce : MonoBehaviour
     public SelectSpeed selectSpeed;
     public Conveyor[] conveyors;
     private int conveyorCount;
+    public bool right=true, left=true, down=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,15 +40,15 @@ public class ConveyorChoce : MonoBehaviour
     {
         if (selectSpeed == SelectSpeed.hayabusa|| selectSpeed == SelectSpeed.State)
         {
-            if(Input.GetKeyDown("joystick button 1"))
+            if(Input.GetKeyDown("joystick button 1")&&right)
             {
                 conveyorCount = 0;
             }
-            if (Input.GetKeyDown("joystick button 0"))
+            if (Input.GetKeyDown("joystick button 0")&&left)
             {
                 conveyorCount = 1;
             }
-            if (Input.GetKeyDown("joystick button 2"))
+            if (Input.GetKeyDown("joystick button 2")&&down)
             {
                 conveyorCount = 2;
             }

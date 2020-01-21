@@ -158,12 +158,15 @@ public class SceneChange : MonoBehaviour
             if(!changeflag)
             {
                 if (stagenum < stage.Length - 1)
+                {
                     stage[stagenum + 1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0), time);
+                }
 
                 stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
-
                 if (stagenum - 1 >= 0)
+                {
                     stage[stagenum - 1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-20, 0, 0), time);
+                }
                 speed = stage[stagenum].transform.position.x;
                 if (stage[stagenum].transform.position == new Vector3(0, 0, 0))
                 {

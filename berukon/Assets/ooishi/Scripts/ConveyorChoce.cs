@@ -17,7 +17,7 @@ public class ConveyorChoce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        conveyorCount = 0;
+        conveyorCount = 1;
         for (int i = 0; i < conveyors.Length - 1; i++)
         {
             if (conveyorCount == i)

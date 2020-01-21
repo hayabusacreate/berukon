@@ -60,6 +60,7 @@ public class EnemyMove : MonoBehaviour
         slider.value = EnemyLife;
         if (enemySelect == EnemySelect.Drone_enemy|| enemySelect == EnemySelect.Nazca_Enemy)
         {
+            rb.velocity = new Vector2(x, 0);
             if (EnemyLife <= 0&&!deathFrag)
             {
                 //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);

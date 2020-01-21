@@ -33,7 +33,7 @@ public class Wave_Manager : MonoBehaviour
         time += Time.deltaTime;
         if(wavecount<EnemyList.Count&&time>wavetime)
         {
-            if (wave[wavecount].GetComponent<EnemyMove>().enemySelect == EnemySelect.Drone_enemy)
+            if (wave[wavecount].GetComponent<EnemyMove>().enemySelect == EnemySelect.Drone_enemy|| wave[wavecount].GetComponent<EnemyMove>().enemySelect == EnemySelect.WarpEnemy)
             {
                 GameObject obj = Instantiate(wave[wavecount], new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
                 obj.transform.parent = gameObject.transform;

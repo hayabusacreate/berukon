@@ -7,6 +7,7 @@ public enum EnemySelect
 {
     Drone_enemy,
     Nazca_Enemy,
+    WarpEnemy,
     Null_Enemy
 }
 public class EnemyMove : MonoBehaviour
@@ -34,6 +35,8 @@ public class EnemyMove : MonoBehaviour
     public GameObject DeathEffect;
     public AudioSource death;
     private SpriteRenderer sprite;
+    private float time;
+    public float StopTime;
     void Start()
     {
         sprite = gameObject.transform.GetComponent<SpriteRenderer>();
@@ -53,8 +56,9 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
         slider.value = EnemyLife;
-        if (enemySelect == EnemySelect.Drone_enemy)
+        if (enemySelect == EnemySelect.Drone_enemy|| enemySelect == EnemySelect.Nazca_Enemy)
         {
             if (EnemyLife <= 0&&!deathFrag)
             {
@@ -77,8 +81,15 @@ public class EnemyMove : MonoBehaviour
         {
             rb.velocity = new Vector2(x, 0);
         }
-        if (enemySelect == EnemySelect.Nazca_Enemy)
+        if(enemySelect==EnemySelect.WarpEnemy)
         {
+            if(time>StopTime)
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(-8, transform.position.y, transform.position.z), speed);
+            }else
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(0, transform.position.y, transform.position.z), deathspeed);
+            }
             if (EnemyLife <= 0 && !deathFrag)
             {
                 //this.gameObject.SpriteRender Color color = new Color(changeRed, changeGreen, cahngeBlue, 0);
@@ -95,10 +106,6 @@ public class EnemyMove : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-        }
-        else
-        {
-            rb.velocity = new Vector2(x, 0);
         }
         if(!deathFrag)
         {
@@ -158,7 +165,22 @@ public class EnemyMove : MonoBehaviour
                 //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
                 // deathFrag = true;
             }
+        }
+        if (enemySelect == EnemySelect.WarpEnemy)
+        {
+            if (collision.gameObject.tag == "AttackArea")
+            {
+                nomalBullet = collision.gameObject.GetComponent<NomalBullet>();
+                EnemyLife_Manager(-nomalBullet.damege);
+                //Debug.Log("ダメージを食らう");
 
+            }
+            if (collision.gameObject.tag == "Core")
+            {
+                deathFrag = true;
+                //もし、ユニットの範囲内でコアに当たってデストロイしてディクショナリーエラーが発生した場合にフラグをtrueすることでエラーをなくせる。
+                // deathFrag = true;
+            }
         }
         if (collision.gameObject.tag == "wall")
         {

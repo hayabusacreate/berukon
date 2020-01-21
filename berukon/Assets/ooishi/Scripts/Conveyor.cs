@@ -69,7 +69,7 @@ public class Conveyor : MonoBehaviour
         }
         if (conveyor.selectSpeed == SelectSpeed.State)
         {
-            if ((Input.GetKey(KeyCode.A) || Input.GetKey("joystick button 0")) && moveflag)
+            if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Vertical") <= -0.8f || Input.GetKey("joystick button 4")) && moveflag)
             {
                 speed -= speedup;
                 up.SetActive(false);
@@ -79,7 +79,7 @@ public class Conveyor : MonoBehaviour
                     speed = minspeed;
                 }
             }
-            if ((Input.GetKey(KeyCode.D) || Input.GetKey("joystick button 1")) && moveflag)
+            if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Vertical") >= 0.8f|| Input.GetKey("joystick button 5")) && moveflag)
             {
                 speed += speedup;
                 down.SetActive(false);

@@ -37,9 +37,9 @@ public class ConveyorChoce : MonoBehaviour
     }
     private void Choce()
     {
-        if (selectSpeed == SelectSpeed.hayabusa)
+        if (selectSpeed == SelectSpeed.hayabusa|| selectSpeed == SelectSpeed.State)
         {
-            if(Input.GetKeyDown("joystick button 2"))
+            if(Input.GetKeyDown("joystick button 1"))
             {
                 conveyorCount = 0;
             }
@@ -47,7 +47,7 @@ public class ConveyorChoce : MonoBehaviour
             {
                 conveyorCount = 1;
             }
-            if (Input.GetKeyDown("joystick button 1"))
+            if (Input.GetKeyDown("joystick button 2"))
             {
                 conveyorCount = 2;
             }

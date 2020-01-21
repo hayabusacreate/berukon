@@ -78,7 +78,7 @@ public class Conveyor : MonoBehaviour
                 {
                     speed = minspeed;
                 }
-            }
+            }else
             if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Vertical") >= 0.8f|| Input.GetKey("joystick button 5")) && moveflag)
             {
                 speed += speedup;
@@ -88,6 +88,10 @@ public class Conveyor : MonoBehaviour
                 {
                     speed = maxspeed;
                 }
+            }else
+            {
+                down.SetActive(false);
+                up.SetActive(false);
             }
             if(!moveflag)
             {

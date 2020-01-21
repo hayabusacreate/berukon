@@ -529,6 +529,7 @@ MonoBehaviour:
   DeathEffect: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
     type: 3}
   death: {fileID: 7282546983816139404}
+  StopTime: 0
 --- !u!95 &1028559307965533970
 Animator:
   serializedVersion: 3

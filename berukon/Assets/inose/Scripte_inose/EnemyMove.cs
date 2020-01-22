@@ -37,6 +37,8 @@ public class EnemyMove : MonoBehaviour
     private SpriteRenderer sprite;
     private float time;
     public float StopTime;
+    public GameObject hari;
+    private Vector3 a,b;
     void Start()
     {
         sprite = gameObject.transform.GetComponent<SpriteRenderer>();
@@ -51,6 +53,8 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        a = new Vector3(0, 0, time).normalized;
+        b = new Vector3(0, 0, StopTime).normalized;
     }
 
     // Update is called once per frame
@@ -89,6 +93,7 @@ public class EnemyMove : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, new Vector3(-8, transform.position.y, transform.position.z), speed);
             }else
             {
+                hari.transform.eulerAngles =new Vector3(0,0,(1-(time/StopTime))*360) ;
                 transform.position = Vector3.Lerp(transform.position, new Vector3(0, transform.position.y, transform.position.z), deathspeed);
             }
             if (EnemyLife <= 0 && !deathFrag)

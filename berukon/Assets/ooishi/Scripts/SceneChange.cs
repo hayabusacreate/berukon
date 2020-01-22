@@ -210,6 +210,10 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GamePlay)
         {
+            if(Input.GetKeyDown("joystick button 7"))
+            {
+                SceneManager.LoadScene("StageSelect");
+            }
             if(endflag)
             {
                 if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown("joystick button 1"))

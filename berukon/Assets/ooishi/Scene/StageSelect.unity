@@ -8890,7 +8890,7 @@ MonoBehaviour:
   clear: {fileID: 0}
   no: {fileID: 0}
   Ex: {fileID: 1344482224}
-  Ex2: {fileID: 0}
+  Ex2: {fileID: 295032415}
   tyutorial: {x: -17, y: 0, z: -10}
 --- !u!1 &924366400
 GameObject:

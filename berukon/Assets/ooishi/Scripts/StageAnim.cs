@@ -41,7 +41,7 @@ public class StageAnim : MonoBehaviour
             {
                 sceneChange.stagenum++;
                 sceneChange.StageNumChange(sceneChange.stagenum);
-                SceneManager.LoadScene("Stage" + sceneChange.stagenum);
+                SceneManager.LoadScene("T_Stage" + sceneChange.stagenum);
                 Sflag = false;
             }
         }

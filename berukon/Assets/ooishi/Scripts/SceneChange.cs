@@ -33,7 +33,7 @@ public class SceneChange : MonoBehaviour
     public static bool start;
     public AudioSource over,clear,no;
     private bool clearfrag;
-    public GameObject Ex;
+    public GameObject Ex,Ex2;
     public Vector3 tyutorial;
     // Start is called before the first frame update
     void Start()
@@ -52,7 +52,7 @@ public class SceneChange : MonoBehaviour
         if (scene == Scene.StageSlect)
         {
             clearfrag = true;
-            for(int i=0;i<stage.Length-1;i++)
+            for(int i=0;i<stage.Length-2;i++)
             {
                 if(sta!=0)
                 {
@@ -87,7 +87,7 @@ public class SceneChange : MonoBehaviour
         changefrag = false;
         if(start==false)
         {
-            for (int i = 1; i < 11; i++)
+            for (int i = 1; i < 12; i++)
             {
                 stagebach.Add(i, 0);
             }
@@ -133,10 +133,12 @@ public class SceneChange : MonoBehaviour
             if (clearfrag)
             {
                 Ex.SetActive(true);
+                Ex2.SetActive(true);
             }
             else
             {
                 Ex.SetActive(false);
+                Ex2.SetActive(false);
             }
             if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f)&& stagenum > 0 && movefrag)
             {
@@ -149,7 +151,7 @@ public class SceneChange : MonoBehaviour
             }
             if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& movefrag)
             {
-                if(stagenum < stage.Length - 2 || (stagenum < stage.Length-1 && clearfrag))
+                if(stagenum < stage.Length - 3 || (stagenum < stage.Length-1 && clearfrag))
                 {
                     time = 0;
                     stagenum++;

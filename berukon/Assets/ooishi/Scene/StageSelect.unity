@@ -2452,8 +2452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfafb10834bcc440bb83c34441853b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clear: {fileID: 479559069}
-  nodamege: {fileID: 1845869305}
+  clear: {fileID: 301565349}
+  nodamege: {fileID: 1895866388}
   num: 1
 --- !u!212 &255722493
 SpriteRenderer:
@@ -2978,8 +2978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfafb10834bcc440bb83c34441853b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clear: {fileID: 1611415362}
-  nodamege: {fileID: 1513986696}
+  clear: {fileID: 359476960}
+  nodamege: {fileID: 1003864548}
   num: 11
 --- !u!212 &295032418
 SpriteRenderer:
@@ -4817,8 +4817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfafb10834bcc440bb83c34441853b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clear: {fileID: 856629411}
-  nodamege: {fileID: 1727313442}
+  clear: {fileID: 843928204}
+  nodamege: {fileID: 1473840893}
   num: 4
 --- !u!212 &433377931
 SpriteRenderer:
@@ -8387,8 +8387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfafb10834bcc440bb83c34441853b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clear: {fileID: 371195052}
-  nodamege: {fileID: 704320912}
+  clear: {fileID: 620546873}
+  nodamege: {fileID: 1920724063}
   num: 3
 --- !u!212 &878432043
 SpriteRenderer:
@@ -12901,8 +12901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfafb10834bcc440bb83c34441853b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clear: {fileID: 1611415362}
-  nodamege: {fileID: 1513986696}
+  clear: {fileID: 1009552365}
+  nodamege: {fileID: 2017855955}
   num: 10
 --- !u!212 &1344482226
 SpriteRenderer:
@@ -18473,8 +18473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfafb10834bcc440bb83c34441853b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clear: {fileID: 1566802501}
-  nodamege: {fileID: 702058246}
+  clear: {fileID: 222515943}
+  nodamege: {fileID: 422737009}
   num: 2
 --- !u!212 &1992160499
 SpriteRenderer:

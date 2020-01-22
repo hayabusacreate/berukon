@@ -16561,7 +16561,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7531c91319ee41a42bbecf345aba736b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 398cebebe5bcb6248871be09700cb5eb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -17661,6 +17661,8 @@ MonoBehaviour:
   Ex: {fileID: 0}
   Ex2: {fileID: 0}
   tyutorial: {x: 0, y: 0, z: 0}
+  yajirusi: {fileID: 0}
+  yajirusi2: {fileID: 0}
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0

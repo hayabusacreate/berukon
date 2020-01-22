@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/inose/T_Stage8.unity
     guid: 38404103b0c4cf24ab9a3a9821b0a168
+  - enabled: 1
+    path: Assets/inose/T_Stage9.unity
+    guid: 909546f60c328d34598f2d0d0c857db3
+  - enabled: 1
+    path: Assets/inose/T_Stage10.unity
+    guid: 2f4f7e26f00f4a349952a5287b22fdb6
+  - enabled: 1
+    path: Assets/inose/T_Stage11.unity
+    guid: 46b2a9c77949bd54b80dac949f498b28
   m_configObjects: {}

@@ -39,8 +39,11 @@ public class EnemyMove : MonoBehaviour
     public float StopTime;
     public GameObject hari;
     private Vector3 a,b;
+    public AudioSource warpse;
+    private bool warp;
     void Start()
     {
+        warp = false;
         sprite = gameObject.transform.GetComponent<SpriteRenderer>();
         deathFrag = false;
         deathPos = new Vector3(40, 0, 0);
@@ -93,6 +96,11 @@ public class EnemyMove : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, new Vector3(-8, transform.position.y, transform.position.z), speed);
             }else
             {
+                if(!warp)
+                {
+                    warpse.PlayOneShot(warpse.clip);
+                    warp = true;
+                }
                 hari.transform.eulerAngles =new Vector3(0,0,(1-(time/StopTime))*360) ;
                 transform.position = Vector3.Lerp(transform.position, new Vector3(0, transform.position.y, transform.position.z), deathspeed);
             }

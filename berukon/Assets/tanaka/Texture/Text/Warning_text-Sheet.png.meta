@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 271fd3c057a92c54b97bfc44a79c5e33
+guid: 906c60493ed881041aaa1f650f89d483
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Warning_text_0
-    21300002: Warning_text_1
-    21300004: Warning_text_2
-    21300006: Warning_text_3
-    21300008: Warning_text_4
-    21300010: Warning_text_5
-    21300012: Warning_text_6
+    21300000: Warning_text-Sheet_0
+    21300002: Warning_text-Sheet_1
+    21300004: Warning_text-Sheet_2
+    21300006: Warning_text-Sheet_3
+    21300008: Warning_text-Sheet_4
+    21300010: Warning_text-Sheet_5
+    21300012: Warning_text-Sheet_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -91,13 +91,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Warning_text_0
+      name: Warning_text-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -105,19 +105,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 955595cf172a4ba4cba5562db723508f
+      spriteID: 863f07c464d14b44c8e1951bc6057d82
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warning_text_1
+      name: Warning_text-Sheet_1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 227
         y: 0
-        width: 33
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,19 +125,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 881caf523078d254b81bc30723f8ca2a
+      spriteID: 53417eb67143c3e47aefd54ec274c8f1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warning_text_2
+      name: Warning_text-Sheet_2
       rect:
         serializedVersion: 2
-        x: 68
+        x: 454
         y: 0
-        width: 33
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 736d1e2d223ed3b498c31c1a0de198d7
+      spriteID: c4728f8699fedab4fa5da886153cecdb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warning_text_3
+      name: Warning_text-Sheet_3
       rect:
         serializedVersion: 2
-        x: 102
+        x: 681
         y: 0
-        width: 33
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ccbec7314a4d6a4bbe85d68914a9e38
+      spriteID: f4742a964e07f184e94dcd252360f33b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warning_text_4
+      name: Warning_text-Sheet_4
       rect:
         serializedVersion: 2
-        x: 136
+        x: 908
         y: 0
-        width: 23
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5366b8b47daf26c47af338cde9fb7302
+      spriteID: e3e33ba9f319e1c4da415f096bd5c348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warning_text_5
+      name: Warning_text-Sheet_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 1135
         y: 0
-        width: 33
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,19 +205,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7edeca81dea2a7047ac5f9a91110cec4
+      spriteID: a9d2c847ae8c6eb4d8b42a407231d907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warning_text_6
+      name: Warning_text-Sheet_6
       rect:
         serializedVersion: 2
-        x: 194
+        x: 1362
         y: 0
-        width: 33
-        height: 64
+        width: 227
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33477dd294714104785789c419268beb
+      spriteID: 8d8cf3116c8c59c4cab45fa23732f5cd
       vertices: []
       indices: 
       edges: []
@@ -233,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d919c03aa56af0e46bdff4d44d586681
+    spriteID: 5ce88b075eb7ad94d9f3d1c401959982
     vertices: []
     indices: 
     edges: []

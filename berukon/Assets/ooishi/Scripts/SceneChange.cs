@@ -34,6 +34,7 @@ public class SceneChange : MonoBehaviour
     public AudioSource over,clear,no;
     private bool clearfrag;
     public GameObject Ex;
+    public Vector3 tyutorial;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +62,7 @@ public class SceneChange : MonoBehaviour
                     }
                     if(i<sta-1)
                     {
-                        stage[i].transform.position = new Vector3(-20, 0, 0);
+                        stage[i].transform.position = new Vector3(-40, 0, 0);
                     }
                     if(i == sta-1)
                     {
@@ -86,10 +87,11 @@ public class SceneChange : MonoBehaviour
         changefrag = false;
         if(start==false)
         {
-            for (int i = 1; i < 7; i++)
+            for (int i = 1; i < 11; i++)
             {
                 stagebach.Add(i, 0);
             }
+            sta = 0;
             start = true;
         }
     }
@@ -140,7 +142,10 @@ public class SceneChange : MonoBehaviour
             {
                     time = 0;
                     stagenum--;
-                
+            }
+            if (stagenum < 4)
+            {
+                cam.transform.position = Vector3.Lerp(cam.transform.position, tyutorial, time);
             }
             if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& movefrag)
             {
@@ -150,6 +155,10 @@ public class SceneChange : MonoBehaviour
                     stagenum++;
                 }
                 
+            }
+            if (stagenum > 3)
+            {
+                cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 0, -10), time);
             }
             if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 0")) 
             {
@@ -161,21 +170,35 @@ public class SceneChange : MonoBehaviour
                 {
                     stage[stagenum + 1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0), time);
                 }
-
-                stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
-                if (stagenum - 1 >= 0)
+                if(stagenum>3)
                 {
-                    stage[stagenum - 1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-20, 0, 0), time);
-                }
-                speed = stage[stagenum].transform.position.x;
-                if (stage[stagenum].transform.position == new Vector3(0, 0, 0))
-                {
-                    movefrag = true;
+                    stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
+                    if (stage[stagenum].transform.position == new Vector3(0, 0, 0))
+                    {
+                        movefrag = true;
+                    }
+                    else
+                    {
+                        movefrag = false;
+                    }
                 }
                 else
                 {
-                    movefrag = false;
+                    stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(-17.5f, 0, 0), time);
+                    if (stage[stagenum].transform.position == new Vector3(-17.5f, 0, 0))
+                    {
+                        movefrag = true;
+                    }
+                    else
+                    {
+                        movefrag = false;
+                    }
                 }
+                if (stagenum - 1 >= 0)
+                {
+                    stage[stagenum - 1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-40, 0, 0), time);
+                }
+                speed = stage[stagenum].transform.position.x;
             }else
             {
                 stage[stagenum].transform.gameObject.GetComponent<StageAnim>().Sflag = true;
@@ -194,7 +217,7 @@ public class SceneChange : MonoBehaviour
                 }
                 if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown("joystick button 0"))
                 {
-                    SceneManager.LoadScene("Stage" + sta);
+                    SceneManager.LoadScene("T_Stage" + sta);
                 }
                 Text.SetActive(true);
             }else

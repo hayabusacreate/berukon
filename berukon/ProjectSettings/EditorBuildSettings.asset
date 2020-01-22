@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/ooishi/Scene/StageSelect.unity
     guid: 0270d3574aea583459da83fa600f97a6
   - enabled: 1
+    path: Assets/inose/T_Stage1.unity
+    guid: 12166c92973aa514c8e3a41d1e7f8cca
+  - enabled: 1
+    path: Assets/inose/T_Stage2.unity
+    guid: 5fe338ac3bb8f11478b0c03615211ec7
+  - enabled: 1
+    path: Assets/inose/T_Stage3.unity
+    guid: ed6a6cb4b4552b345a7135765fa6c46a
+  - enabled: 1
+    path: Assets/inose/T_Stage4.unity
+    guid: 14d2639395ee78b4e8cdff1cc67ba35d
+  - enabled: 1
     path: Assets/inose/T_Stage5.unity
     guid: b2210af350308e440b50fea140ad7fdd
   - enabled: 1
@@ -23,10 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/inose/T_Stage8.unity
     guid: 38404103b0c4cf24ab9a3a9821b0a168
-  - enabled: 1
-    path: Assets/inose/Stage5.unity
-    guid: 909546f60c328d34598f2d0d0c857db3
-  - enabled: 1
-    path: Assets/inose/Stage6.unity
-    guid: 46b2a9c77949bd54b80dac949f498b28
   m_configObjects: {}

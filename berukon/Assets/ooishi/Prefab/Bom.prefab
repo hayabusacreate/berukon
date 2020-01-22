@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colision: 0
   hitArea: 30
-  damege: 1
+  damege: 2
   AreaSpeed: 1
 --- !u!1001 &6587284546945585145
 PrefabInstance:

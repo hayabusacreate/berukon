@@ -39,8 +39,7 @@ public class SceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        yajirusi.SetActive(false);
-        yajirusi2.SetActive(false);
+
         stagenum = 0;
         changeflag = false;
         endflag = false;
@@ -48,12 +47,14 @@ public class SceneChange : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                Text = child.transform.gameObject;
+                Text = child.gameObject;
             }
             Text.SetActive(false);
         }
         if (scene == Scene.StageSlect)
         {
+            yajirusi.SetActive(false);
+            yajirusi2.SetActive(false);
             clearfrag = true;
             for(int i=0;i<stage.Length-2;i++)
             {

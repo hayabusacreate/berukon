@@ -5260,7 +5260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -7.51, y: 0}
+  m_AnchoredPosition: {x: -7.09, y: 0}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &471790224
@@ -9034,7 +9034,7 @@ MonoBehaviour:
   Ex2: {fileID: 295032415}
   tyutorial: {x: -17, y: 0, z: -10}
   yajirusi: {fileID: 1326302865}
-  yajirusi2: {fileID: 0}
+  yajirusi2: {fileID: 466078075}
 --- !u!1 &924366400
 GameObject:
   m_ObjectHideFlags: 0

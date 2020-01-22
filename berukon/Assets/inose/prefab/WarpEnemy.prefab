@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   y: 2
-  speed: 5
+  speed: 0
 --- !u!114 &9129401098835871406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,15 +521,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelect: 2
-  EnemyLife: 3
-  speed: 5
+  EnemyLife: 19
+  speed: 3
   deathFrag: 0
   slider: {fileID: 4755122634502328684}
   conflag: 0
   DeathEffect: {fileID: 3111229794735516127, guid: ec07d7f29d000c84ca80b75685631469,
     type: 3}
   death: {fileID: 7282546983816139404}
-  StopTime: 5
+  StopTime: 12
 --- !u!95 &1028559307965533970
 Animator:
   serializedVersion: 3

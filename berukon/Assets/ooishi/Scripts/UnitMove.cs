@@ -28,6 +28,8 @@ public class UnitMove : MonoBehaviour
     public GameObject healobj,deathobj;
     public SpriteRenderer unit;
     public SpriteRenderer uni;
+    public GameObject Max,Warnig;
+    public GameObject maxpos;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,7 @@ public class UnitMove : MonoBehaviour
 
         }
         Deathflag = false;
+        Warnig.SetActive(false);
     }
 
     // Update is called once per frame
@@ -79,6 +82,8 @@ public class UnitMove : MonoBehaviour
                 deathobj.SetActive(false);
                 uni.color  = new Color32(255, 255, 255, 255);
                 unit.color = new Color32(255, 255, 255, 255);
+                GameObject obj = Instantiate(Max, maxpos.transform.position, transform.rotation);
+                obj.transform.parent = transform;
             }
         }
         else
@@ -90,6 +95,13 @@ public class UnitMove : MonoBehaviour
                 uni.color = new Color32(170, 170, 170, 255);
                 unit.color = new Color32(170, 170, 170, 255);
             }
+        }
+        if(!Deathflag&&UnityLife<=3)
+        {
+            Warnig.SetActive(true);
+        }else
+        {
+            Warnig.SetActive(false);
         }
         if(UnityLife<=0)
         {

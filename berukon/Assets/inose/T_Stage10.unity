@@ -7259,8 +7259,8 @@ MonoBehaviour:
   - {fileID: 9129401098835871395, guid: c8dc8e2145d158c4bb077797d3e5fe77, type: 3}
   - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
   - {fileID: 9129401098835871395, guid: 7fe79fd5d68e1bc44b318da84595bb68, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
-  - {fileID: 9129401098835871395, guid: 8f0a437adffc7874e86abfc01ebffbbe, type: 3}
+  - {fileID: 9129401098835871395, guid: b6ca3b08a1eb2a84880796a611f5d405, type: 3}
+  - {fileID: 9129401098835871395, guid: b6ca3b08a1eb2a84880796a611f5d405, type: 3}
   - {fileID: 9129401098835871395, guid: b6ca3b08a1eb2a84880796a611f5d405, type: 3}
   - {fileID: 9129401098835871395, guid: b6ca3b08a1eb2a84880796a611f5d405, type: 3}
   - {fileID: 9129401098835871395, guid: c8dc8e2145d158c4bb077797d3e5fe77, type: 3}
@@ -7782,7 +7782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2.8
+  maxspeed: 3.3
   nomalspeed: 0.3
   minspeed: 0.3
   speed: 0
@@ -17458,7 +17458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2.8
+  maxspeed: 3.3
   nomalspeed: 0.3
   minspeed: 0.3
   speed: 0
@@ -17608,6 +17608,7 @@ MonoBehaviour:
   clear: {fileID: 495295269}
   no: {fileID: 495295267}
   Ex: {fileID: 0}
+  tyutorial: {x: 0, y: 0, z: 0}
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0
@@ -23461,7 +23462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 2.8
+  maxspeed: 3.3
   nomalspeed: 0.3
   minspeed: 0.3
   speed: 0

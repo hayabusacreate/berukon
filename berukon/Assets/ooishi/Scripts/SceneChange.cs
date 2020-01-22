@@ -35,9 +35,12 @@ public class SceneChange : MonoBehaviour
     private bool clearfrag;
     public GameObject Ex,Ex2;
     public Vector3 tyutorial;
+    public GameObject yajirusi,yajirusi2;
     // Start is called before the first frame update
     void Start()
     {
+        yajirusi.SetActive(false);
+        yajirusi2.SetActive(false);
         stagenum = 0;
         changeflag = false;
         endflag = false;
@@ -148,6 +151,20 @@ public class SceneChange : MonoBehaviour
             if (stagenum < 4)
             {
                 cam.transform.position = Vector3.Lerp(cam.transform.position, tyutorial, time);
+            }
+            if(stagenum >= 3)
+            {
+                yajirusi.SetActive(true);
+            }else
+            {
+                yajirusi.SetActive(false);
+            }
+            if(stagenum <= 4)
+            {
+                yajirusi2.SetActive(true);
+            }else
+            {
+                yajirusi2.SetActive(false);
             }
             if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& movefrag)
             {

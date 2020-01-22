@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 604622202}
+  - {fileID: 618424213}
   endflag: 0
 --- !u!224 &156216527 stripped
 RectTransform:
@@ -15398,6 +15398,8 @@ MonoBehaviour:
   Ex: {fileID: 0}
   Ex2: {fileID: 0}
   tyutorial: {x: 0, y: 0, z: 0}
+  yajirusi: {fileID: 0}
+  yajirusi2: {fileID: 0}
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0

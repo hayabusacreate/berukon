@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/ooishi/Scene/StageSelect.unity
     guid: 0270d3574aea583459da83fa600f97a6
   - enabled: 1
-    path: Assets/inose/Stage1.unity
+    path: Assets/inose/T_Stage5.unity
     guid: b2210af350308e440b50fea140ad7fdd
   - enabled: 1
     path: Assets/inose/Stage2.unity

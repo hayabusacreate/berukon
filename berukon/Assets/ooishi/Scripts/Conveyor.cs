@@ -17,7 +17,7 @@ public class Conveyor : MonoBehaviour
 {
     public Direction direction;
     private ConveyorChoce conveyor;
-    public float maxspeed, nomalspeed, minspeed;
+    public int maxspeed=5, nomalspeed=3, minspeed=1;
     public float speed;
     public bool moveflag;
     private float r, g, b;
@@ -29,9 +29,9 @@ public class Conveyor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedup = 0.05f;
+        speedup = 0.5f;
         conveyor = GameObject.Find("BerukonChoce").GetComponent<ConveyorChoce>();
-        speed = nomalspeed;
+        speed = 1.5f;
         up.SetActive(false);
         down.SetActive(false);
         _slider.maxValue = maxspeed;
@@ -52,9 +52,9 @@ public class Conveyor : MonoBehaviour
             {
                 up.SetActive(true);
                 speed -= speedup;
-                if (speed < minspeed)
+                if (speed < 0.5f)
                 {
-                    speed = minspeed;
+                    speed = 0.5f;
                 }
             }
             if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1")) && moveflag)

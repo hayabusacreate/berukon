@@ -7355,9 +7355,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 3.3
-  nomalspeed: 1.3
-  minspeed: 0.3
+  maxspeed: 3
+  nomalspeed: 1
+  minspeed: 0
   speed: 0
   moveflag: 0
   upDown: 0
@@ -14867,7 +14867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f14a227d99b2844fbc3a862c145cdcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectSpeed: 1
+  selectSpeed: 0
   conveyors:
   - {fileID: 636464821}
   - {fileID: 2266069166173277399}
@@ -15265,9 +15265,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 3.3
-  nomalspeed: 1.3
-  minspeed: 0.3
+  maxspeed: 3
+  nomalspeed: 1
+  minspeed: 0
   speed: 0
   moveflag: 0
   upDown: 0
@@ -19372,9 +19372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  maxspeed: 3.3
-  nomalspeed: 0.3
-  minspeed: 0.3
+  maxspeed: 3
+  nomalspeed: 0
+  minspeed: 0
   speed: 0
   moveflag: 0
   upDown: 0
@@ -19777,6 +19777,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4012080551908629727, guid: 6be72ef1b07ecca4fbc3076cc6eaddcc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8074806946198769632, guid: 6be72ef1b07ecca4fbc3076cc6eaddcc,
         type: 3}
       propertyPath: m_Text
@@ -19786,11 +19791,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012080551908629727, guid: 6be72ef1b07ecca4fbc3076cc6eaddcc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be72ef1b07ecca4fbc3076cc6eaddcc, type: 3}

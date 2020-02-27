@@ -30,6 +30,7 @@ public class UnitShot : MonoBehaviour
     public Slider _slider;
     public AudioSource se;
     private int hou;
+    LineRenderer renderer ;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,11 +59,19 @@ public class UnitShot : MonoBehaviour
                 housin = child.gameObject;
             }
         }
+        renderer = gameObject.GetComponent<LineRenderer>();
+        // 頂点の数
+        renderer.SetVertexCount(2);
+        // 頂点を設定
+        renderer.SetPosition(0, transform.position);
+        renderer.SetPosition(1, transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
+        renderer.SetPosition(0, transform.position);
+        renderer.SetPosition(1, transform.position);
         deathflag = unitMove.Deathflag;
         healfrag = unitMove.healfrag;
         if (!deathflag)
@@ -87,6 +96,7 @@ public class UnitShot : MonoBehaviour
                             float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
                             Vector3 euler = new Vector3(0, 0, angle + 90);
                             housins[i].transform.rotation = Quaternion.Euler(euler);
+                            renderer.SetPosition(1, enemys[0].transform.position);
                         }
                     }
                 }
@@ -95,8 +105,9 @@ public class UnitShot : MonoBehaviour
                     Vector3 posDif = housin.transform.position - enemys[0].transform.position;
                     float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
                     Vector3 euler = new Vector3(0, 0, angle + 90);
-
+                    renderer.SetPosition(1, transform.position);
                     housin.transform.rotation = Quaternion.Euler(euler);
+                    renderer.SetPosition(1, enemys[0].transform.position);
                 }
             }
 

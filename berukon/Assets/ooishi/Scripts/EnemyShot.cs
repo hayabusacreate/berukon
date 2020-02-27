@@ -23,6 +23,7 @@ public class EnemyShot : MonoBehaviour
     private EnemyMove eneMove;
     private int targetcount;
     private GameObject housin;
+    LineRenderer renderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +36,20 @@ public class EnemyShot : MonoBehaviour
             //child is your child transfor
             housin = child.gameObject;
         }
+        renderer = gameObject.GetComponent<LineRenderer>();
+        // 頂点の数
+        renderer.SetVertexCount(2);
+        // 頂点を設定
+        renderer.SetPosition(0, transform.position);
+        renderer.SetPosition(1, transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(eneMove.enemySelect==EnemySelect.Nazca_Enemy&&hitfrag)
+        renderer.SetPosition(0, transform.position);
+        renderer.SetPosition(1, transform.position);
+        if (eneMove.enemySelect==EnemySelect.Nazca_Enemy&&hitfrag)
         {
             Vector3 posDif = housin.transform.position - units[0].transform.position;
             float angle = Mathf.Atan2(posDif.y, posDif.x) * Mathf.Rad2Deg;
@@ -121,6 +130,7 @@ public class EnemyShot : MonoBehaviour
         }
         if(units.Count>0)
         {
+            renderer.SetPosition(1, units[0].transform.position);
             if (target.GetComponent<UnitMove>().Deathflag == true)
             {
                 if (units.Count == 1)

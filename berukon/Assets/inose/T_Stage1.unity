@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fd437ae635c0f4fb0382caf25ebb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrtical: 1
+  vrtical: 0
   healfrag: 0
   Deathflag: 0
   HealTime: 0
@@ -7360,7 +7360,7 @@ MonoBehaviour:
   minspeed: 0
   speed: 0
   moveflag: 0
-  upDown: 0
+  upDown: 1
   up: {fileID: 910560622}
   down: {fileID: 96403638}
   _slider: {fileID: 379448675}
@@ -12446,7 +12446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fd437ae635c0f4fb0382caf25ebb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrtical: 1
+  vrtical: 0
   healfrag: 0
   Deathflag: 0
   HealTime: 0
@@ -15059,7 +15059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f14a227d99b2844fbc3a862c145cdcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectSpeed: 0
+  selectSpeed: 1
   conveyors:
   - {fileID: 636464821}
   - {fileID: 2266069166173277399}
@@ -15558,7 +15558,7 @@ MonoBehaviour:
   minspeed: 0
   speed: 0
   moveflag: 0
-  upDown: 0
+  upDown: 1
   up: {fileID: 2082897627}
   down: {fileID: 556874489}
   _slider: {fileID: 1485054541}
@@ -15610,6 +15610,7 @@ MonoBehaviour:
   tyutorial: {x: 0, y: 0, z: 0}
   yajirusi: {fileID: 0}
   yajirusi2: {fileID: 0}
+  tutrial: {fileID: 0}
 --- !u!4 &1610368468
 Transform:
   m_ObjectHideFlags: 0

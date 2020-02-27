@@ -29,6 +29,10 @@ public class ConveyorChoce : MonoBehaviour
                 conveyors[i].moveflag = false;
             }
         }
+        if(!down)
+        {
+            conveyorCount = 0;
+        }
     }
 
     // Update is called once per frame
@@ -40,15 +44,15 @@ public class ConveyorChoce : MonoBehaviour
     {
         if (selectSpeed == SelectSpeed.hayabusa|| selectSpeed == SelectSpeed.State)
         {
-            if((Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown("joystick button 1"))&&left)
+            if((Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown("joystick button 1"))&&right)
             {
                 conveyorCount = 0;
             }
-            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 0"))&&down)
+            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown("joystick button 0"))&& down)
             {
                 conveyorCount = 1;
             }
-            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("joystick button 2"))&&right)
+            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown("joystick button 2"))&&left)
             {
                 conveyorCount = 2;
             }

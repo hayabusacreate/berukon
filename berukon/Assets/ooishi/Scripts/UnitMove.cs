@@ -25,10 +25,10 @@ public class UnitMove : MonoBehaviour
     public int UnityLife;
     public Slider _slider;
     private float rote;
-    public GameObject healobj,deathobj;
+    public GameObject healobj, deathobj;
     public SpriteRenderer unit;
     public SpriteRenderer uni;
-    public GameObject Max,Warnig;
+    public GameObject Max, Warnig;
     public GameObject maxpos;
     // Start is called before the first frame update
     void Start()
@@ -44,43 +44,75 @@ public class UnitMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         healfrag = false;
         _slider.maxValue = UnityLife;
-        if (vrtical == Vrtical.Up)
+        if (conveyor.upDown == UpDown.Up)
         {
-            if (conveyor.direction == Direction.Right)
+            if (vrtical == Vrtical.Up)
             {
-                an = 0.1f;
+                if (conveyor.direction == Direction.Right)
+                {
+                    LRfrag = false;
+                }
+                if (conveyor.direction == Direction.Left)
+                {
+                    LRfrag = true;
+                }
             }
-            if (conveyor.direction == Direction.Left)
+            else
             {
-                an = -0.1f;
-            }
-        }
-        else
-        {
-            if (conveyor.direction == Direction.Right)
-            {
-                an = 180.1f;
-            }
-            if (conveyor.direction == Direction.Left)
-            {
-                an = 179.9f;
+                if (conveyor.direction == Direction.Right)
+                {
+                    LRfrag = true;
+                }
+                if (conveyor.direction == Direction.Left)
+                {
+                    LRfrag = false;
+                }
             }
 
         }
+        else
+        {
+            if (vrtical == Vrtical.Up)
+            {
+                if (conveyor.direction == Direction.Right)
+                {
+                    LRfrag = true;
+                }
+                if (conveyor.direction == Direction.Left)
+                {
+                    LRfrag = false;
+                }
+            }
+            else
+            {
+                if (conveyor.direction == Direction.Right)
+                {
+                    LRfrag = false;
+                }
+                if (conveyor.direction == Direction.Left)
+                {
+                    LRfrag = true;
+                }
+            }
+        }
+
+
+
         Deathflag = false;
         Warnig.SetActive(false);
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if(Deathflag)
+        if (Deathflag)
         {
-            if(UnityLife>=_slider.maxValue-1)
+            if (UnityLife >= _slider.maxValue - 1)
             {
                 Deathflag = false;
                 deathobj.SetActive(false);
-                uni.color  = new Color32(255, 255, 255, 255);
+                uni.color = new Color32(255, 255, 255, 255);
                 unit.color = new Color32(255, 255, 255, 255);
                 GameObject obj = Instantiate(Max, maxpos.transform.position, transform.rotation);
                 obj.transform.parent = transform;
@@ -88,7 +120,7 @@ public class UnitMove : MonoBehaviour
         }
         else
         {
-            if(UnityLife<=0)
+            if (UnityLife <= 0)
             {
                 Deathflag = true;
                 deathobj.SetActive(true);
@@ -96,14 +128,15 @@ public class UnitMove : MonoBehaviour
                 unit.color = new Color32(170, 170, 170, 255);
             }
         }
-        if(!Deathflag&&UnityLife<=3)
+        if (!Deathflag && UnityLife <= 3)
         {
             Warnig.SetActive(true);
-        }else
+        }
+        else
         {
             Warnig.SetActive(false);
         }
-        if(UnityLife<=0)
+        if (UnityLife <= 0)
         {
             UnityLife = 0;
         }
@@ -115,11 +148,11 @@ public class UnitMove : MonoBehaviour
             HealTime += Time.deltaTime;
             if (cooltime < HealTime)
             {
-               
-                    //Debug.Log("ヒールタイムリセット");
-                    UnitLife_Manager(1);
-                    HealTime = 0;
-                
+
+                //Debug.Log("ヒールタイムリセット");
+                UnitLife_Manager(1);
+                HealTime = 0;
+
             }
         }
         if (healfrag == false)
@@ -130,114 +163,28 @@ public class UnitMove : MonoBehaviour
     }
     void Move()
     {
-        //angle = conveyor.speed * rotecount/2;
-        if (LRfrag == true)
+        if (rotecount <= 180)
         {
-            if (vrtical == Vrtical.Up)
+            if (conveyor.direction == Direction.Right)
             {
-                if (conveyor.direction == Direction.Right)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, -rote);
-                        //transform.Rotate(0, 0, -1);
-                    }
-                }
-                if (conveyor.direction == Direction.Left)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount <=180)
-                    {
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, rote);
-                        //transform.Rotate(0, 0, 1 );
-                    }
-                }
+                //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
+                transform.Rotate(0, 0, -rote);
+                //transform.Rotate(0, 0, -1);
             }
             else
             {
-                if (conveyor.direction == Direction.Right)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        //transform.Rotate(0, 0, -1);
-                        transform.Rotate(0, 0, -rote);
-                    }
-                }
-                if (conveyor.direction == Direction.Left)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, rote);
-                        //transform.Rotate(0, 0, 1 );
-                    }
-                }
+                //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
+                transform.Rotate(0, 0, rote);
+                //transform.Rotate(0, 0, -1);
             }
-
+        }
+        if (LRfrag)
+        {
+            rb.velocity = new Vector2(conveyor.speed, 0);
         }
         else
         {
-            if (vrtical == Vrtical.Up)
-            {
-                if (conveyor.direction == Direction.Right)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        transform.Rotate(0, 0, -rote);
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        //transform.Rotate(0, 0, -1 );
-                    }
-                }
-                if (conveyor.direction == Direction.Left)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        transform.Rotate(0, 0, rote);
-                        //transform.Rotate(0, 0, 1 );
-                    }
-                }
-            }
-            else
-            {
-                if (conveyor.direction == Direction.Right)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(-conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        transform.Rotate(0, 0, -rote);
-                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, an), angle);
-                        //transform.Rotate(0, 0, -1);
-                    }
-                }
-                if (conveyor.direction == Direction.Left)
-                {
-                    if (Rotefrag == false)
-                        rb.velocity = new Vector2(conveyor.speed, 0);
-                    if (rotecount <= 180)
-                    {
-                        //transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(0, 0, an), angle);
-                        // 回転速度分回す
-                        transform.Rotate(0, 0, rote);
-                        //transform.Rotate(0, 0, 1);
-                    }
-                }
-            }
+            rb.velocity = new Vector2(-conveyor.speed, 0);
         }
         if (Rotefrag == true)
             rb.velocity = new Vector2(0, 0);
@@ -247,7 +194,7 @@ public class UnitMove : MonoBehaviour
         }
         rotecount += 1 * conveyor.speed;
         rote = 1 * conveyor.speed;
-        if (rotecount>180)
+        if (rotecount > 180)
         {
             rote -= rotecount - 180;
             rotecount = 180;
@@ -267,10 +214,6 @@ public class UnitMove : MonoBehaviour
             angle = 0;
             rotecount = 0;
             Rotefrag = true;
-            if (conveyor.direction == Direction.Right)
-                an += 180.0f;
-            if (conveyor.direction == Direction.Left)
-                an -= 180.0f;
             if (LRfrag == true)
             {
                 LRfrag = false;
@@ -280,12 +223,12 @@ public class UnitMove : MonoBehaviour
                 LRfrag = true;
             }
         }
-        if (collision.gameObject.tag == "EnemyBullet"&&!healfrag)
+        if (collision.gameObject.tag == "EnemyBullet" && !healfrag)
         {
-            if(!Deathflag)
-            UnitLife_Manager(-1);
+            if (!Deathflag)
+                UnitLife_Manager(-1);
         }
-        if(collision.gameObject.tag == "Bom" && !healfrag)
+        if (collision.gameObject.tag == "Bom" && !healfrag)
         {
             if (!Deathflag)
                 UnitLife_Manager(-collision.gameObject.GetComponent<Bom>().damege);

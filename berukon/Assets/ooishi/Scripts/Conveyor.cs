@@ -31,7 +31,7 @@ public class Conveyor : MonoBehaviour
     {
         speedup = 0.5f;
         conveyor = GameObject.Find("BerukonChoce").GetComponent<ConveyorChoce>();
-        speed = 1.5f;
+        speed = (float)nomalspeed/2;
         up.SetActive(false);
         down.SetActive(false);
         _slider.maxValue = maxspeed;
@@ -69,25 +69,22 @@ public class Conveyor : MonoBehaviour
         }
         if (conveyor.selectSpeed == SelectSpeed.State)
         {
-            if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Vertical") <= -0.8f || Input.GetKey("joystick button 4")) && moveflag)
+            if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Vertical") <= -0.8f || Input.GetKeyDown("joystick button 4")) && moveflag)
             {
                 speed -= speedup;
                 up.SetActive(false);
                 down.SetActive(true);
-                if (speed < minspeed)
+                if (speed < 0.5f)
                 {
-                    speed = minspeed;
+                    speed = 0.5f;
                 }
-            }else
-            if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Vertical") >= 0.8f|| Input.GetKey("joystick button 5")) && moveflag)
+            }
+            else
+            if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Vertical") >= 0.8f|| Input.GetKeyDown("joystick button 5")) && moveflag)
             {
                 speed += speedup;
                 down.SetActive(false);
                 up.SetActive(true);
-                if (speed > maxspeed)
-                {
-                    speed = maxspeed;
-                }
             }else
             {
                 down.SetActive(false);
@@ -97,6 +94,11 @@ public class Conveyor : MonoBehaviour
             {
                 down.SetActive(false);
                 up.SetActive(false);
+            }
+
+            if (speed > maxspeed)
+            {
+                speed = maxspeed;
             }
         }
         if (conveyor.selectSpeed == SelectSpeed.Rotat)
@@ -155,59 +157,59 @@ public class Conveyor : MonoBehaviour
         {
             if (moveflag)
             {
-                if (Input.GetAxis("Horizontal") >0)
+                if (Input.GetKeyDown("joystick button 5"))
                 {
                     if(direction==Direction.Right)
                     {
                         if(upDown==UpDown.Up)
                         {
-                            speed -= speedup;
+                            speed -= 0.5f;
                         }
                         else
                         {
-                            speed += speedup;
+                            speed += 0.5f;
                         }
                     }else
                     {
                         if (upDown == UpDown.Up)
                         {
-                            speed += speedup;
+                            speed += 0.5f;
                         }
                         else
                         {
-                            speed -= speedup;
+                            speed -= 0.5f;
                         }
                     }
                 }
                 else
-                if (Input.GetAxis("Horizontal") <0)
+                if (Input.GetKeyDown("joystick button 4"))
                 {
                     if (direction == Direction.Right)
                     {
                         if (upDown == UpDown.Up)
                         {
-                            speed += speedup;
+                            speed += 0.5f;
                         }
                         else
                         {
-                            speed -= speedup;
+                            speed -= 0.5f;
                         }
                     }
                     else
                     {
                         if (upDown == UpDown.Up)
                         {
-                            speed -= speedup;
+                            speed -= 0.5f;
                         }
                         else
                         {
-                            speed += speedup;
+                            speed += 0.5f;
                         }
                     }
                 }
-                if (speed < minspeed)
+                if (speed < 0.5f)
                 {
-                    speed = minspeed;
+                    speed = 0.5f;
                 }
                 if (speed > maxspeed)
                 {

@@ -8,7 +8,7 @@ public enum Scene
     Title,
     StageSlect,
     GamePlay,
-    GameOver
+    GameOver,
 }
 public class SceneChange : MonoBehaviour
 {
@@ -25,25 +25,26 @@ public class SceneChange : MonoBehaviour
     public GameObject cam;
     private float camtime;
     public GameObject gameover, gameclear, nodamege;
-    private bool endflag,changefrag;
+    private bool endflag, changefrag;
     private GameObject Text;
     private StageAnim stageAnim;
     private bool frag;
-    private static Dictionary<int, int> stagebach=new Dictionary<int, int>();
+    private static Dictionary<int, int> stagebach = new Dictionary<int, int>();
     public static bool start;
-    public AudioSource over,clear,no;
+    public AudioSource over, clear, no;
     private bool clearfrag;
-    public GameObject Ex,Ex2;
+    public GameObject Ex, Ex2;
     public Vector3 tyutorial;
-    public GameObject yajirusi,yajirusi2;
+    public GameObject yajirusi, yajirusi2;
+    public Tutrial tutrial;
+    private static bool tutrialflag;
     // Start is called before the first frame update
     void Start()
     {
-
         stagenum = 0;
         changeflag = false;
         endflag = false;
-        if(scene==Scene.GamePlay)
+        if (scene == Scene.GamePlay || scene == Scene.GameOver)
         {
             foreach (Transform child in transform)
             {
@@ -56,29 +57,29 @@ public class SceneChange : MonoBehaviour
             yajirusi.SetActive(false);
             yajirusi2.SetActive(false);
             clearfrag = true;
-            for(int i=0;i<stage.Length-2;i++)
+            for (int i = 0; i < stage.Length - 2; i++)
             {
-                if(sta!=0)
+                if (sta != 0)
                 {
-                    if (stagebach[i+1]==0)
+                    if (stagebach[i + 1] == 0)
                     {
                         clearfrag = false;
                     }
-                    if(i<sta-1)
+                    if (i < sta - 1)
                     {
                         stage[i].transform.position = new Vector3(-40, 0, 0);
                     }
-                    if(i == sta-1)
+                    if (i == sta - 1)
                     {
                         stage[i].transform.position = new Vector3(0, 0, 0);
                     }
-                    if(i > sta - 1)
+                    if (i > sta - 1)
                     {
                         stage[i].transform.position = new Vector3(20, 0, 0);
                     }
-                    stageAnim= stage[i].transform.GetComponent<StageAnim>();
+                    stageAnim = stage[i].transform.GetComponent<StageAnim>();
                     stageAnim.Eflag = true;
-                    stagenum = sta-1;
+                    stagenum = sta - 1;
                 }
                 else
                 {
@@ -89,7 +90,7 @@ public class SceneChange : MonoBehaviour
         }
         frag = false;
         changefrag = false;
-        if(start==false)
+        if (start == false)
         {
             for (int i = 1; i < 12; i++)
             {
@@ -103,33 +104,41 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camtime += Time.deltaTime/3;
-        if (scene == Scene.GamePlay&&frag==false)
+        camtime += Time.deltaTime / 3;
+        if ((scene == Scene.GamePlay || scene == Scene.GameOver) && frag == false)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 0, -10), camtime);
-            if(cam.transform.position== new Vector3(0, 0, -10))
+            if (cam.transform.position == new Vector3(0, 0, -10))
             {
                 frag = true;
             }
         }
-        if(changefrag)
+        if (changefrag)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 23, -10), camtime);
-            if(cam.transform.position.y>=18)
+            if (cam.transform.position.y >= 18)
             {
                 SceneManager.LoadScene("StageSelect");
             }
         }
-            Change();
+        Change();
     }
     void Change()
     {
-        time += Time.deltaTime*10;
-        if(scene==Scene.Title)
+        time += Time.deltaTime * 10;
+        if (scene == Scene.Title)
         {
-            if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 0"))
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")))
             {
-                SceneManager.LoadScene("StageSelect");
+                if (tutrialflag)
+                {
+                    SceneManager.LoadScene("StageSelect");
+                }
+                else
+                {
+                    tutrialflag = true;
+                    SceneManager.LoadScene("Tutrial");
+                }
             }
         }
         if (scene == Scene.StageSlect)
@@ -144,53 +153,55 @@ public class SceneChange : MonoBehaviour
                 Ex.SetActive(false);
                 Ex2.SetActive(false);
             }
-            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f)&& stagenum > 0 && movefrag)
+            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f) && stagenum > 0 && movefrag)
             {
-                    time = 0;
-                    stagenum--;
+                time = 0;
+                stagenum--;
             }
             if (stagenum < 4)
             {
                 cam.transform.position = Vector3.Lerp(cam.transform.position, tyutorial, time);
             }
-            if(stagenum >= 3)
+            if (stagenum >= 3)
             {
                 yajirusi.SetActive(true);
-            }else
+            }
+            else
             {
                 yajirusi.SetActive(false);
             }
-            if(stagenum <= 4)
+            if (stagenum <= 4)
             {
                 yajirusi2.SetActive(true);
-            }else
+            }
+            else
             {
                 yajirusi2.SetActive(false);
             }
-            if ((Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Horizontal") > 0.8f)&& movefrag)
+            if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0.8f) && movefrag)
             {
-                if(stagenum < stage.Length - 3 || (stagenum < stage.Length-1 && clearfrag))
+                if (stagenum < stage.Length - 3 || (stagenum < stage.Length - 1 && clearfrag))
                 {
                     time = 0;
                     stagenum++;
                 }
-                
+
             }
             if (stagenum > 3)
             {
                 cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, 0, -10), time);
             }
-            if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown("joystick button 0")) 
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
             {
                 changeflag = true;
             }
-            if(!changeflag)
+            if (!changeflag)
             {
                 if (stagenum < stage.Length - 1)
                 {
                     stage[stagenum + 1].transform.position = Vector3.Lerp(stage[stagenum + 1].transform.position, new Vector3(20, 0, 0), time);
                 }
-                if(stagenum>3)
+                if (stagenum > 3)
                 {
                     stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, 0, 0), time);
                     if (stage[stagenum].transform.position == new Vector3(0, 0, 0))
@@ -219,7 +230,8 @@ public class SceneChange : MonoBehaviour
                     stage[stagenum - 1].transform.position = Vector3.Lerp(stage[stagenum - 1].transform.position, new Vector3(-40, 0, 0), time);
                 }
                 speed = stage[stagenum].transform.position.x;
-            }else
+            }
+            else
             {
                 stage[stagenum].transform.gameObject.GetComponent<StageAnim>().Sflag = true;
                 //stage[stagenum].transform.position = Vector3.Lerp(stage[stagenum].transform.position, new Vector3(0, -100, 0), time);
@@ -228,23 +240,24 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GamePlay)
         {
-            if(Input.GetKeyDown("joystick button 7"))
+            if (Input.GetKeyDown("joystick button 7"))
             {
                 SceneManager.LoadScene("StageSelect");
             }
-            if(endflag)
+            if (endflag)
             {
-                if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown("joystick button 1"))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1"))
                 {
                     camtime = 0;
                     changefrag = true;
                 }
-                if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown("joystick button 0"))
+                if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown("joystick button 0"))
                 {
-                    SceneManager.LoadScene("T_Stage" + sta);
+                    SceneManager.LoadScene("Stage" + sta);
                 }
                 Text.SetActive(true);
-            }else
+            }
+            else
             {
                 if (core.CoreLife < 0)
                 {
@@ -257,7 +270,7 @@ public class SceneChange : MonoBehaviour
                     if (core.CoreLife == 2)
                     {
                         if (stagebach[sta] < 2)
-                            stagebach[sta]=2;
+                            stagebach[sta] = 2;
                         nodamege.SetActive(true);
                         no.PlayOneShot(no.clip);
                     }
@@ -274,9 +287,9 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GameOver)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (tutrial.endflag)
             {
-                SceneManager.LoadScene("Title");
+                SceneManager.LoadScene("StageSelect");
             }
         }
     }

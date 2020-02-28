@@ -3769,7 +3769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &359476961
 Transform:
   m_ObjectHideFlags: 0
@@ -9019,8 +9019,8 @@ MonoBehaviour:
   - {fileID: 344126602}
   - {fileID: 474027613}
   - {fileID: 642106165}
-  - {fileID: 1467536012}
   - {fileID: 1812682716}
+  - {fileID: 1467536012}
   speed: 0
   movefrag: 0
   cam: {fileID: 1776582935}
@@ -10055,7 +10055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1003864549
 Transform:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class Conveyor : MonoBehaviour
 {
     public Direction direction;
     private ConveyorChoce conveyor;
-    public int maxspeed=5, nomalspeed=3, minspeed=1;
+    public int maxspeed = 5, nomalspeed = 3, minspeed = 1;
     public float speed;
     public bool moveflag;
     private float r, g, b;
@@ -26,16 +26,20 @@ public class Conveyor : MonoBehaviour
     public GameObject up, down;
     public Slider _slider;
     private float speedup;
+    //スマホ
+    private Touch touch;
+    private Vector3 spos, nowpos;
+    private bool touchflag;
     // Start is called before the first frame update
     void Start()
     {
         speedup = 0.5f;
         conveyor = GameObject.Find("BerukonChoce").GetComponent<ConveyorChoce>();
-        speed = (float)nomalspeed/2;
+        speed = (float)nomalspeed / 2;
         up.SetActive(false);
         down.SetActive(false);
         _slider.maxValue = maxspeed;
-        _slider.minValue = minspeed-0.1f;
+        _slider.minValue = minspeed - 0.1f;
     }
 
     // Update is called once per frame
@@ -45,178 +49,231 @@ public class Conveyor : MonoBehaviour
     }
     void ChangeSpeed()
     {
-        _slider.value = speed;
-        if (conveyor.selectSpeed == SelectSpeed.Tap)
+        if (Input.touchCount > 0&&moveflag)
         {
-            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0")) && moveflag)
+            touch = Input.GetTouch(0);
+            if (!touchflag)
             {
-                up.SetActive(true);
-                speed -= speedup;
-                if (speed < 0.5f)
-                {
-                    speed = 0.5f;
-                }
+                touchflag = true;
+                spos = touch.position;
             }
-            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1")) && moveflag)
+            nowpos = touch.position;
+            _slider.value = speed;
+            if(spos.x-nowpos.x>0)
             {
-                down.SetActive(true);
-                speed += speedup;
-                if (speed > maxspeed)
-                {
-                    speed = maxspeed;
-                }
+                speed -= Vector3.Distance(spos, nowpos)/1000;
             }
-        }
-        if (conveyor.selectSpeed == SelectSpeed.State)
-        {
-            if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Vertical") <= -0.8f || Input.GetKeyDown("joystick button 4")) && moveflag)
+            if (spos.x - nowpos.x < 0)
             {
-                speed -= speedup;
+                speed += Vector3.Distance(spos, nowpos)/1000;
+            }
+            if (Vector3.Distance(spos, nowpos) < 0)
+            {
                 up.SetActive(false);
                 down.SetActive(true);
-                if (speed < 0.5f)
-                {
-                    speed = 0.5f;
-                }
             }
             else
-            if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Vertical") >= 0.8f|| Input.GetKeyDown("joystick button 5")) && moveflag)
+                if (Vector3.Distance(spos, nowpos) > 0)
             {
-                speed += speedup;
                 down.SetActive(false);
                 up.SetActive(true);
-            }else
+            }
+            else
+            if (!moveflag)
             {
                 down.SetActive(false);
                 up.SetActive(false);
             }
-            if(!moveflag)
+            if (speed < 0.5f)
             {
-                down.SetActive(false);
-                up.SetActive(false);
+                speed = 0.5f;
             }
-
             if (speed > maxspeed)
             {
                 speed = maxspeed;
             }
         }
-        if (conveyor.selectSpeed == SelectSpeed.Rotat)
+        else
         {
-            if (moveflag)
+            touchflag = false;
+            spos = new Vector3(0, 0, 0);
+            nowpos = new Vector3(0, 0, 0);
+
+            _slider.value = speed;
+            if (conveyor.selectSpeed == SelectSpeed.Tap)
             {
-                if (Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Vertical") == 1)
+                if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown("joystick button 0")) && moveflag)
                 {
-                    x = true;
+                    up.SetActive(true);
+                    speed -= speedup;
+                    if (speed < 0.5f)
+                    {
+                        speed = 0.5f;
+                    }
                 }
-                if (Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == -1)
+                if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown("joystick button 1")) && moveflag)
                 {
-                    y = true;
-                }
-                if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-                {
-                    x = false;
-                    y = false;
-                }
-                if (x && y)
-                {
+                    down.SetActive(true);
                     speed += speedup;
                     if (speed > maxspeed)
                     {
                         speed = maxspeed;
                     }
-                    x = false;
-                    y = false;
-                }
-                if (Input.GetAxis("Horizontal2") == 1 || Input.GetAxis("Vertical2") == 1)
-                {
-                    x2 = true;
-                }
-                if (Input.GetAxis("Horizontal2") == -1 || Input.GetAxis("Vertical2") == -1)
-                {
-                    y2 = true;
-                }
-                if (Input.GetAxis("Horizontal2") == 0 && Input.GetAxis("Vertical2") == 0)
-                {
-                    x2 = false;
-                    y2 = false;
-                }
-                if (x2 && y2)
-                {
-                    speed -= 0.1f;
-                    if (speed < minspeed)
-                    {
-                        speed = minspeed;
-                    }
-                    x2 = false;
-                    y2 = false;
                 }
             }
-        }
-        if (conveyor.selectSpeed == SelectSpeed.hayabusa)
-        {
-            if (moveflag)
+            if (conveyor.selectSpeed == SelectSpeed.State)
             {
-                if (Input.GetKeyDown("joystick button 5"))
+
+                if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Vertical") <= -0.8f || Input.GetKeyDown("joystick button 4")) && moveflag)
                 {
-                    if(direction==Direction.Right)
+                    speed -= speedup;
+                    up.SetActive(false);
+                    down.SetActive(true);
+                    if (speed < 0.5f)
                     {
-                        if(upDown==UpDown.Up)
-                        {
-                            speed -= 0.5f;
-                        }
-                        else
-                        {
-                            speed += 0.5f;
-                        }
-                    }else
-                    {
-                        if (upDown == UpDown.Up)
-                        {
-                            speed += 0.5f;
-                        }
-                        else
-                        {
-                            speed -= 0.5f;
-                        }
+                        speed = 0.5f;
                     }
                 }
                 else
-                if (Input.GetKeyDown("joystick button 4"))
+                if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Vertical") >= 0.8f || Input.GetKeyDown("joystick button 5")) && moveflag)
                 {
-                    if (direction == Direction.Right)
-                    {
-                        if (upDown == UpDown.Up)
-                        {
-                            speed += 0.5f;
-                        }
-                        else
-                        {
-                            speed -= 0.5f;
-                        }
-                    }
-                    else
-                    {
-                        if (upDown == UpDown.Up)
-                        {
-                            speed -= 0.5f;
-                        }
-                        else
-                        {
-                            speed += 0.5f;
-                        }
-                    }
+                    speed += speedup;
+                    down.SetActive(false);
+                    up.SetActive(true);
                 }
-                if (speed < 0.5f)
+                else
                 {
-                    speed = 0.5f;
+                    down.SetActive(false);
+                    up.SetActive(false);
                 }
+                if (!moveflag)
+                {
+                    down.SetActive(false);
+                    up.SetActive(false);
+                }
+
                 if (speed > maxspeed)
                 {
                     speed = maxspeed;
                 }
             }
-
+            if (conveyor.selectSpeed == SelectSpeed.Rotat)
+            {
+                if (moveflag)
+                {
+                    if (Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Vertical") == 1)
+                    {
+                        x = true;
+                    }
+                    if (Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == -1)
+                    {
+                        y = true;
+                    }
+                    if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+                    {
+                        x = false;
+                        y = false;
+                    }
+                    if (x && y)
+                    {
+                        speed += speedup;
+                        if (speed > maxspeed)
+                        {
+                            speed = maxspeed;
+                        }
+                        x = false;
+                        y = false;
+                    }
+                    if (Input.GetAxis("Horizontal2") == 1 || Input.GetAxis("Vertical2") == 1)
+                    {
+                        x2 = true;
+                    }
+                    if (Input.GetAxis("Horizontal2") == -1 || Input.GetAxis("Vertical2") == -1)
+                    {
+                        y2 = true;
+                    }
+                    if (Input.GetAxis("Horizontal2") == 0 && Input.GetAxis("Vertical2") == 0)
+                    {
+                        x2 = false;
+                        y2 = false;
+                    }
+                    if (x2 && y2)
+                    {
+                        speed -= 0.1f;
+                        if (speed < minspeed)
+                        {
+                            speed = minspeed;
+                        }
+                        x2 = false;
+                        y2 = false;
+                    }
+                }
+            }
+            if (conveyor.selectSpeed == SelectSpeed.hayabusa)
+            {
+                if (moveflag)
+                {
+                    if (Input.GetKeyDown("joystick button 5"))
+                    {
+                        if (direction == Direction.Right)
+                        {
+                            if (upDown == UpDown.Up)
+                            {
+                                speed -= 0.5f;
+                            }
+                            else
+                            {
+                                speed += 0.5f;
+                            }
+                        }
+                        else
+                        {
+                            if (upDown == UpDown.Up)
+                            {
+                                speed += 0.5f;
+                            }
+                            else
+                            {
+                                speed -= 0.5f;
+                            }
+                        }
+                    }
+                    else
+                    if (Input.GetKeyDown("joystick button 4"))
+                    {
+                        if (direction == Direction.Right)
+                        {
+                            if (upDown == UpDown.Up)
+                            {
+                                speed += 0.5f;
+                            }
+                            else
+                            {
+                                speed -= 0.5f;
+                            }
+                        }
+                        else
+                        {
+                            if (upDown == UpDown.Up)
+                            {
+                                speed -= 0.5f;
+                            }
+                            else
+                            {
+                                speed += 0.5f;
+                            }
+                        }
+                    }
+                    if (speed < 0.5f)
+                    {
+                        speed = 0.5f;
+                    }
+                    if (speed > maxspeed)
+                    {
+                        speed = maxspeed;
+                    }
+                }
+            }
         }
 
     }

@@ -38,6 +38,8 @@ public class SceneChange : MonoBehaviour
     public GameObject yajirusi, yajirusi2;
     public Tutrial tutrial;
     private static bool tutrialflag;
+
+    private Touch touch;
     // Start is called before the first frame update
     void Start()
     {
@@ -126,9 +128,13 @@ public class SceneChange : MonoBehaviour
     void Change()
     {
         time += Time.deltaTime * 10;
+        if(Input.touchCount>0)
+        {
+            touch = Input.GetTouch(0);
+        }
         if (scene == Scene.Title)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")))
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))||Input.touchCount>0)
             {
                 if (tutrialflag)
                 {

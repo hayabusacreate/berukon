@@ -13,6 +13,7 @@ public class Tutrial : MonoBehaviour
     public bool endflag;
     public GameObject[] icons;
     public Renderer[] icon;
+    private Touch touch;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,17 @@ public class Tutrial : MonoBehaviour
                 if (time>0.99f)
                 {
                     playableDirector.Pause();
+                }
+                if(Input.touchCount > 0)
+                {
+                    touch = Input.GetTouch(0);
+                    if(touch.phase==TouchPhase.Began)
+                    {
+                        playableDirector.Play();
+                        time = 0;
+                        count++;
+                        icons[0].SetActive(false);
+                    }
                 }
                 if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
                 {
@@ -99,6 +111,14 @@ public class Tutrial : MonoBehaviour
                 }
                 break;
             case 8:
+                if(Input.touchCount>0)
+                {
+                    touch = Input.GetTouch(0);
+                    if(touch.phase==TouchPhase.Began)
+                    {
+                        endflag = true;
+                    }
+                }
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
                 {
                     endflag = true;

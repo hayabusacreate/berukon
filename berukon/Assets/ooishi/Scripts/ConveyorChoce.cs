@@ -14,6 +14,7 @@ public class ConveyorChoce : MonoBehaviour
     public Conveyor[] conveyors;
     private int conveyorCount;
     public bool right=true, left=true, down=true;
+    private Touch touch;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,18 @@ public class ConveyorChoce : MonoBehaviour
     void Update()
     {
         Choce();
+    }
+    public void Select1()
+    {
+        conveyorCount = 0;
+    }
+    public void Select2()
+    {
+        conveyorCount = 1;
+    }
+    public void Select3()
+    {
+        conveyorCount = 2;
     }
     private void Choce()
     {

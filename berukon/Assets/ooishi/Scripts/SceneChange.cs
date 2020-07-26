@@ -39,7 +39,10 @@ public class SceneChange : MonoBehaviour
     public Tutrial tutrial;
     private static bool tutrialflag;
 
+    //スマホ
     private Touch touch;
+    private Vector3 spos, nowpos;
+    private float checkcount;
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +128,19 @@ public class SceneChange : MonoBehaviour
         }
         Change();
     }
+    public void Acept()
+    {
+        changeflag = true;
+    }
+
+    public void StageSerect()
+    {
+        SceneManager.LoadScene("StageSelect");
+    }
+    public void Retry()
+    {
+        SceneManager.LoadScene("Stage" + sta);
+    }
     void Change()
     {
         time += Time.deltaTime * 10;
@@ -158,6 +174,37 @@ public class SceneChange : MonoBehaviour
             {
                 Ex.SetActive(false);
                 Ex2.SetActive(false);
+            }
+            if(Input.touchCount>0)
+            {
+                touch = Input.GetTouch(0);
+                if(touch.phase==TouchPhase.Began)
+                {
+                    spos = touch.position;
+                }
+
+                if(touch.phase==TouchPhase.Moved)
+                {
+                    checkcount = 0;
+                    nowpos = touch.position;
+                    if(movefrag)
+                    {
+                        if (spos.x < nowpos.x && stagenum > 0)
+                        {
+                            time = 0;
+                            stagenum--;
+                        }
+                        if (spos.x > nowpos.x&& (stagenum < stage.Length - 3 || (stagenum < stage.Length - 1 && clearfrag)))
+                        {
+                            time = 0;
+                            stagenum++;
+                        }
+                    }
+                    spos = touch.position;
+                }
+            }else
+            {
+                checkcount = 0;
             }
             if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < -0.8f) && stagenum > 0 && movefrag)
             {

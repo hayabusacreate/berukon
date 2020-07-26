@@ -61,11 +61,13 @@ public class Conveyor : MonoBehaviour
             _slider.value = speed;
             if(spos.x-nowpos.x>0)
             {
-                speed -= Vector3.Distance(spos, nowpos)/1000;
+                speed -= Vector3.Distance(spos, nowpos)/500;
+                spos = nowpos;
             }
             if (spos.x - nowpos.x < 0)
             {
-                speed += Vector3.Distance(spos, nowpos)/1000;
+                speed += Vector3.Distance(spos, nowpos)/500;
+                spos = nowpos;
             }
             if (Vector3.Distance(spos, nowpos) < 0)
             {
